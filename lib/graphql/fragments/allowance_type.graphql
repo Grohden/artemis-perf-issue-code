@@ -1,0 +1,5 @@
+fragment AllowanceTypeItem on AllowanceType {
+    __typename
+    id
+    description
+}

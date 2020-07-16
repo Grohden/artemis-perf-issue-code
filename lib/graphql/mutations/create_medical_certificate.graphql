@@ -1,0 +1,5 @@
+mutation createMedicalCertificate($medicalCertificate: MedicalCertificateInput!) {
+    createMedicalCertificate(medicalCertificate: $medicalCertificate) {
+        ...MedicalRecordCertificateItem
+    }
+}

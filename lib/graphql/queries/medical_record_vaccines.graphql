@@ -1,0 +1,5 @@
+query medicalRecordVaccines($id: String!) {
+    vaccines: medicalRecordVaccinesByMedicalRecord(medicalRecord: $id) {
+        ...MedicalRecordVaccineItem
+    }
+}

@@ -1,0 +1,8 @@
+query searchICDGroup($pagination: Pagination,$query: PaginationDefaultQueryInput!) {
+    gIcdGroups(query: $query, pagination: $pagination) {
+        hasMore
+        items {
+            ...ICDGroupItem
+        }
+    }
+}

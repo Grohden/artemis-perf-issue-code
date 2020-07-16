@@ -1,0 +1,18 @@
+fragment ActionPlanItem on ActionPlan {
+    __typename
+    id
+    what
+    why
+    where
+    how
+    dateStart
+    dateEnd
+    expectedCost
+    realCost
+    currentValue
+    goal
+    measure
+    measureType
+    observation
+    situation
+}

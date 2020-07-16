@@ -1,0 +1,5 @@
+fragment BranchItem on Branch {
+    __typename
+    id
+    name
+}

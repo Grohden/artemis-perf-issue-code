@@ -1,0 +1,31 @@
+fragment SessionItem on Session {
+    token
+    branch {
+        __typename
+        id
+        name
+        organization {
+            __typename
+            id
+            name
+            socialName
+        }
+    }
+    user {
+        __typename
+        id
+        name
+        email
+        documentNumber
+        birthDate
+        gender
+        address
+        educationLevel
+        profilePicture
+        roles {
+            __typename
+            roleId
+            branchId
+        }
+    }
+}

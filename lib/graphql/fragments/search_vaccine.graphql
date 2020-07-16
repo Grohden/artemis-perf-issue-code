@@ -1,0 +1,11 @@
+fragment SearchVaccineItem on Vaccine {
+    __typename
+    id
+    description
+}
+
+fragment SearchGenericVaccineItem on GenericVaccine {
+    __typename
+    id
+    description
+}

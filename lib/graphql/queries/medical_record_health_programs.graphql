@@ -1,0 +1,5 @@
+query medicalRecordHealthPrograms($id: String!) {
+    programms: medicalRecordHealthProgramByMedicalRecord(medicalRecord: $id) {
+        ...MedicalRecordHealthProgramItem
+    }
+}

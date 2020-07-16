@@ -1,0 +1,14 @@
+query searchHealthProgram($pagination: Pagination, $query: PaginationDefaultQueryInput!) {
+    healthPrograms(pagination: $pagination, query: $query) {
+        hasMore
+        items {
+            ...SearchHealthProgramItem
+        }
+    }
+    gHealthPrograms(pagination: $pagination, query: $query) {
+        hasMore
+        items {
+            ...SearchGenericHealthProgramItem
+        }
+    }
+}

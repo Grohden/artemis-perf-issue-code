@@ -1,0 +1,5 @@
+query searchAccident($summary: String!) {
+    accidents: accidentBySummary(summary: $summary) {
+        ...AccidentItem
+    }
+}

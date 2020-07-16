@@ -1,0 +1,5 @@
+mutation createSessionForBranch($branchId: String!) {
+    createSessionForBranch(branchId: $branchId){
+       ...SessionItem
+    }
+}

@@ -1,0 +1,11 @@
+fragment MedicalRecordHealthProgramItem on MedicalRecordHealthProgram {
+    __typename
+    id
+    startDate
+    endDate
+    healthProgram {
+        __typename
+        id
+        description
+    }
+}

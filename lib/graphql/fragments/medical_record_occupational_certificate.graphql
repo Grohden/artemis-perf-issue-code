@@ -1,0 +1,6 @@
+fragment OccupationalCertificateItem on OccupationalHealthCertificate {
+    __typename
+    id
+    scheduleDate
+    nature
+}

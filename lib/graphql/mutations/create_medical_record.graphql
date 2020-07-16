@@ -1,0 +1,5 @@
+mutation createMedicalRecord($medicalRecord: MedicalRecordInput!) {
+    createMedicalRecord(medicalRecord: $medicalRecord) {
+        ...MedicalRecordListItem
+    }
+}

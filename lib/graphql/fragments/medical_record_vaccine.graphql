@@ -1,0 +1,10 @@
+fragment MedicalRecordVaccineItem on MedicalRecordVaccine {
+    __typename
+    id
+    date
+    vaccine {
+        __typename
+        id
+        description
+    }
+}

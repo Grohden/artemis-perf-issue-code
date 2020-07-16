@@ -1,0 +1,12 @@
+query actionPlansList (
+    $orderBy: ActionPlanOrderByInput,
+    $pagination: Pagination,
+    $query: ActionPlanQueryInput!
+) {
+    actionPlans(pagination: $pagination, query: $query, orderBy: $orderBy) {
+        hasMore
+        items {
+            ...ActionPlanItem
+        }
+    }
+}

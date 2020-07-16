@@ -1,0 +1,26 @@
+query medicalGenericQuiz($id: String!) {
+    quiz: gQuiz(id: $id) {
+        __typename
+        id
+        description
+        questionsGroup: genericQuestionsGroup {
+            __typename
+            id
+            description
+            questionsQuiz: genericQuestionsQuiz {
+                __typename
+                id
+                description
+                gender
+                defaultOption
+                hasDetails
+                responseType
+                responseOptions: genericResponseOptions {
+                    __typename
+                    id
+                    description
+                }
+            }
+        }
+    }
+}

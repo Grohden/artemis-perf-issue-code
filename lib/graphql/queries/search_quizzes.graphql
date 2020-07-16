@@ -1,0 +1,14 @@
+query searchQuizzes($pagination: Pagination,$query: PaginationDefaultQueryInput!) {
+    quizzes(query: $query, pagination: $pagination) {
+        hasMore
+        items {
+            ...SearchQuizItem
+        }
+    }
+    gQuizzes(query: $query, pagination: $pagination) {
+        hasMore
+        items {
+            ...SearchGenericQuizItem
+        }
+    }
+}

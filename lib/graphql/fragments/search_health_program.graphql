@@ -1,0 +1,11 @@
+fragment SearchHealthProgramItem on HealthProgram {
+    __typename
+    id
+    description
+}
+
+fragment SearchGenericHealthProgramItem on GenericHealthProgram {
+    __typename
+    id
+    description
+}

@@ -1,0 +1,5 @@
+mutation createMedicalOccupationalCertificate($certificate: OccupationalHealthCertificateInput!) {
+    createMedicalOccupationalCertificate: createOccupationalHealthCertificate(occupationalHealthCertificate: $certificate) {
+        ...OccupationalCertificateItem
+    }
+}

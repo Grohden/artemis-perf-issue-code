@@ -1,0 +1,6 @@
+mutation createMedicalQuiz($quiz: ClinicalQuizInput!) {
+    createClinicalQuiz(quiz: $quiz) {
+        __typename
+        id
+    }
+}

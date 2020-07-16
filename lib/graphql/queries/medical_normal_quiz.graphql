@@ -1,0 +1,27 @@
+query medicalNormalQuiz($id: String!) {
+    quiz(id: $id) {
+        __typename
+        id
+        description
+        questionsGroup {
+            __typename
+            id
+            description
+            questionsQuiz {
+                __typename
+                id
+                description
+                gender
+                defaultOption
+                hasDetails
+                responseType
+                required
+                responseOptions {
+                    __typename
+                    id
+                    description
+                }
+            }
+        }
+    }
+}

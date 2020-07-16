@@ -1,0 +1,15 @@
+fragment MedicalRecordListItem on MedicalRecord {
+    __typename
+    id
+    name
+    gender
+    individualRegistration
+    candidate
+    weight
+    height
+    bloodDonator
+    bloodType
+    person {
+        ...PersonItem
+    }
+}

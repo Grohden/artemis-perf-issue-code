@@ -1,0 +1,5 @@
+query medicalRecordCertificates($id: String!) {
+    records: medicalCertificatesByMedicalRecord(medicalRecord: $id) {
+        ...MedicalRecordCertificateItem
+    }
+}

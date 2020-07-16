@@ -1,0 +1,14 @@
+name: foo
+description: foo
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dev_dependencies:
+  artemis: ^6.4.4-beta.1
+  json_serializable: ^3.3.0
+  build_runner: ^1.5.0

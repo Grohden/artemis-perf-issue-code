@@ -1,0 +1,5 @@
+query medicalRecordReferrals($id: String!) {
+    referrals: medicalReferralsByMedicalRecord(medicalRecord: $id) {
+        ...MedicalRecordReferralItem
+    }
+}

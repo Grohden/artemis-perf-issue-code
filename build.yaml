@@ -1,0 +1,30 @@
+targets:
+  $default:
+    builders:
+      source_gen|combining_builder:
+        options:
+          ignore_for_file:
+            - implicit_dynamic_parameter
+            - always_put_required_named_parameters_first
+            - constant_identifier_names
+            - lines_longer_than_80_chars
+            - prefer_const_literals_to_create_immutables
+      # Some of our queries fail when we send null keys
+      # (foo)
+      json_serializable:
+        options:
+          include_if_null: false
+      artemis:
+        options:
+          scalar_mapping:
+            - custom_parser_import: 'package:foo/graphql/coercers.dart'
+              graphql_type: DateTime
+              dart_type: DateTime
+          fragments_glob: lib/graphql/fragments/*.graphql
+          # Prefix every output with .graphql.dart to avoid
+          # generating a useless file
+          schema_mapping:
+            - schema: lib/graphql/schema.graphql
+              queries_glob: lib/graphql/{queries,mutations}/*.graphql
+              output: lib/graphql/gen/api.graphql.dart
+              naming_scheme: pathedWithFields

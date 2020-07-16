@@ -1,0 +1,8 @@
+query searchUser($pagination: Pagination, $query: PaginationPersonQueryInput!) {
+    people(query: $query, pagination: $pagination) {
+        hasMore
+        items {
+            ...PersonItem
+        }
+    }
+}

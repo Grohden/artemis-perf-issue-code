@@ -1,0 +1,8 @@
+query searchAbsenceTypes($pagination: Pagination,$query: PaginationDefaultQueryInput!) {
+    absenceTypes(query: $query, pagination: $pagination) {
+        hasMore
+        items {
+            ...AbsenceTypeItem
+        }
+    }
+}

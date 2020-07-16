@@ -1,0 +1,6 @@
+fragment MedicalRecordReferralItem on MedicalReferral {
+    __typename
+    id
+    date
+    specialty
+}

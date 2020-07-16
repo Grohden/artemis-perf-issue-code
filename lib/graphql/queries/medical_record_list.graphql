@@ -1,0 +1,11 @@
+query medicalRecordsList(
+    $pagination: Pagination,
+    $query: PaginationDefaultQueryInput!
+) {
+    medicalRecords(pagination: $pagination,query: $query) {
+        hasMore
+        items {
+            ...MedicalRecordListItem
+        }
+    }
+}

@@ -1,0 +1,11 @@
+fragment MedicalRecordCertificateItem on MedicalCertificate {
+    __typename
+    id
+    dateStart
+    icdGroup {
+        __typename
+        id
+        code
+        description
+    }
+}

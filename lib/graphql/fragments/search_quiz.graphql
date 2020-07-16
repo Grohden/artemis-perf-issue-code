@@ -1,0 +1,11 @@
+fragment SearchQuizItem on Quiz {
+    __typename
+    id
+    description
+}
+
+fragment SearchGenericQuizItem on GenericQuiz {
+    __typename
+    id
+    description
+}

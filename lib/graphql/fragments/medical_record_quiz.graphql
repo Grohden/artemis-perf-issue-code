@@ -1,0 +1,10 @@
+fragment MedicalRecordQuizItem on ClinicalQuiz {
+    __typename
+    id
+    realizationDate
+    quiz {
+        __typename
+        id
+        description
+    }
+}

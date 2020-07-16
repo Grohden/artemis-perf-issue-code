@@ -1,0 +1,12 @@
+query accidentsList(
+    $orderBy: AccidentOrderByInput,
+    $pagination: Pagination,
+    $query: AccidentQueryInput!
+) {
+    accidents(pagination: $pagination, query: $query, orderBy: $orderBy) {
+        hasMore
+        items {
+            ...AccidentItem
+        }
+    }
+}

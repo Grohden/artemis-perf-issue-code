@@ -1,0 +1,5 @@
+mutation createMedicalRecordDeficiency($deficiency: DeficiencyInput!) {
+    createDeficiency(deficiency: $deficiency) {
+        ...MedicalRecordDeficiencyItem
+    }
+}

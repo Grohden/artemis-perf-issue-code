@@ -1,0 +1,5 @@
+query medicalRecordDeficiencies($id: String!) {
+    deficiencies: deficienciesByMedicalRecord(medicalRecord: $id) {
+        ...MedicalRecordDeficiencyItem
+    }
+}

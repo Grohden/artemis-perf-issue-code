@@ -1,0 +1,5 @@
+query medicalRecordQuizzes($id: String!) {
+    clinicalQuizzes(medicalRecord: $id) {
+        ...MedicalRecordQuizItem
+    }
+}

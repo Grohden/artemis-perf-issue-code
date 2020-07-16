@@ -1,0 +1,14 @@
+query searchVaccine($pagination: Pagination, $query: PaginationDefaultQueryInput!) {
+    vaccines(pagination: $pagination, query: $query) {
+        hasMore
+        items {
+            ...SearchVaccineItem
+        }
+    }
+    gVaccines(pagination: $pagination, query: $query) {
+        hasMore
+        items {
+            ...SearchGenericVaccineItem
+        }
+    }
+}

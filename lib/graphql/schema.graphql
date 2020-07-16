@@ -1,0 +1,8089 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type AbsenceType {
+    description: String!
+    id: String!
+    referenceId: String
+}
+
+type Accident {
+    accept: Boolean
+    accidentCode: AccidentCode
+    accidentLocation: AccidentLocation
+    accidentType: AccidentType
+    accidentTypeEnum: AccidentTypeEnum!
+    bodyParts: [BodyPartOnAccident!]
+    causerAgents: [CauserAgentOnAccident!]
+    city: String
+    companyRegistration: String
+    comunicationType: ComunicationType
+    conclusion: String
+    costCenter: CostCenter
+    country: String
+    date: DateTime!
+    daysLost: Float
+    deathDate: DateTime
+    description: String
+    distance: String
+    emissionDate: DateTime
+    emitter: Emitter
+    exitHour: String
+    expenses: [ExpenseOnAccident!]
+    hadPathChange: Boolean
+    hasAbsence: Boolean
+    icd: Icd
+    icdGroup: IcdGroup
+    icds: [ComplementaryIcdOnAccident!]
+    id: String!
+    injuryNature: InjuryNature
+    lastDayWork: DateTime
+    locationDescription: String
+    locomotion: String
+    occurencePath: OccurencePath
+    originDate: DateTime
+    originNumber: String
+    otherOccupation: Boolean
+    person: Person
+    policeRecord: Boolean
+    reason: String
+    retired: Boolean
+    serviceArea: ServiceArea
+    socialSecurityAffiliation: SocialSecurityAffiliation
+    socialSecurityCode: String
+    standarTime: String
+    state: String
+    street: String
+    streetNumber: String
+    summary: String!
+    timeWorked: String
+    trafficAccidentType: TrafficAccidentType
+    usualPath: String
+    willTransferSector: Boolean
+    witnesses: [WitnessOnAccident!]
+    workedHours: String
+    zipCode: String
+}
+
+type AccidentAbsence {
+    absence: String!
+    amount: Float!
+    month: Float!
+    year: Float!
+}
+
+type AccidentAmount {
+    amount: Float!
+    month: Float!
+    person: String!
+    year: Float!
+}
+
+type AccidentCause {
+    causeType: CauseType!
+    description: String!
+    id: String!
+    isActive: Boolean!
+    referenceId: String
+}
+
+type AccidentCode {
+    description: String!
+    eSocialCode: String!
+    id: String!
+}
+
+type AccidentDescription {
+    description: String!
+    id: String!
+}
+
+type AccidentExpenseAmount {
+    amount: Float!
+    month: Float!
+    year: Float!
+}
+
+type AccidentObject {
+    description: String!
+    eSocialCode: String!
+    id: String!
+}
+
+type AccidentType {
+    eSocialCode: String!
+    id: String!
+    occupationalDesease: Boolean!
+    occupationalDeseaseDescription: String!
+    workAccident: Boolean!
+    workAccidentDescription: String!
+}
+
+type AccidentVictim {
+    amount: Float!
+    description: String!
+}
+
+type AccidentWithInvestigation {
+    accidentId: String!
+    date: DateTime
+    dateAccident: DateTime!
+    dateInvestigation: DateTime
+    defectiveEquipment: Boolean
+    improvisation: Boolean
+    investigationId: String
+    knewNorms: Boolean
+    name: String
+    personId: String
+    report: String
+    summary: String!
+    trained: Boolean
+    wasUsedEpi: Boolean
+}
+
+type AccidentWitness {
+    accident: Accident!
+    id: String!
+    person: Person!
+}
+
+type Accredited {
+    exams: [AccreditedExam!]
+    id: String!
+    isActive: Boolean!
+    name: String!
+}
+
+type AccreditedExam {
+    contractEnd: DateTime
+    contractStart: DateTime!
+    exam: Exam!
+    id: String!
+    price: Float!
+}
+
+type ActionOnMeeting {
+    active: Boolean!
+    dateAction: DateTime!
+    description: String!
+}
+
+type ActionPlan {
+    currentValue: Float!
+    dateEnd: DateTime!
+    dateStart: DateTime!
+    expectedCost: Float!
+    expectedGoals: [ExpectedGoalOnActionPlan!]
+    goal: Float!
+    how: String!
+    id: String!
+    measure: Measure!
+    measureType: MeasureType!
+    observation: String
+    realCost: Float
+    realGoals: [RealGoalOnActionPlan!]
+    responsiblesAction: [ResponsibleOnActionPlan!]
+    situation: Situation!
+    what: String!
+    where: String!
+    why: String!
+}
+
+type ActivityGroup {
+    cipaCode: String!
+    code: String!
+    description: String!
+    id: String!
+    riskDegree: Float!
+}
+
+type ActivityICD {
+    economicActivity: EconomicActivity!
+    icdGroupEnd: IcdGroup!
+    icdGroupStart: IcdGroup!
+    id: String!
+}
+
+type AgeRange {
+    fromAge: Float!
+    id: String!
+    periodicRangeId: String!
+    periodicity: Float!
+    toAge: Float!
+}
+
+type AgeRangeEntry {
+    fromAge: Float!
+    id: String
+    periodicity: Float!
+    toAge: Float!
+}
+
+type Agreement {
+    createdAt: DateTime!
+    ipAddress: String!
+    terms: String!
+    userAgent: String
+}
+
+type AllowanceType {
+    description: String!
+    id: String!
+}
+
+type Analysis {
+    description: String!
+    examMeasure: ExamMeasure
+    id: String!
+    references: [References!]
+}
+
+type Attachment {
+    contentLength: Float!
+    contentType: String!
+    createdAt: DateTime!
+    filename: String!
+    id: String!
+    uploadUrl: String
+    uploadedBy: String!
+    url: String!
+}
+
+type BodyPart {
+    description: String!
+    eSocialCode: String!
+    id: String!
+}
+
+type BodyPartOnAccident {
+    eSocialCode: String
+    laterality: Laterality
+}
+
+type Branch {
+    activityType: ActivityType
+    city: String
+    country: String
+    createdAt: DateTime!
+    crons: [CronTab!]
+    deletedAt: DateTime
+    documentNumber: String
+    economicActivity: EconomicActivity
+    economicActivityId: String
+    endpoint: Endpoint
+    erpBranch: String
+    id: String!
+    name: String!
+    neighborhood: String
+    number: String
+    organizationId: String!
+    phoneNumber: String
+    state: String
+    street: String
+    timeZone: String
+    updatedAt: DateTime!
+    zipCode: String
+}
+
+type BranchWithOrganization {
+    activityType: ActivityType
+    city: String
+    country: String
+    createdAt: DateTime!
+    crons: [CronTab!]
+    deletedAt: DateTime
+    documentNumber: String
+    economicActivity: EconomicActivity
+    economicActivityId: String
+    endpoint: Endpoint
+    erpBranch: String
+    id: String!
+    name: String!
+    neighborhood: String
+    number: String
+    organization: Organization!
+    organizationId: String!
+    phoneNumber: String
+    state: String
+    street: String
+    timeZone: String
+    updatedAt: DateTime!
+    zipCode: String
+}
+
+type Calendar {
+    calendarWorkShifts: [CalendarWorkShift!]!
+    id: String!
+    isActive: Boolean!
+    name: String!
+}
+
+type CalendarWorkShift {
+    calendarId: String!
+    end: TimePoint!
+    id: String!
+    start: TimePoint!
+}
+
+type CalendarWorkShiftEntry {
+    end: TimePoint!
+    start: TimePoint!
+}
+
+type Candidate {
+    errorIntegration: String
+    id: String!
+    mandate: Mandate!
+    person: Person!
+    stabilityType: StabilityType
+}
+
+type CauserAgent {
+    accident: Accident!
+    accidentObject: AccidentObject!
+    id: String!
+}
+
+type CauserAgentOnAccident {
+    accidentObject: AccidentObject!
+    id: String!
+}
+
+type Causes {
+    defectiveEquipment: Float!
+    improvisation: Float!
+    knewNorms: Float!
+    trained: Float!
+    wasUsedEpi: Float!
+}
+
+type ClinicalQuiz {
+    id: String!
+    medicalRecord: MedicalRecord!
+    quiz: Quiz!
+    realizationDate: DateTime!
+    responses: [ResponsesClinicalQuiz!]!
+}
+
+type ComplementaryExam {
+    accredited: Accredited
+    consultation: Consultation!
+    exam: Exam!
+    id: String!
+}
+
+type ComplementaryIcd {
+    accident: Accident!
+    icd: Icd!
+    icdGroup: IcdGroup!
+    id: String!
+}
+
+type ComplementaryIcdOnAccident {
+    icd: Icd
+    icdGroup: IcdGroup
+    id: String!
+}
+
+type ComplementaryIcdOnDiagnostic {
+    icd: Icd
+    icdGroup: IcdGroup
+    id: String!
+}
+
+type Component {
+    active: Boolean!
+    componentType: ComponentType!
+    errorIntegration: String
+    id: String!
+    indication: Indication!
+    mandate: Mandate!
+    person: Person!
+    specificFunction: SpecificFunction!
+    stabilityType: StabilityType
+}
+
+type Consultation {
+    complementaryExams: [ExamOnConsultation!]
+    doctor: Person!
+    endDate: DateTime
+    estimatedDate: DateTime!
+    estimatedTime: Float
+    exam: Exam
+    id: String!
+    observation: String
+    patient: MedicalRecord!
+    reason: String!
+    startDate: DateTime
+    type: ConsultationType!
+}
+
+type ContactRequest {
+    comment: String
+    createdAt: DateTime!
+    email: String!
+    id: String!
+    name: String!
+    phone: String!
+    updatedAt: DateTime!
+}
+
+type ControlMeasure {
+    controlType: ControlType!
+    description: String
+    id: String!
+    isActive: Boolean!
+    name: String!
+}
+
+type ControlMeasureByRisk {
+    controlMeasure: ControlMeasure!
+    id: String!
+}
+
+type CostCenter {
+    classCostCenter: String
+    description: String!
+    equipments: [EquipmentByCostCenter!]
+    erpId: String
+    id: String!
+    isActive: Boolean!
+    needEquipment: Boolean
+    referenceId: String
+}
+
+type CostCenterByRisk {
+    costCenter: CostCenter!
+    id: String!
+}
+
+type CostCenterOnMandate {
+    costCenter: CostCenter!
+    id: String!
+}
+
+type CostCenterOnVaccine {
+    costCenter: CostCenter!
+    id: String!
+}
+
+type CronTab {
+    branchId: String!
+    businessEntity: BusinessEntity!
+    createdAt: DateTime!
+    description: String!
+    id: String!
+    isActive: Boolean!
+    lastHttpCode: Float!
+    lastHttpState: String
+    periodicity: Float!
+    updatedAt: DateTime!
+}
+
+type Deficiency {
+    date: DateTime!
+    icd: Icd
+    id: String!
+    medicalRecordId: String!
+    observation: String
+    recovered: Boolean
+    type: DeficiencyType!
+}
+
+type Department {
+    description: String!
+    erpId: String
+    id: String!
+    isActive: Boolean!
+}
+
+type DepartmentByRisk {
+    department: Department!
+    id: String!
+}
+
+type Dependent {
+    birthday: DateTime!
+    erpId: String
+    gender: Gender!
+    id: String!
+    individualRegistration: String
+    name: String!
+    person: Person!
+}
+
+type DependentByPerson {
+    birthday: DateTime!
+    erpId: String
+    gender: Gender!
+    id: String!
+    individualRegistration: String
+    name: String!
+}
+
+type Diagnostic {
+    attendance: String
+    complaint: String
+    consultation: Consultation!
+    diagnostic: String!
+    diagnosticDate: DateTime!
+    diastolicPressure: Float
+    height: Float
+    icd: Icd
+    icdGroup: IcdGroup
+    icds: [ComplementaryIcdOnDiagnostic!]
+    id: String!
+    medicines: [MedicineOnDiagnostic!]
+    systolicPressure: Float
+    weight: Float
+}
+
+type DiagnosticComplementaryIcd {
+    diagnostic: Diagnostic!
+    icd: Icd!
+    icdGroup: IcdGroup!
+    id: String!
+}
+
+type DiagnosticMedicine {
+    amount: Float!
+    diagnostic: Diagnostic!
+    id: String!
+    measurementUnit: MedicineMeasurementUnit
+    medicine: Medicine!
+    posology: String
+    showsInPrescription: Boolean!
+}
+
+type EarPart {
+    abnormality: Boolean!
+    description: String
+    earPart: EarPartEnum!
+    examOtological: ExamOtological!
+    id: String!
+}
+
+type EconomicActivity {
+    activityGroup: ActivityGroup!
+    code: String!
+    description: String!
+    groupId: String!
+    id: String!
+}
+
+type ElectionComission {
+    id: String!
+    mandate: Mandate!
+    person: Person!
+}
+
+type EmployeeTask {
+    endDate: DateTime
+    id: String!
+    person: Person!
+    startDate: DateTime!
+    task: Task!
+}
+
+type Endpoint {
+    authType: AuthType
+    erpType: ErpType!
+    id: String
+    password: String
+    port: Float
+    url: String
+    user: String
+}
+
+type EnvironmentalReport {
+    content: String!
+    costCenter: CostCenter
+    elaborator: Person!
+    endDate: DateTime!
+    expirationDate: DateTime!
+    finality: ReportFinality
+    id: String!
+    initialDate: DateTime!
+    objective: String!
+    review: String!
+    statementResponsibility: StatementResponsibility
+    type: ReportType!
+}
+
+type EquipmentByCostCenter {
+    costCenter: CostCenter!
+    daysForReplacement: Float
+    id: String!
+    ipe: Ipe!
+}
+
+type EquipmentByOccupation {
+    daysForReplacement: Float
+    id: String!
+    ipe: Ipe!
+    occupation: Occupation!
+}
+
+type Event {
+    dateReference: String!
+    id: String!
+    message: String!
+    subDaysEnd: Float!
+    subDaysStart: Float!
+    type: String!
+}
+
+type Exam {
+    admission: Boolean!
+    backToWork: Boolean!
+    changeOfFunction: Boolean!
+    description: String!
+    dismissal: Boolean!
+    groupAnalysis: [GroupAnalysis!]
+    ibmp: ExamIbmp
+    id: String!
+    isActive: Boolean!
+    periodic: Boolean!
+    periodicRange: PeriodicRange
+    preparation: String
+    referenceId: String
+    resultType: ResultTypeEnum!
+}
+
+type ExamAudiometry {
+    calibrationDate: DateTime!
+    complementaryExam: ComplementaryExam
+    consultation: Consultation
+    crm: String
+    date: DateTime!
+    details: String
+    doctor: String
+    equipment: MeasuringInstrument!
+    gaugingDate: DateTime!
+    id: String!
+    indicator: ExamResultIndicatorEnum!
+    observations: String
+    odAirEight: Float
+    odAirFour: Float
+    odAirHigherAvg: Float
+    odAirLowerAvg: Float
+    odAirMaskEight: Float
+    odAirMaskFour: Float
+    odAirMaskMarkedEight: Boolean!
+    odAirMaskMarkedFour: Boolean!
+    odAirMaskMarkedOne: Boolean!
+    odAirMaskMarkedPointFive: Boolean!
+    odAirMaskMarkedPointTwentyFive: Boolean!
+    odAirMaskMarkedSix: Boolean!
+    odAirMaskMarkedThree: Boolean!
+    odAirMaskMarkedTwo: Boolean!
+    odAirMaskMax: Float
+    odAirMaskMin: Float
+    odAirMaskOne: Float
+    odAirMaskPointFive: Float
+    odAirMaskPointTwentyFive: Float
+    odAirMaskSix: Float
+    odAirMaskThree: Float
+    odAirMaskTwo: Float
+    odAirOne: Float
+    odAirPointFive: Float
+    odAirPointTwentyFive: Float
+    odAirSix: Float
+    odAirThree: Float
+    odAirTwo: Float
+    odBoneFour: Float
+    odBoneMaskFour: Float
+    odBoneMaskMarkedFour: Boolean!
+    odBoneMaskMarkedOne: Boolean!
+    odBoneMaskMarkedPointFive: Boolean!
+    odBoneMaskMarkedThree: Boolean!
+    odBoneMaskMarkedTwo: Boolean!
+    odBoneMaskMax: Float
+    odBoneMaskMin: Float
+    odBoneMaskOne: Float
+    odBoneMaskPointFive: Float
+    odBoneMaskThree: Float
+    odBoneMaskTwo: Float
+    odBoneOne: Float
+    odBonePointFive: Float
+    odBoneThree: Float
+    odBoneTwo: Float
+    odClinicalResult: AudiometryClinicalEnum!
+    odInssResult: AudiometryInssEnum!
+    odIrfMasking: Float
+    odIrfMonosyllables: Float
+    odIrfSyllables: Float
+    odLossTypeResult: AudiometryLossTypeEnum
+    odMeatoscopy: String
+    odOrdinanceResult: AudiometryOrdinanceEnum!
+    odSdtIndex: Float
+    odSrtIndex: Float
+    odSrtMasking: Float
+    oeAirEight: Float
+    oeAirFour: Float
+    oeAirHigherAvg: Float
+    oeAirLowerAvg: Float
+    oeAirMaskEight: Float
+    oeAirMaskFour: Float
+    oeAirMaskMarkedEight: Boolean!
+    oeAirMaskMarkedFour: Boolean!
+    oeAirMaskMarkedOne: Boolean!
+    oeAirMaskMarkedPointFive: Boolean!
+    oeAirMaskMarkedPointTwentyFive: Boolean!
+    oeAirMaskMarkedSix: Boolean!
+    oeAirMaskMarkedThree: Boolean!
+    oeAirMaskMarkedTwo: Boolean!
+    oeAirMaskMax: Float
+    oeAirMaskMin: Float
+    oeAirMaskOne: Float
+    oeAirMaskPointFive: Float
+    oeAirMaskPointTwentyFive: Float
+    oeAirMaskSix: Float
+    oeAirMaskThree: Float
+    oeAirMaskTwo: Float
+    oeAirOne: Float
+    oeAirPointFive: Float
+    oeAirPointTwentyFive: Float
+    oeAirSix: Float
+    oeAirThree: Float
+    oeAirTwo: Float
+    oeBoneFour: Float
+    oeBoneMaskFour: Float
+    oeBoneMaskMarkedFour: Boolean!
+    oeBoneMaskMarkedOne: Boolean!
+    oeBoneMaskMarkedPointFive: Boolean!
+    oeBoneMaskMarkedThree: Boolean!
+    oeBoneMaskMarkedTwo: Boolean!
+    oeBoneMaskMax: Float
+    oeBoneMaskMin: Float
+    oeBoneMaskOne: Float
+    oeBoneMaskPointFive: Float
+    oeBoneMaskThree: Float
+    oeBoneMaskTwo: Float
+    oeBoneOne: Float
+    oeBonePointFive: Float
+    oeBoneThree: Float
+    oeBoneTwo: Float
+    oeClinicalResult: AudiometryClinicalEnum!
+    oeInssResult: AudiometryInssEnum!
+    oeIrfMasking: Float
+    oeIrfMonosyllables: Float
+    oeIrfSyllables: Float
+    oeLossTypeResult: AudiometryLossTypeEnum
+    oeMeatoscopy: String
+    oeOrdinanceResult: AudiometryOrdinanceEnum!
+    oeSdtIndex: Float
+    oeSrtIndex: Float
+    oeSrtMasking: Float
+    responsibleForMeasuring: Person!
+    result: String!
+    state: State
+}
+
+type ExamByHealthProgram {
+    admission: Boolean!
+    backToWork: Boolean!
+    changeOfFunction: Boolean!
+    dismissal: Boolean!
+    exam: Exam!
+    id: String!
+    periodic: Boolean!
+    periodicRange: PeriodicRange
+}
+
+type ExamByOccupation {
+    admission: Boolean!
+    backToWork: Boolean!
+    changeOfFunction: Boolean!
+    dismissal: Boolean!
+    exam: Exam!
+    id: String!
+    occupation: Occupation!
+    periodic: Boolean!
+    periodicRange: PeriodicRange
+}
+
+type ExamByRisk {
+    admission: Boolean!
+    backToWork: Boolean!
+    changeOfFunction: Boolean!
+    dismissal: Boolean!
+    exam: Exam!
+    id: String!
+    periodic: Boolean!
+    periodicRange: PeriodicRange
+    risk: Risk!
+}
+
+type ExamDiagnosticImage {
+    attachments: [Attachment!]
+    complementaryExam: ComplementaryExam
+    consultation: Consultation
+    crm: String
+    date: DateTime!
+    description: String
+    details: String
+    doctor: String
+    id: String!
+    indicator: ExamResultIndicatorEnum!
+    observations: String
+    result: String!
+    state: State
+}
+
+type ExamIbmp {
+    biologicalMaterial: BiologicalMaterial!
+    examMeasure: ExamMeasure!
+    id: String!
+    maximumAllowed: Float!
+    reference: Float!
+    riskAgent: RiskAgent!
+}
+
+type ExamItem {
+    complementaryExam: ComplementaryExam
+    consultation: Consultation
+    crm: String
+    date: DateTime!
+    details: String
+    doctor: String
+    examItemValues: [ExamItemValue!]!
+    id: String!
+    indicator: ExamResultIndicatorEnum!
+    observations: String
+    result: String!
+    state: State
+}
+
+type ExamItemValue {
+    analysis: Analysis!
+    id: String!
+    percentageValue: Float
+    value: Float!
+}
+
+type ExamNormal {
+    complementaryExam: ComplementaryExam
+    consultation: Consultation!
+    crm: String
+    date: DateTime!
+    details: String
+    doctor: String
+    id: String!
+    indicator: ExamResultIndicatorEnum!
+    observations: String
+    result: String!
+    state: State
+}
+
+type ExamOnConsultation {
+    accredited: Accredited
+    done: Boolean
+    exam: Exam!
+    id: String!
+}
+
+type ExamOtological {
+    complementaryExam: ComplementaryExam
+    consultation: Consultation
+    crm: String
+    date: DateTime!
+    description: String
+    details: String
+    doctor: String
+    earParts: [EarPart!]!
+    evolutionaryCharacter: EvolutionaryCharacterEnum!
+    examLocation: String!
+    exposureTime: String!
+    id: String!
+    indicator: ExamResultIndicatorEnum!
+    nexusNoise: Boolean!
+    noiseExposure: NoiseExposureEnum!
+    observations: String
+    occupational: Boolean!
+    otologicalDiagnosis: OtologicalDiagnosisEnum!
+    result: String!
+    state: State
+    timeUnit: TimeUnitEnum!
+    useOfIpe: UseOfAuricularIpeEnum!
+}
+
+type ExamSpirometry {
+    bronchodilator: Boolean!
+    calibrationDate: DateTime!
+    complementaryExam: ComplementaryExam
+    consultation: Consultation
+    crm: String
+    date: DateTime!
+    description: String
+    details: String
+    doctor: String
+    equipment: MeasuringInstrument!
+    examLocation: String
+    gaugingDate: DateTime!
+    id: String!
+    inconclusiveData: Boolean!
+    indicator: ExamResultIndicatorEnum!
+    observations: String
+    posMeasuredFet: Float
+    posMeasuredFev: Float
+    posMeasuredFevFvc: Float
+    posMeasuredFevTwentyFiveSeventyFive: Float
+    posMeasuredFvc: Float
+    posMeasuredPef: Float
+    posMeasuredPif: Float
+    posPrevFet: Float
+    posPrevFev: Float
+    posPrevFevFvc: Float
+    posPrevFevTwentyFiveSeventyFive: Float
+    posPrevFvc: Float
+    posPrevPef: Float
+    posPrevPif: Float
+    preMeasuredFet: Float
+    preMeasuredFev: Float
+    preMeasuredFevFvc: Float
+    preMeasuredFevTwentyFiveSeventyFive: Float
+    preMeasuredFvc: Float
+    preMeasuredPef: Float
+    preMeasuredPif: Float
+    prePrevFet: Float
+    prePrevFev: Float
+    prePrevFevTwentyFiveSeventyFive: Float
+    prePrevFevfvc: Float
+    prePrevFvc: Float
+    prePrevPef: Float
+    prePrevPif: Float
+    responsibleForMeasuring: Person!
+    result: String!
+    smoker: Boolean!
+    state: State
+    timeBeingSmoker: Float
+}
+
+type ExpectedGoal {
+    actionPlan: ActionPlan!
+    date: DateTime!
+    id: String!
+    value: Float!
+}
+
+type ExpectedGoalOnActionPlan {
+    date: DateTime!
+    value: Float!
+}
+
+type Expense {
+    description: String!
+    id: String!
+    incidence: IncidenceExpense!
+    isActive: Boolean!
+    referenceId: String
+    type: ExpenseType!
+}
+
+type ExpenseOnAccident {
+    date: DateTime!
+    expense: Expense!
+    value: Float
+}
+
+type ExtinguishingSystem {
+    abnt: String
+    brand: String
+    description: String!
+    emptyWeight: Float
+    extinguishingCapacity: String
+    fireExtinguisherType: FireExtinguisherType
+    fullWeight: Float
+    id: String!
+    inspectionPeriodicity: Float
+    inspections: [ExtinguishingSystemInspection!]
+    location: String
+    manufacturingYear: Float
+    model: String
+    physicalEnvironment: PhysicalEnvironment!
+    purchaseDate: DateTime
+    situation: ExtinguishingSystemSituation!
+    systemType: ExtinguishingSystemType!
+}
+
+type ExtinguishingSystemInspection {
+    completeValve: Boolean!
+    cylindricalValve: Boolean!
+    diffuserReplacement: Boolean!
+    drillUsed: Boolean!
+    extinguishingSystem: ExtinguishingSystem!
+    fireUsed: Boolean!
+    hose: Boolean!
+    hydrostaticTest: Boolean!
+    id: String!
+    monometer: Boolean!
+    observation: String
+    painting: Boolean!
+    plannedDate: DateTime!
+    realDate: DateTime
+    realoaded: Boolean!
+    reloadDate: DateTime
+    responsible: Person!
+    safetyValve: Boolean!
+    situation: InspectionSituation!
+    sundry: Boolean!
+    triggerReplacement: Boolean!
+}
+
+type FireBrigade {
+    description: String!
+    endDate: DateTime
+    id: String!
+    startDate: DateTime!
+}
+
+type FireBrigadeComponent {
+    assignments: String
+    exitDate: DateTime
+    fireBrigade: FireBrigade!
+    id: String!
+    inclusionDate: DateTime!
+    person: Person!
+    specificFunction: FireBrigadeSpecificFunction!
+}
+
+type FireBrigadeExam {
+    admission: Boolean!
+    backToWork: Boolean!
+    changeOfFunction: Boolean!
+    dismissal: Boolean!
+    exam: Exam!
+    fireBrigade: FireBrigade!
+    id: String!
+    periodic: Boolean!
+    periodicRange: PeriodicRange
+}
+
+type FireBrigadeMeeting {
+    date: DateTime!
+    duration: String
+    fireBrigade: FireBrigade!
+    id: String!
+    meetingLocal: String
+    meetingType: MeetingType!
+    minutesMeeting: String
+    realDate: DateTime
+    subject: String!
+}
+
+type FireBrigadeTraining {
+    errorIntegration: String
+    fireBrigade: FireBrigade!
+    id: String!
+    training: Training!
+    urgency: TrainingUrgency!
+}
+
+type FrequencyIndex {
+    description: String
+    index: Float!
+}
+
+type FuncionalHistory {
+    costCenter: CostCenter!
+    id: String!
+    occupation: Occupation!
+    person: Person!
+    realizationDate: DateTime!
+    sefip: String
+}
+
+type FuncionalHistoryByPerson {
+    costCenter: CostCenter!
+    id: String!
+    occupation: Occupation!
+    realizationDate: DateTime!
+    sefip: String
+}
+
+type GeneratingSource {
+    id: String!
+    isActive: Boolean!
+    name: String!
+    sourcePicture: String
+    uploadUrl: String
+}
+
+type GenericAccidentCause {
+    causeType: String!
+    description: String!
+    id: String!
+}
+
+type GenericActivePrinciple {
+    description: String!
+    id: String!
+}
+
+type GenericAgeRange {
+    fromAge: Float!
+    id: String!
+    periodicRangeId: String!
+    periodicity: Float!
+    toAge: Float!
+}
+
+type GenericCostCenter {
+    classCostCenter: String
+    description: String!
+    id: String!
+}
+
+type GenericExam {
+    description: String!
+    ibmp: GenericExamIbmp
+    id: String!
+    resultType: ResultTypeEnum!
+}
+
+type GenericExamIbmp {
+    biologicalMaterial: BiologicalMaterial!
+    examMeasure: ExamMeasure!
+    id: String!
+    maximumAllowed: Float!
+    reference: Float!
+    riskAgent: GenericRiskAgent!
+}
+
+type GenericExpense {
+    description: String!
+    id: String!
+    incidence: String!
+    type: String!
+}
+
+type GenericHealthProgram {
+    description: String!
+    id: String!
+    name: String!
+    programType: ProgramType!
+}
+
+type GenericLaboratory {
+    description: String!
+    id: String!
+}
+
+type GenericMeasuringInstrument {
+    description: String!
+    id: String!
+}
+
+type GenericMedicine {
+    activePrinciple: GenericActivePrinciple!
+    ambulatoryMedicine: Boolean!
+    description: String!
+    id: String!
+    label: MedicineLabelEnum!
+    laboratory: GenericLaboratory!
+    presentation: String!
+}
+
+type GenericOccupation {
+    cbo: String!
+    description: String!
+    id: String!
+}
+
+type GenericPeriodicRange {
+    description: String!
+    gender: PeriodicRangeGenderEnum!
+    genericAgeRanges: [GenericAgeRange!]!
+    id: String!
+}
+
+type GenericQuestionGroup {
+    description: String!
+    genericQuestionsQuiz: [GenericQuestionQuiz!]!
+    id: String!
+}
+
+type GenericQuestionQuiz {
+    defaultOption: String
+    description: String!
+    gender: String
+    genericResponseOptions: [GenericResponseOption!]!
+    hasDetails: Boolean!
+    id: String!
+    order: Float!
+    responseType: String!
+}
+
+type GenericQuiz {
+    description: String!
+    genericQuestionsGroup: [GenericQuestionGroup!]!
+    id: String!
+}
+
+type GenericResponseOption {
+    description: String!
+    id: String!
+}
+
+type GenericRiskAgent {
+    description: String!
+    eSocialCode: String!
+    group: AgentGroup!
+    id: String!
+}
+
+type GenericStatementResponsibility {
+    description: String!
+    id: String!
+    statement: String!
+}
+
+type GenericTask {
+    description: String!
+    eSocialCode: String!
+    id: String!
+    name: String!
+}
+
+type GenericTraining {
+    description: String!
+    eSocialCode: String!
+    id: String!
+}
+
+type GenericVaccine {
+    description: String!
+    gender: VaccineGenderEnum!
+    id: String!
+}
+
+type GenericWorkShift {
+    description: String!
+    id: String!
+    productiveHours: Float
+}
+
+type GroupAnalysis {
+    analysis: [Analysis!]
+    description: String!
+    examMeasure: ExamMeasure
+    hasPercent: Boolean!
+    id: String!
+}
+
+type HealthProgram {
+    description: String!
+    exams: [ExamByHealthProgram!]
+    id: String!
+    isActive: Boolean!
+    name: String!
+    programType: ProgramType!
+    referenceId: String
+}
+
+type Icd {
+    classType: ClassICDType
+    code: String!
+    deathCause: Boolean!
+    description: String!
+    gender: String
+    icdGroupRef: IcdGroup!
+    id: String!
+}
+
+type IcdGroup {
+    classType: ClassICDType
+    code: String!
+    description: String!
+    id: String!
+}
+
+type Indicator {
+    indicator: String!
+    value: Float!
+}
+
+type InjuryNature {
+    description: String!
+    eSocialCode: String!
+    id: String!
+}
+
+type InspectionOnExtinguishingSystem {
+    completeValve: Boolean!
+    cylindricalValve: Boolean!
+    diffuserReplacement: Boolean!
+    drillUsed: Boolean!
+    fireUsed: Boolean!
+    hose: Boolean!
+    hydrostaticTest: Boolean!
+    id: String!
+    monometer: Boolean!
+    observation: String
+    painting: Boolean!
+    plannedDate: DateTime!
+    realDate: DateTime
+    realoaded: Boolean!
+    reloadDate: DateTime
+    responsible: Person!
+    safetyValve: Boolean!
+    situation: InspectionSituation!
+    sundry: Boolean!
+    triggerReplacement: Boolean!
+}
+
+type Investigation {
+    accidentId: String!
+    attachments: [Attachment!]
+    date: DateTime
+    defectiveEquipment: Boolean
+    id: String!
+    improvisation: Boolean
+    investigationCause: [InvestigationCause!]
+    knewNorms: Boolean
+    mandateId: String!
+    personId: String!
+    report: String!
+    trained: Boolean
+    wasUsedEpi: Boolean
+}
+
+type InvestigationCause {
+    accidentCause: AccidentCause!
+    id: String!
+    investigation: Investigation!
+}
+
+type InvestigationCauseOnAccident {
+    accidentCause: AccidentCause!
+}
+
+type Invite {
+    branch: Branch!
+    createdAt: DateTime!
+    email: String!
+    name: String
+    roleId: String!
+    token: String!
+}
+
+type Ipe {
+    description: String!
+    id: String!
+    protection: IpeProtection!
+}
+
+type IpeByRisk {
+    daysForReplacement: Float
+    id: String!
+    ipe: Ipe!
+}
+
+type IpeDelivery {
+    amountReturned: Float
+    ca: String!
+    caExpirationDate: DateTime!
+    cost: Float
+    deliveryAmount: Float!
+    deliveryDate: DateTime!
+    effective: Boolean
+    employee: Person!
+    id: String!
+    ipeManufacturer: IpeManufacturer!
+    issueDate: DateTime
+    lastMaintenanceDate: DateTime!
+    observation: String
+    reason: DeliveryReason!
+    replacementSituation: ReplacementSituation
+    returnDate: DateTime
+}
+
+type IpeManufacturer {
+    approvedForReport: String!
+    caCode: String!
+    cnpj: String!
+    color: String!
+    corporateNameLaboratory: String!
+    equipmentDescription: String!
+    equipmentName: String!
+    expiration: DateTime!
+    ipe: Ipe!
+    laboratoryCNPJ: String!
+    manufacturer: Manufacturer!
+    mark: String!
+    norm: String!
+    observation: String!
+    processNumber: String!
+    reference: String!
+    reportNumber: String!
+    restrictedForReport: String!
+    situation: CaSituation!
+}
+
+type Mandate {
+    candidates: [Candidate!]
+    costCenters: [CostCenterOnMandate!]
+    dateEnd: DateTime!
+    dateStart: DateTime!
+    description: String!
+    disableDates: Boolean
+    electionComissions: [ElectionComission!]
+    electionLocal: String
+    electionOccurences: String
+    electionPresident: Person
+    electionSecretary: Person
+    endElectionHour: String
+    id: String!
+    investigations: [Investigation!]
+    mandateEvents: [MandateEvent!]
+    maxDays: Float
+    meetings: [Meeting!]
+    sessionPresident: Person
+    sessionSecretary: Person
+    sipats: [Sipat!]
+    startElectionHour: String
+    votes: [Vote!]
+}
+
+type MandateAction {
+    actionPlan: ActionPlan!
+    id: String!
+    mandate: Mandate!
+}
+
+type MandateCostCenter {
+    costCenter: CostCenter!
+    id: String!
+    mandate: Mandate!
+}
+
+type MandateEvent {
+    dateEnd: DateTime!
+    dateStart: DateTime!
+    done: Boolean!
+    event: Event
+    id: String!
+    mandate: Mandate!
+    referenceId: String!
+}
+
+type MandateTraining {
+    errorIntegration: String
+    id: String!
+    mandate: Mandate!
+    training: Training!
+    urgency: TrainingUrgency!
+}
+
+type Manufacturer {
+    cnpj: String!
+    corporateName: String!
+    nature: String!
+}
+
+type MeasurementByRisk {
+    amount: Float!
+    date: DateTime!
+    id: String!
+    measuringInstrument: MeasuringInstrument!
+}
+
+type MeasuringInstrument {
+    calibrationDate: DateTime
+    description: String!
+    id: String!
+    isActive: Boolean!
+    referenceId: String
+    valuationDate: DateTime
+}
+
+type MedicalCertificate {
+    absenceType: AbsenceType
+    accident: Accident
+    allowanceType: AllowanceType
+    amountOfTreatmentDays: Float!
+    certificateType: CertificateType!
+    crmState: State
+    dateEnd: DateTime!
+    dateStart: DateTime!
+    doctorCrm: String
+    doctorName: String
+    errorIntegration: String
+    icd: Icd
+    icdGroup: IcdGroup
+    id: String!
+    medicalRecordId: String!
+    observation: String
+    origin: CertificateOrigin!
+    user: User
+}
+
+type MedicalRecord {
+    amountConsumed: Float
+    armSize: Float
+    birthday: DateTime!
+    bloodDonator: Boolean!
+    bloodType: BloodType!
+    candidate: Boolean!
+    clinicalQuizzes: [ClinicalQuiz!]!
+    deficiencies: [Deficiency!]!
+    elbowHeight: Float
+    eyeColor: EyeColor
+    eyeHeight: Float
+    forearmSize: Float
+    gender: Gender!
+    hairColor: HairColor
+    handSize: Float
+    height: Float!
+    historic: String
+    id: String!
+    individualRegistration: String
+    kneeHeight: Float
+    legLength: Float
+    medicalCertificates: [MedicalCertificate!]!
+    medicalRecordHealthPrograms: [MedicalRecordHealthProgram!]!
+    medicalRecordVaccines: [MedicalRecordVaccine!]!
+    medicalReferrals: [MedicalReferral!]!
+    name: String!
+    nippleLine: Float
+    occupationalCertificates: [OccupationalHealthCertificate!]!
+    patientConsultations: [Consultation!]!
+    person: Person
+    personId: String
+    pubicHeight: Float
+    shoeSize: Float
+    skinColor: SkinColor
+    smoker: Boolean!
+    tamagistPeriod: Float
+    weight: Float!
+}
+
+type MedicalRecordHealthProgram {
+    endDate: DateTime
+    healthProgram: HealthProgram!
+    id: String!
+    startDate: DateTime!
+}
+
+type MedicalRecordVaccine {
+    date: DateTime!
+    dose: Float!
+    id: String!
+    status: MedicalRecordVaccineStatus!
+    vaccine: Vaccine!
+}
+
+type MedicalReferral {
+    date: DateTime!
+    id: String!
+    medicalRecordId: String!
+    observation: String
+    specialty: MedicalSpecialty!
+    user: User
+}
+
+type Medicine {
+    activePrinciple: GenericActivePrinciple
+    activePrincipleId: String
+    ambulatoryMedicine: Boolean!
+    contraindication: String
+    description: String!
+    id: String!
+    indication: String
+    isActive: Boolean!
+    label: MedicineLabelEnum
+    laboratory: GenericLaboratory
+    laboratoryId: String
+    presentation: String!
+    referenceId: String
+}
+
+type MedicineOnDiagnostic {
+    amount: Float!
+    id: String!
+    measurementUnit: MedicineMeasurementUnit
+    medicine: Medicine!
+    posology: String
+    showsInPrescription: Boolean!
+}
+
+type Meeting {
+    date: DateTime!
+    duration: String
+    id: String!
+    mandate: Mandate!
+    meetingActions: [ActionOnMeeting!]
+    meetingLocal: String
+    meetingParticipants: [ParticipantOnMeeting!]
+    meetingType: MeetingType!
+    minutesMeeting: String
+    realDate: DateTime
+    subject: String!
+}
+
+type MeetingAction {
+    active: Boolean!
+    dateAction: DateTime!
+    description: String!
+    id: String!
+    meeting: Meeting!
+}
+
+type MeetingParticipant {
+    attendance: Boolean
+    id: String!
+    justification: String
+    meeting: Meeting!
+    person: Person!
+}
+
+type Mutation {
+    _createAndVerifyUser(user: UserCreationInput!): User!
+    _createPersonWithUser(person: PersonInput!): Person!
+    _deleteBranchData: Boolean!
+    _deleteOrganizationData: Boolean!
+    _inviteAndCreateUser(invite: _InviteInput!): User!
+    _triggerCaepi: Boolean!
+    addOwnership(fields: OrganizationOwnershipInput!): OrganizationOwnership!
+    blockRole(userId: String!): Role!
+    blockRoles(userId: String!): [Role!]!
+    copySuggestion(id: String!): [SuggestionBox!]!
+    createAbsenceType(absenceType: AbsenceTypeInput!): AbsenceType!
+    createAbsenceTypeByGeneric(referenceId: String!): AbsenceType!
+    createAccident(accident: AccidentInput!): Accident!
+    createAccidentCause(accidentCause: AccidentCauseInput!): AccidentCause!
+    createAccidentCauseByGeneric(referenceId: String!): AccidentCause!
+    createAccredited(accredited: AccreditedInput!): Accredited!
+    createActionPlan(actionPlan: ActionPlanInput!): ActionPlan!
+    createAgreement(signature: String!): Agreement!
+    createAllowanceType(allowanceType: AllowanceTypeInput!): AllowanceType!
+    createBranch(branch: BranchInput!): Branch!
+    createCalendar(fields: CalendarInput!): Calendar!
+    createCandidate(candidate: CandidateInput!): Candidate!
+    createClinicalQuiz(quiz: ClinicalQuizInput!): ClinicalQuiz!
+    createComponent(component: ComponentInput!): Component!
+    createConsultation(consultation: ConsultationInput!): Consultation!
+    createContactRequest(fields: ContactRequestInput!): ContactRequest!
+    createControlMeasure(controlMeasure: ControlMeasureInput!): ControlMeasure!
+    createCostCenter(costCenter: CostCenterInput!): CostCenter!
+    createCostCenterByGeneric(referenceId: String!): CostCenter!
+    createDeficiency(deficiency: DeficiencyInput!): Deficiency!
+    createDepartment(department: DepartmentInput!): Department!
+    createDiagnostic(diagnostic: DiagnosticInput!, realizationDate: DateTime!): Diagnostic!
+    createElectionComission(electionComission: ElectionComissionInput!): ElectionComission!
+    createEmployeeTask(employeeTask: EmployeeTaskInput!): EmployeeTask!
+    createEnvironmentalReport(environmentalReport: EnvironmentalReportInput!): EnvironmentalReport!
+    createEquipmentByCostCenter(equipmentByCostCenter: EquipmentByCostCenterInput!): EquipmentByCostCenter!
+    createEquipmentByOccupation(equipmentByOccupation: EquipmentByOccupationInput!): EquipmentByOccupation!
+    createExam(exam: ExamInput!): Exam!
+    createExamAudiometry(examAudiometry: ExamAudiometryInput!, realizationDate: DateTime!): ExamAudiometry!
+    createExamByGeneric(referenceId: String!): Exam!
+    createExamDiagnosticImage(examDiagnosticImage: ExamDiagnosticImageInput!, realizationDate: DateTime!): ExamDiagnosticImage!
+    createExamDiagnosticImageAttachment(contentLength: Float!, contentType: String!, diagnosticImageId: String!, filename: String!): Attachment!
+    createExamItem(examItem: ExamItemInput!, realizationDate: DateTime!): ExamItem!
+    createExamNormal(examNormal: ExamNormalInput!, realizationDate: DateTime!): ExamNormal!
+    createExamOtological(examOtological: ExamOtologicalInput!, realizationDate: DateTime!): ExamOtological!
+    createExamSpirometry(examSpirometry: ExamSpirometryInput!, realizationDate: DateTime!): ExamSpirometry!
+    createExpectedGoal(expectedGoal: ExpectedGoalInput!): ExpectedGoal!
+    createExpense(expense: ExpenseInput!): Expense!
+    createExpenseByGeneric(referenceId: String!): Expense!
+    createExtinguishingSystem(extinguishingSystem: ExtinguishingSystemInput!): ExtinguishingSystem!
+    createFireBrigade(fireBrigade: FireBrigadeInput!): FireBrigade!
+    createFireBrigadeComponent(fireBrigadeComponent: FireBrigadeComponentInput!): FireBrigadeComponent!
+    createFireBrigadeExam(fireBrigadeExam: FireBrigadeExamInput!): FireBrigadeExam!
+    createFireBrigadeMeeting(fireBrigadeMeeting: FireBrigadeMeetingInput!): FireBrigadeMeeting!
+    createFireBrigadeTraining(fireBrigadeTraining: FireBrigadeTrainingInput!): FireBrigadeTraining!
+    createGeneratingSource(generatingSource: GeneratingSourceInput!): GeneratingSource!
+    createHealthProgram(healthProgram: HealthProgramInput!): HealthProgram!
+    createHealthProgramByGeneric(referenceId: String!): HealthProgram!
+    createInvestigation(investigation: InvestigationInput!): Investigation!
+    createInvestigationAttachment(contentLength: Float!, contentType: String!, filename: String!, investigationId: String!): Attachment!
+    createInvite(invite: InviteInput!): Boolean!
+    createIpeDelivery(ipeDelivery: [IpeDeliveryInput!]!): [IpeDelivery!]!
+    createMandate(mandate: MandateInput!): Mandate!
+    createMandateAction(mandateAction: MandateActionInput!): MandateAction!
+    createMandateCostCenter(mandateCostCenter: MandateCostCenterInput!): MandateCostCenter!
+    createMandateTraining(mandateTraining: MandateTrainingInput!): MandateTraining!
+    createManyOrdinaryFireBrigadeMeeting(date: DateTime!, fireBrigadeId: String!): [FireBrigadeMeeting!]!
+    createManyOrdinaryMeeting(date: DateTime!, mandateId: String!): [Meeting!]!
+    createMeasuringInstrument(measuringInstrument: MeasuringInstrumentInput!): MeasuringInstrument!
+    createMeasuringInstrumentByGeneric(referenceId: String!): MeasuringInstrument!
+    createMedicalCertificate(medicalCertificate: MedicalCertificateInput!): MedicalCertificate!
+    createMedicalRecord(medicalRecord: MedicalRecordInput!): MedicalRecord!
+    createMedicalRecordHealthProgram(medicalRecordHealthProgram: MedicalRecordHealthProgramInput!): MedicalRecordHealthProgram!
+    createMedicalRecordVaccine(medicalRecordVaccine: MedicalRecordVaccineInput!): MedicalRecordVaccine!
+    createMedicalReferral(medicalReferral: MedicalReferralInput!): MedicalReferral!
+    createMedicine(medicine: MedicineInput!): Medicine!
+    createMedicineByGeneric(referenceId: String!): Medicine!
+    createMeeting(meeting: MeetingInput!): Meeting!
+    createOccupation(occupation: OccupationInput!): Occupation!
+    createOccupationByGeneric(referenceId: String!): Occupation!
+    createOccupationalHealthCertificate(occupationalHealthCertificate: OccupationalHealthCertificateInput!): OccupationalHealthCertificate!
+    createOrganization(organization: OrganizationInput!): OrganizationWithBranches!
+    createOrthoRater(orthoRater: OrthoRaterInput!, realizationDate: DateTime!): OrthoRater!
+    createPeriodicRange(fields: PeriodicRangeInput!): PeriodicRange!
+    createPeriodicRangeByGeneric(referenceId: String!): PeriodicRange!
+    createPerson(person: PersonInput!): Person!
+    createPhysicalEnvironment(physicalEnvironment: PhysicalEnvironmentInput!): PhysicalEnvironment!
+    createQuiz(quiz: QuizInput!): Quiz!
+    createQuizByGeneric(referenceId: String!): Quiz!
+    createRealGoal(realGoal: RealGoalInput!): RealGoal!
+    createResponsibleAction(responsibleAction: ResponsibleActionInput!): ResponsibleAction!
+    createResultExamIbmp(examIbmp: ResultExamIbmpInput!, realizationDate: DateTime!): ResultExamIbmp!
+    createRisk(risk: RiskInput!): Risk!
+    createRiskAgent(riskAgent: RiskAgentInput!): RiskAgent!
+    createRiskAgentByGeneric(referenceId: String!): RiskAgent!
+    createRiskComposition(riskComposition: RiskCompositionInput!): RiskComposition!
+    createScheduleRestriction(scheduleRestriction: ScheduleRestrictionInput!): ScheduleRestriction!
+    createSession(input: SessionInput!): Session!
+    createSessionForBranch(branchId: String!): Session!
+    createSipat(sipat: SipatInput!): Sipat!
+    createSipatAttachment(contentLength: Float!, contentType: String!, filename: String!, sipatId: String!): Attachment!
+    createSnellen(realizationDate: DateTime!, snellen: SnellenInput!): Snellen!
+    createStabilityType(StabilityType: StabilityTypeInput!): StabilityType!
+    createStatementResponsibility(statement: StatementResponsibilityInput!): StatementResponsibility!
+    createStatementResponsibilityByGeneric(referenceId: String!): StatementResponsibility!
+    createSuggestionBox(suggestionBox: SuggestionBoxInput!): SuggestionBox!
+    createTask(task: TaskInput!): Task!
+    createTraining(training: TrainingInput!): Training!
+    createTrainingByGeneric(referenceId: String!): Training!
+    createUrinalysis(realizationDate: DateTime!, urinalysis: UrinalysisInput!): Urinalysis!
+    createUser(user: UserCreationInput!): UserFromCreation!
+    createVaccine(vaccine: VaccineInput!): Vaccine!
+    createVaccineByGeneric(referenceId: String!): Vaccine!
+    createVote(vote: VoteInput!): Vote!
+    createWorkShift(workShift: WorkShiftInput!): WorkShift!
+    createWorkShiftByGeneric(referenceId: String!): WorkShift!
+    reactivateBranch(branchId: String!): Branch!
+    reactivateRole(userId: String!): Role!
+    removeAbsenceType(id: String!): AbsenceType!
+    removeAccident(id: String!): Accident!
+    removeAccidentCause(id: String!): AccidentCause!
+    removeAccredited(id: String!): Accredited!
+    removeActionPlan(id: String!): ActionPlan!
+    removeAllowanceType(id: String!): AllowanceType!
+    removeBranch(branchId: String!): Branch!
+    removeCalendar(id: String!): Calendar!
+    removeCandidate(id: String!): Candidate!
+    removeClinicalQuiz(id: String!): ClinicalQuiz!
+    removeComponent(id: String!): Component!
+    removeConsultation(id: String!): Consultation!
+    removeControlMeasure(id: String!): ControlMeasure!
+    removeCostCenter(id: String!): CostCenter!
+    removeDeficiency(id: String!): Deficiency!
+    removeDepartment(id: String!): Department!
+    removeDiagnostic(id: String!): Diagnostic!
+    removeElectionComission(id: String!): ElectionComission!
+    removeEmployeeTask(id: String!): EmployeeTask!
+    removeEnvironmentalReport(id: String!): EnvironmentalReport!
+    removeEquipmentByCostCenter(id: String!): EquipmentByCostCenter!
+    removeEquipmentByOccupation(id: String!): EquipmentByOccupation!
+    removeExam(id: String!): Exam!
+    removeExamDiagnosticImage(id: String!): ExamDiagnosticImage!
+    removeExamDiagnosticImageAttachment(id: String!): Boolean!
+    removeExamNormal(id: String!): ExamNormal!
+    removeExamOtological(id: String!): ExamOtological!
+    removeExpectedGoal(id: String!): ExpectedGoal!
+    removeExpense(id: String!): Expense!
+    removeExtinguishingSystem(id: String!): ExtinguishingSystem!
+    removeFireBrigade(id: String!): FireBrigade!
+    removeFireBrigadeComponent(id: String!): FireBrigadeComponent!
+    removeFireBrigadeExam(id: String!): FireBrigadeExam!
+    removeFireBrigadeMeeting(id: String!): FireBrigadeMeeting!
+    removeFireBrigadeTraining(id: String!): FireBrigadeTraining!
+    removeGeneratingSource(id: String!): GeneratingSource!
+    removeHealthProgram(id: String!): HealthProgram!
+    removeInvestigation(id: String!): Investigation!
+    removeInvestigationAttachment(id: String!): Boolean!
+    removeInvite(email: String!): Invite!
+    removeIpeDelivery(id: String!): IpeDelivery!
+    removeMandate(id: String!): Mandate!
+    removeMandateAction(id: String!): MandateAction!
+    removeMandateCostCenter(id: String!): MandateCostCenter!
+    removeMandateTraining(id: String!): MandateTraining!
+    removeMeasuringInstrument(id: String!): MeasuringInstrument!
+    removeMedicalCertificate(id: String!): MedicalCertificate!
+    removeMedicalRecord(id: String!): MedicalRecord!
+    removeMedicalRecordHealthProgram(id: String!): MedicalRecordHealthProgram!
+    removeMedicalRecordVaccine(id: String!): MedicalRecordVaccine!
+    removeMedicalReferral(id: String!): MedicalReferral!
+    removeMedicine(id: String!): Medicine!
+    removeMeeting(id: String!): Meeting!
+    removeOccupation(id: String!): Occupation!
+    removeOccupationalHealthCertificate(id: String!): OccupationalHealthCertificate!
+    removeOrganization: OrganizationWithBranches!
+    removeOrthoRater(id: String!): OrthoRater!
+    removeOwnership(fields: OrganizationOwnershipInput!): OrganizationOwnership!
+    removePeriodicRange(id: String!): PeriodicRange!
+    removePerson(id: String!): Person!
+    removePhysicalEnvironment(id: String!): PhysicalEnvironment!
+    removeQuiz(id: String!): Quiz!
+    removeRealGoal(id: String!): RealGoal!
+    removeResponsibleAction(id: String!): ResponsibleAction!
+    removeResultExamIbmp(id: String!): ResultExamIbmp!
+    removeRisk(id: String!): Risk!
+    removeRiskAgent(id: String!): RiskAgent!
+    removeRiskComposition(id: String!): RiskComposition!
+    removeRole(userId: String!): Role!
+    removeRoles(userId: String!): [Role!]!
+    removeScheduleRestriction(id: String!): ScheduleRestriction!
+    removeSession(token: String!): Session!
+    removeSipat(id: String!): Sipat!
+    removeSipatAttachment(id: String!): Boolean!
+    removeSnellen(id: String!): Snellen!
+    removeStabilityType(id: String!): StabilityType!
+    removeStatementResponsibility(id: String!): StatementResponsibility!
+    removeSuggestionBox(id: String!): SuggestionBox!
+    removeTask(id: String!): Task!
+    removeTraining(id: String!): Training!
+    removeUrinalysis(id: String!): Urinalysis!
+    removeVaccine(id: String!): Vaccine!
+    removeWorkShift(id: String!): WorkShift!
+    replacementIpeDelivery(ipeDeliveryInput: IpeDeliveryInput!, ipeDeliveryUpdate: IpeDeliveryUpdate!): [IpeDelivery!]!
+    requestPasswordReset(email: String!): Boolean!
+    resendInvite(email: String!): Boolean!
+    resendUserEmailVerification(email: String!): Boolean!
+    resetPassword(password: String!, token: String!): PasswordRecovery!
+    setBranches(branches: [String!]!, userId: String!): [Role!]!
+    setOrganizationPicture(contentLength: Float!, contentType: String!): String!
+    setUserProfilePicture(contentLength: Float!, contentType: String!): String!
+    syncCron(businessEntity: BusinessEntity!): CronTab!
+    unblockRole(userId: String!): Role!
+    unblockRoles(userId: String!): [Role!]!
+    unsetOrganizationPicture: Boolean!
+    unsetUserProfilePicture: Boolean!
+    updateAbsenceType(absenceType: AbsenceTypeUpdate!): AbsenceType!
+    updateAccident(accident: AccidentUpdate!): Accident!
+    updateAccidentCause(accidentCause: AccidentCauseUpdate!): AccidentCause!
+    updateAccredited(accredited: AccreditedUpdate!): Accredited!
+    updateActionPlan(actionPlan: ActionPlanUpdate!): ActionPlan!
+    updateAllowanceType(allowanceType: AllowanceTypeUpdate!): AllowanceType!
+    updateBranch(fields: BranchUpdateInput!): Branch!
+    updateCalendar(fields: CalendarUpdate!): Calendar!
+    updateClinicalQuiz(quiz: ClinicalQuizUpdate!): ClinicalQuiz!
+    updateComponent(component: ComponentUpdate!): Component!
+    updateConsultation(consultation: ConsultationUpdate!): Consultation!
+    updateControlMeasure(controlMeasure: ControlMeasureUpdate!): ControlMeasure!
+    updateCostCenter(costCenter: CostCenterUpdate!): CostCenter!
+    updateCronTab(cron: CronTabInput!): CronTab!
+    updateDeficiency(deficiency: DeficiencyUpdate!): Deficiency!
+    updateDepartment(department: DepartmentUpdate!): Department!
+    updateDiagnostic(diagnostic: DiagnosticUpdate!): Diagnostic!
+    updateEmployeeTask(employeeTask: EmployeeTaskUpdate!): EmployeeTask!
+    updateEnvironmentalReport(environmentalReport: EnvironmentalReportUpdate!): EnvironmentalReport!
+    updateExam(exam: ExamUpdate!): Exam!
+    updateExamAudiometry(examAudiometry: ExamAudiometryUpdate!): ExamAudiometry!
+    updateExamDiagnosticImage(examDiagnosticImage: ExamDiagnosticImageUpdate!): ExamDiagnosticImage!
+    updateExamItem(examItem: ExamItemUpdate!): ExamItem!
+    updateExamNormal(examNormal: ExamNormalUpdate!): ExamNormal!
+    updateExamOtological(examOtological: ExamOtologicalUpdate!): ExamOtological!
+    updateExamSpirometry(examSpirometry: ExamSpirometryUpdate!): ExamSpirometry!
+    updateExpense(expense: ExpenseUpdate!): Expense!
+    updateExtinguishingSystem(extinguishingSystem: ExtinguishingSystemUpdate!): ExtinguishingSystem!
+    updateFireBrigade(fireBrigade: FireBrigadeUpdate!): FireBrigade!
+    updateFireBrigadeComponent(fireBrigadeComponent: FireBrigadeComponentUpdate!): FireBrigadeComponent!
+    updateFireBrigadeExam(fireBrigadeExam: FireBrigadeExamUpdate!): FireBrigadeExam!
+    updateFireBrigadeMeeting(fireBrigadeMeeting: FireBrigadeMeetingUpdate!): FireBrigadeMeeting!
+    updateGeneratingSource(generatingSource: GeneratingSourceUpdate!): GeneratingSource!
+    updateHealthProgram(healthProgram: HealthProgramUpdate!): HealthProgram!
+    updateInvestigation(investigation: InvestigationUpdate!): Investigation!
+    updateIpeDelivery(ipeDelivery: IpeDeliveryUpdate!): IpeDelivery!
+    updateMandate(mandate: MandateUpdate!): Mandate!
+    updateMandateEvent(mandateEvent: MandateEventUpdate!): MandateEvent!
+    updateMeasuringInstrument(measuringInstrument: MeasuringInstrumentUpdate!): MeasuringInstrument!
+    updateMedicalCertificate(medicalCertificate: MedicalCertificateUpdate!): MedicalCertificate!
+    updateMedicalRecord(medicalRecord: MedicalRecordUpdate!): MedicalRecord!
+    updateMedicalRecordHealthProgram(medicalRecordHealthProgram: MedicalRecordHealthProgramUpdate!): MedicalRecordHealthProgram!
+    updateMedicalRecordVaccine(medicalRecordVaccine: MedicalRecordVaccineUpdate!): MedicalRecordVaccine!
+    updateMedicalReferral(medicalReferral: MedicalReferralUpdate!): MedicalReferral!
+    updateMedicine(medicine: MedicineUpdate!): Medicine!
+    updateMeeting(meeting: MeetingUpdate!): Meeting!
+    updateOccupation(occupation: OccupationUpdate!): Occupation!
+    updateOccupationalHealthCertificate(occupationalHealthCertificate: OccupationalHealthCertificateUpdate!): OccupationalHealthCertificate!
+    updateOrganization(fields: OrganizationUpdateInput!): OrganizationWithBranches!
+    updateOrthoRater(orthoRater: OrthoRaterUpdate!): OrthoRater!
+    updatePeriodicRange(fields: PeriodicRangeUpdate!): PeriodicRange!
+    updatePerson(person: PersonUpdate!): Person!
+    updatePhysicalEnvironment(physicalEnvironment: PhysicalEnvironmentUpdate!): PhysicalEnvironment!
+    updateQuiz(quiz: QuizUpdate!): Quiz!
+    updateResultExamIbmp(examIbmp: ResultExamIbmpUpdate!): ResultExamIbmp!
+    updateRisk(risk: RiskUpdate!): Risk!
+    updateRiskAgent(riskAgent: RiskAgentUpdate!): RiskAgent!
+    updateRiskComposition(riskComposition: RiskCompositionUpdate!): RiskComposition!
+    updateRisks(risks: [RiskUpdate!]!): [Risk!]!
+    updateRole(update: RoleUpdate!): Role!
+    updateRoles(update: RoleUpdate!): [Role!]!
+    updateScheduleRestriction(scheduleRestriction: ScheduleRestrictionUpdate!): ScheduleRestriction!
+    updateSipat(sipat: SipatUpdate!): Sipat!
+    updateSnellen(snellen: SnellenUpdate!): Snellen!
+    updateStabilityType(StabilityType: StabilityTypeUpdate!): StabilityType!
+    updateStatementResponsibility(statement: StatementResponsibilityUpdate!): StatementResponsibility!
+    updateSuggestionBox(suggestionBox: SuggestionBoxUpdate!): SuggestionBox!
+    updateTask(task: TaskUpdate!): Task!
+    updateTraining(training: TrainingUpdate!): Training!
+    updateUrinalysis(urinalysis: UrinalysisUpdate!): Urinalysis!
+    updateUser(fields: UserUpdateInput!): UserBasicInfo!
+    updateUserRoleMdt(roles: [UserRoleUpdate!]!, userId: String!): [UserRoleMdt!]!
+    updateVaccine(vaccine: VaccineUpdate!): Vaccine!
+    updateWorkShift(workShift: WorkShiftUpdate!): WorkShift!
+    verifyUserEmail(token: String!): UserBasicInfo!
+}
+
+type Occupation {
+    cbo: String
+    description: String!
+    equipments: [EquipmentByOccupation!]
+    erpId: String
+    exams: [ExamByOccupation!]
+    id: String!
+    isActive: Boolean!
+    needEquipment: Boolean
+    referenceId: String
+}
+
+type OccupationByRisk {
+    id: String!
+    occupation: Occupation!
+}
+
+type OccupationOnVaccine {
+    id: String!
+    occupation: Occupation!
+}
+
+type OccupationalHealthCertificate {
+    cancelDate: DateTime
+    civilMaintenance: Boolean
+    cold: Boolean
+    confined: Boolean
+    electricity: Boolean
+    emissionDate: DateTime
+    excavation: Boolean
+    explosives: Boolean
+    height: Boolean
+    id: String!
+    loadHandling: Boolean
+    medicalRecordId: String!
+    nature: Nature!
+    observation: String
+    plataform: Boolean
+    pressure: Boolean
+    radiation: Boolean
+    recommendation: Recommendation
+    scheduleDate: DateTime!
+    welding: Boolean
+}
+
+type Organization {
+    createdAt: DateTime!
+    erpCompany: String
+    id: String!
+    isPartner: Boolean!
+    isTotvs: Boolean!
+    name: String!
+    organizationPicture: String
+    socialName: String
+    utmData: UtmDataType
+}
+
+type OrganizationOwnership {
+    organizationId: String!
+    userId: String!
+}
+
+type OrganizationWithBranches {
+    branches: [Branch!]!
+    createdAt: DateTime!
+    erpCompany: String
+    id: String!
+    isPartner: Boolean!
+    isTotvs: Boolean!
+    name: String!
+    organizationPicture: String
+    socialName: String
+    utmData: UtmDataType
+}
+
+type OrthoRater {
+    aggravation: OphthalmologicAggravationEnum!
+    calibrationDate: DateTime!
+    closeBothEyes: OrthoRaterValueEnum!
+    closeFusion: String
+    closeFusionResponse: OrthoRaterResponseEnum!
+    closeLateralPhoria: PhoriaEnum!
+    closeLeftEye: OrthoRaterValueEnum!
+    closeRightEye: OrthoRaterValueEnum!
+    closeStereopsis: String
+    closeStereopsisResponse: OrthoRaterResponseEnum!
+    closeVerticalPhoria: PhoriaEnum!
+    closeWithCorrection: Boolean!
+    complementaryExam: ComplementaryExam
+    consultation: Consultation
+    correction: OphthalmologicCorrectionEnum!
+    crm: String
+    date: DateTime!
+    details: String
+    doctor: String
+    equipment: MeasuringInstrument!
+    farBothEyes: OrthoRaterValueEnum!
+    farFusion: String
+    farFusionResponse: OrthoRaterResponseEnum!
+    farLateralPhoria: PhoriaEnum!
+    farLeftEye: OrthoRaterValueEnum!
+    farRightEye: OrthoRaterValueEnum!
+    farStereopsis: String
+    farStereopsisResponse: OrthoRaterResponseEnum!
+    farVerticalPhoria: PhoriaEnum!
+    farWithCorrection: Boolean!
+    gaugingDate: DateTime!
+    id: String!
+    indicator: ExamResultIndicatorEnum!
+    observations: String
+    responsibleForMeasuring: Person!
+    result: String!
+    sees23: Boolean!
+    sees32: Boolean!
+    sees56: Boolean!
+    sees63: Boolean!
+    sees79: Boolean!
+    sees92: Boolean!
+    state: State
+    visualFieldLeftEye: VisualFieldEnum!
+    visualFieldRightEye: VisualFieldEnum!
+}
+
+type PaginatedAbsenceType {
+    hasMore: Boolean!
+    items: [AbsenceType!]!
+}
+
+type PaginatedAccident {
+    hasMore: Boolean!
+    items: [Accident!]!
+}
+
+type PaginatedAccidentCause {
+    hasMore: Boolean!
+    items: [AccidentCause!]!
+}
+
+type PaginatedAccidentCode {
+    hasMore: Boolean!
+    items: [AccidentCode!]!
+}
+
+type PaginatedAccidentObject {
+    hasMore: Boolean!
+    items: [AccidentObject!]!
+}
+
+type PaginatedAccidentType {
+    hasMore: Boolean!
+    items: [AccidentDescription!]!
+}
+
+type PaginatedAccredited {
+    hasMore: Boolean!
+    items: [Accredited!]!
+}
+
+type PaginatedActionPlan {
+    hasMore: Boolean!
+    items: [ActionPlan!]!
+}
+
+type PaginatedActivityGroup {
+    hasMore: Boolean!
+    items: [ActivityGroup!]!
+}
+
+type PaginatedActivityICD {
+    hasMore: Boolean!
+    items: [ActivityICD!]!
+}
+
+type PaginatedAllowanceType {
+    hasMore: Boolean!
+    items: [AllowanceType!]!
+}
+
+type PaginatedBodyPart {
+    hasMore: Boolean!
+    items: [BodyPart!]!
+}
+
+type PaginatedCalendar {
+    hasMore: Boolean!
+    items: [Calendar!]!
+}
+
+type PaginatedConsultation {
+    hasMore: Boolean!
+    items: [Consultation!]!
+}
+
+type PaginatedControlMeasure {
+    hasMore: Boolean!
+    items: [ControlMeasure!]!
+}
+
+type PaginatedCostCenter {
+    hasMore: Boolean!
+    items: [CostCenter!]!
+}
+
+type PaginatedDepartment {
+    hasMore: Boolean!
+    items: [Department!]!
+}
+
+type PaginatedEconomicActivity {
+    hasMore: Boolean!
+    items: [EconomicActivity!]!
+}
+
+type PaginatedEnvironmentalReport {
+    hasMore: Boolean!
+    items: [EnvironmentalReport!]!
+}
+
+type PaginatedEvent {
+    hasMore: Boolean!
+    items: [Event!]!
+}
+
+type PaginatedExam {
+    hasMore: Boolean!
+    items: [Exam!]!
+}
+
+type PaginatedExpense {
+    hasMore: Boolean!
+    items: [Expense!]!
+}
+
+type PaginatedExtinguishingSystem {
+    hasMore: Boolean!
+    items: [ExtinguishingSystem!]!
+}
+
+type PaginatedFireBrigade {
+    hasMore: Boolean!
+    items: [FireBrigade!]!
+}
+
+type PaginatedGeneratingSource {
+    hasMore: Boolean!
+    items: [GeneratingSource!]!
+}
+
+type PaginatedGenericAccidentCause {
+    hasMore: Boolean!
+    items: [GenericAccidentCause!]!
+}
+
+type PaginatedGenericActivePrinciple {
+    hasMore: Boolean!
+    items: [GenericActivePrinciple!]!
+}
+
+type PaginatedGenericCostCenter {
+    hasMore: Boolean!
+    items: [GenericCostCenter!]!
+}
+
+type PaginatedGenericExam {
+    hasMore: Boolean!
+    items: [GenericExam!]!
+}
+
+type PaginatedGenericExpense {
+    hasMore: Boolean!
+    items: [GenericExpense!]!
+}
+
+type PaginatedGenericHealthProgram {
+    hasMore: Boolean!
+    items: [GenericHealthProgram!]!
+}
+
+type PaginatedGenericLaboratory {
+    hasMore: Boolean!
+    items: [GenericLaboratory!]!
+}
+
+type PaginatedGenericMeasuringInstrument {
+    hasMore: Boolean!
+    items: [GenericMeasuringInstrument!]!
+}
+
+type PaginatedGenericMedicine {
+    hasMore: Boolean!
+    items: [GenericMedicine!]!
+}
+
+type PaginatedGenericOccupation {
+    hasMore: Boolean!
+    items: [GenericOccupation!]!
+}
+
+type PaginatedGenericPeriodicRange {
+    hasMore: Boolean!
+    items: [GenericPeriodicRange!]!
+}
+
+type PaginatedGenericQuestionGroup {
+    hasMore: Boolean!
+    items: [GenericQuestionGroup!]!
+}
+
+type PaginatedGenericQuestionQuiz {
+    hasMore: Boolean!
+    items: [GenericQuestionQuiz!]!
+}
+
+type PaginatedGenericQuiz {
+    hasMore: Boolean!
+    items: [GenericQuiz!]!
+}
+
+type PaginatedGenericResponseOption {
+    hasMore: Boolean!
+    items: [GenericResponseOption!]!
+}
+
+type PaginatedGenericRiskAgent {
+    hasMore: Boolean!
+    items: [GenericRiskAgent!]!
+}
+
+type PaginatedGenericStatementResponsibility {
+    hasMore: Boolean!
+    items: [GenericStatementResponsibility!]!
+}
+
+type PaginatedGenericTask {
+    hasMore: Boolean!
+    items: [GenericTask!]!
+}
+
+type PaginatedGenericTraining {
+    hasMore: Boolean!
+    items: [GenericTraining!]!
+}
+
+type PaginatedGenericVaccine {
+    hasMore: Boolean!
+    items: [GenericVaccine!]!
+}
+
+type PaginatedGenericWorkShift {
+    hasMore: Boolean!
+    items: [GenericWorkShift!]!
+}
+
+type PaginatedHealthProgram {
+    hasMore: Boolean!
+    items: [HealthProgram!]!
+}
+
+type PaginatedIcdGroups {
+    hasMore: Boolean!
+    items: [IcdGroup!]!
+}
+
+type PaginatedIcds {
+    hasMore: Boolean!
+    items: [Icd!]!
+}
+
+type PaginatedInjuryNature {
+    hasMore: Boolean!
+    items: [InjuryNature!]!
+}
+
+type PaginatedIpe {
+    hasMore: Boolean!
+    items: [Ipe!]!
+}
+
+type PaginatedIpeManufacturer {
+    hasMore: Boolean!
+    items: [IpeManufacturer!]!
+}
+
+type PaginatedMandate {
+    hasMore: Boolean!
+    items: [Mandate!]!
+}
+
+type PaginatedManufacturer {
+    hasMore: Boolean!
+    items: [Manufacturer!]!
+}
+
+type PaginatedMeasuringInstrument {
+    hasMore: Boolean!
+    items: [MeasuringInstrument!]!
+}
+
+type PaginatedMedicalRecords {
+    hasMore: Boolean!
+    items: [MedicalRecord!]!
+}
+
+type PaginatedMedicine {
+    hasMore: Boolean!
+    items: [Medicine!]!
+}
+
+type PaginatedOccupation {
+    hasMore: Boolean!
+    items: [Occupation!]!
+}
+
+type PaginatedPeriodicRange {
+    hasMore: Boolean!
+    items: [PeriodicRange!]!
+}
+
+type PaginatedPerson {
+    hasMore: Boolean!
+    items: [Person!]!
+}
+
+type PaginatedPhysicalEnvironment {
+    hasMore: Boolean!
+    items: [PhysicalEnvironment!]!
+}
+
+type PaginatedQuiz {
+    hasMore: Boolean!
+    items: [Quiz!]!
+}
+
+type PaginatedRisk {
+    hasMore: Boolean!
+    items: [Risk!]!
+}
+
+type PaginatedRiskAgent {
+    hasMore: Boolean!
+    items: [RiskAgent!]!
+}
+
+type PaginatedScheduleRestriction {
+    hasMore: Boolean!
+    items: [ScheduleRestriction!]!
+}
+
+type PaginatedStabilityType {
+    hasMore: Boolean!
+    items: [StabilityType!]!
+}
+
+type PaginatedStatementResponsibility {
+    hasMore: Boolean!
+    items: [StatementResponsibility!]!
+}
+
+type PaginatedTask {
+    hasMore: Boolean!
+    items: [Task!]!
+}
+
+type PaginatedTraining {
+    hasMore: Boolean!
+    items: [Training!]!
+}
+
+type PaginatedVaccine {
+    hasMore: Boolean!
+    items: [Vaccine!]!
+}
+
+type PaginatedWorkShift {
+    hasMore: Boolean!
+    items: [WorkShift!]!
+}
+
+type ParticipantOnMeeting {
+    attendance: Boolean
+    justification: String
+    person: Person!
+}
+
+type PasswordRecovery {
+    createdAt: DateTime!
+    token: String!
+    user: String!
+}
+
+type PeriodicRange {
+    ageRanges: [AgeRange!]!
+    description: String!
+    gender: PeriodicRangeGenderEnum!
+    id: String!
+    isActive: Boolean!
+    postAdmission: Float
+}
+
+type Person {
+    address: String
+    admissionDate: DateTime
+    birthday: DateTime!
+    city: String
+    civilStatus: CivilStatus
+    costCenter: CostCenter
+    ctps: String
+    dismissalDate: DateTime
+    educationLevel: EducationLevel
+    email: String
+    employeeSituation: EmployeeSituation
+    employeeTasks: [TaskByPerson!]
+    erpId: String
+    funcionalHistories: [FuncionalHistoryByPerson!]
+    gender: Gender!
+    generalRegistration: String
+    id: String!
+    individualRegistration: String!
+    ipeDeliveries: [IpeDelivery!]
+    isActive: Boolean!
+    mothersName: String
+    name: String!
+    neighborhood: String
+    numberAddress: String
+    occupation: Occupation
+    pisCode: String
+    profilePicture: String
+    registration: String
+    sefip: String
+    state: String
+    telephone: String
+    trainingHistories: [TrainingHistoryByPerson!]
+    unicESocialId: String
+    uploadUrl: String
+    user: String
+    workShift: WorkShift
+    zipCode: String
+}
+
+type PersonByRisk {
+    id: String!
+    person: Person!
+}
+
+type PersonHistoryActivate {
+    activateDate: DateTime!
+    deactivateDate: DateTime
+    id: String!
+    person: Person!
+}
+
+type PhysicalEnvironment {
+    ceilingDetailing: String
+    ceilingMaterial: CeilingMaterial
+    description: String!
+    displayDetailing: String
+    displayType: DisplayType
+    doorDetailing: String
+    doorMaterial: DoorMaterial
+    firstCoatDetailing: String
+    firstCoatMaterial: FirstCoatMaterial
+    floorDetailing: String
+    floorMaterial: FloorMaterial
+    heightCeiling: Float
+    id: String!
+    isActive: Boolean!
+    lightingDetailing: String
+    lightingMaterial: LightingMaterial
+    machinery: String
+    riskMapPicture: String
+    secondCoatDetailing: String
+    secondCoatMaterial: SecondCoatMaterial
+    uploadUrl: String
+    wallDetailing: String
+    wallMaterial: WallMaterial
+    windowDetailing: String
+    windowMaterial: WindowMaterial
+}
+
+type Query {
+    AllowanceType(id: String!): AllowanceType!
+    MeetingParticipant(id: String!): MeetingParticipant!
+    MeetingParticipantPresent(id: String!): MeetingParticipant!
+    MeetingParticipants(meetingId: String!): [MeetingParticipant!]!
+    _invites: [_Invite!]!
+    _passwordRecoveries: [_PasswordRecovery!]!
+    _terms: [_Terms!]!
+    absenceType(id: String!): AbsenceType!
+    absenceTypes(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedAbsenceType!
+    accident(id: String!): Accident!
+    accidentAbsence(dateEnd: DateTime!, dateStart: DateTime!): [AccidentAbsence!]!
+    accidentAmount(dateEnd: DateTime!, dateStart: DateTime!): [AccidentAmount!]!
+    accidentBySummary(summary: String!): [Accident!]!
+    accidentCause(id: String!): AccidentCause!
+    accidentCauses(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedAccidentCause!
+    accidentDeathAccident: [AccidentVictim!]!
+    accidentExpenseAmount(dateEnd: DateTime!, dateStart: DateTime!): [AccidentExpenseAmount!]!
+    accidentLastAccident: Float!
+    accidentMaxDaysWithout: Float!
+    accidentSummary(query: AccidentQueryInput!): Summary!
+    accidentWithVictim: [AccidentVictim!]!
+    accidentWithoutVictim: [AccidentVictim!]!
+    accidents(orderBy: AccidentOrderByInput = {field : Summary, type : Ascending}, pagination: Pagination, query: AccidentQueryInput!): PaginatedAccident!
+    accidentsWithInvestigation(mandateId: String!): [AccidentWithInvestigation!]!
+    accidentsWithoutInvestigation: [Accident!]!
+    accredited(id: String!): Accredited!
+    actionPlan(id: String!): ActionPlan!
+    actionPlanSummary(query: ActionPlanQueryInput!): Summary!
+    actionPlans(orderBy: ActionPlanOrderByInput = {field : What, type : Ascending}, pagination: Pagination, query: ActionPlanQueryInput!): PaginatedActionPlan!
+    actionPlansBySituation(situation: Situation!): [ActionPlan!]!
+    actualMandate: [Mandate!]!
+    allAccredited(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedAccredited!
+    allowanceTypes(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedAllowanceType!
+    availableBranches: [Branch!]!
+    calendar(id: String!): Calendar!
+    calendars(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedCalendar!
+    candidate(id: String!): Candidate!
+    candidateByMandate(mandateId: String!): [Candidate!]!
+    candidateByName(name: String!): [Candidate!]!
+    candidates: [Candidate!]!
+    clinicalQuiz(id: String!): ClinicalQuiz!
+    clinicalQuizzes(medicalRecord: String!): [ClinicalQuiz!]!
+    component(id: String!): Component!
+    components(mandateId: String!): [Component!]!
+    consultation(id: String!): Consultation!
+    consultations(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedConsultation!
+    consultationsByDoctor(doctorId: String!, pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedConsultation!
+    controlMeasure(id: String!): ControlMeasure!
+    controlMeasures(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedControlMeasure!
+    costCenter(id: String!): CostCenter!
+    costCenters(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedCostCenter!
+    crons: [CronTab!]!
+    currentSession: Session!
+    currentUser: User!
+    deficiencies: [Deficiency!]!
+    deficienciesByMedicalRecord(medicalRecord: String!): [Deficiency!]!
+    deficiency(id: String!): Deficiency!
+    department(id: String!): Department!
+    departments(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedDepartment!
+    diagnostic(id: String!): Diagnostic!
+    diagnosticByConsultation(consultationId: String!): Diagnostic!
+    electionComission(id: String!): ElectionComission!
+    electionComissionByMandate(mandate: String!): [ElectionComission!]!
+    electionComissionByPerson(person: String!): [ElectionComission!]!
+    employeeTask(id: String!): EmployeeTask!
+    environmentalReport(id: String!): EnvironmentalReport!
+    environmentalReports(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedEnvironmentalReport!
+    equipmentByCostCenter(id: String!): EquipmentByCostCenter!
+    equipmentByCostCenterByCostCenter(costCenter: String!): [EquipmentByCostCenter!]!
+    equipmentByOccupation(id: String!): EquipmentByOccupation!
+    equipmentByOccupationByOccupation(occupation: String!): [EquipmentByOccupation!]!
+    exam(id: String!): Exam!
+    examAudiometryByConsultation(complementaryExamId: String, consultationId: String!): ExamAudiometry!
+    examDiagnosticImage(id: String!): ExamDiagnosticImage!
+    examDiagnosticImageByConsultation(complementaryExamId: String, consultationId: String!): ExamDiagnosticImage!
+    examItemByConsultation(complementaryExamId: String, consultationId: String!): ExamItem!
+    examNormalByConsultation(complementaryExamId: String, consultationId: String!): ExamNormal!
+    examOtological(id: String!): ExamOtological!
+    examOtologicalByConsultation(complementaryExamId: String, consultationId: String!): ExamOtological!
+    examSpirometryByConsultation(complementaryExamId: String, consultationId: String!): ExamSpirometry!
+    exams(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedExam!
+    expectedGoal(id: String!): ExpectedGoal!
+    expense(id: String!): Expense!
+    expenses(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedExpense!
+    extinguishingSystem(id: String!): ExtinguishingSystem!
+    extinguishingSystems(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedExtinguishingSystem!
+    fireBrigade(id: String!): FireBrigade!
+    fireBrigadeComponent(id: String!): FireBrigadeComponent!
+    fireBrigadeComponentsByFireBrigade(fireBrigade: String!): [FireBrigadeComponent!]!
+    fireBrigadeExam(id: String!): FireBrigadeExam!
+    fireBrigadeExamByFireBrigade(fireBrigade: String!): [FireBrigadeExam!]!
+    fireBrigadeMeeting(id: String!): FireBrigadeMeeting!
+    fireBrigadeMeetingByActive(fireBrigadeId: String!): [FireBrigadeMeeting!]!
+    fireBrigadeMeetingByDate(date: DateTime!, fireBrigadeId: String!): [FireBrigadeMeeting!]!
+    fireBrigadeMeetingBySubject(fireBrigadeId: String!, subject: String!): [FireBrigadeMeeting!]!
+    fireBrigadeMeetings(fireBrigadeId: String!): [FireBrigadeMeeting!]!
+    fireBrigadeMeetingsByFireBrigade(fireBrigade: String!): [FireBrigadeMeeting!]!
+    fireBrigadeTraining(id: String!): FireBrigadeTraining!
+    fireBrigadeTrainingsByFireBrigade(fireBrigade: String!): [FireBrigadeTraining!]!
+    fireBrigades(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedFireBrigade!
+    frequencyIndex: [FrequencyIndex!]!
+    gAccidentCauses(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericAccidentCause!
+    gAccidentCodes(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedAccidentCode!
+    gAccidentObjects(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedAccidentObject!
+    gAccidentTypes(pagination: Pagination, query: PaginationDefaultQueryInput!, type: AccidentTypeEnum!): PaginatedAccidentType!
+    gActivePrinciples(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericActivePrinciple!
+    gActivitiesGroups(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedActivityGroup!
+    gActivitiesICDs(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedActivityICD!
+    gBodiesParts(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedBodyPart!
+    gCostCenters(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericCostCenter!
+    gEconomicActivities(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedEconomicActivity!
+    gEvents(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedEvent!
+    gExams(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericExam!
+    gExpenses(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericExpense!
+    gHealthPrograms(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericHealthProgram!
+    gIcdGroups(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedIcdGroups!
+    gIcds(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedIcds!
+    gInjuriesNatures(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedInjuryNature!
+    gIpe(id: String!): Ipe!
+    gIpeManufacturer(caCode: String!): IpeManufacturer!
+    gIpes(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedIpe!
+    gIpesManufacturerByCaCode(equipmentName: String!, pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedIpeManufacturer!
+    gLaboratories(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericLaboratory!
+    gManufacturer(cnpj: String!): Manufacturer!
+    gManufactureres(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedManufacturer!
+    gMeasuringInstruments(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericMeasuringInstrument!
+    gMedicines(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericMedicine!
+    gOccupations(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericOccupation!
+    gPeriodicRanges(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericPeriodicRange!
+    gQuestionsGroups(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericQuestionGroup!
+    gQuestionsQuizzes(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericQuestionQuiz!
+    gQuiz(id: String!): GenericQuiz!
+    gQuizzes(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericQuiz!
+    gResponsesOptions(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericResponseOption!
+    gRiskAgent(id: String!): GenericRiskAgent!
+    gRiskAgents(group: AgentGroup, pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericRiskAgent!
+    gStatements(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericStatementResponsibility!
+    gTasks(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericTask!
+    gTrainings(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericTraining!
+    gVaccines(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericVaccine!
+    gWorkShifts(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGenericWorkShift!
+    generatingSource(id: String!): GeneratingSource!
+    generatingSources(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedGeneratingSource!
+    getRequiredIpes(origin: String!, originId: String!): [Ipe!]!
+    healthProgram(id: String!): HealthProgram!
+    healthPrograms(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedHealthProgram!
+    indicators: [Indicator!]!
+    investigation(id: String!): Investigation!
+    investigationIndicators: Causes!
+    invite(token: String!): Invite!
+    ipeDeliveries: [IpeDelivery!]!
+    ipeDeliveriesByPerson(personId: String!): [IpeDelivery!]!
+    ipeDelivery(id: String!): IpeDelivery!
+    lastDeliveryByPerson(personId: String!): IpeDelivery!
+    mandate(id: String!): Mandate!
+    mandateAction(id: String!): MandateAction!
+    mandateActions(mandateId: String!): [MandateAction!]!
+    mandateCostCenter(id: String!): MandateCostCenter!
+    mandateCostCenterByMandate(mandate: String!): [MandateCostCenter!]!
+    mandateEvent(id: String!): MandateEvent!
+    mandateEventByEvent(event: String!, mandateId: String!): MandateEvent!
+    mandateEventByMandate(mandate: String!): [MandateEvent!]!
+    mandateEventByMessage(message: String!): [MandateEvent!]!
+    mandateEventByTypeToday(type: String!): [MandateEvent!]!
+    mandateEvents: [MandateEvent!]!
+    mandateEventsToday: [MandateEvent!]!
+    mandateTraining(id: String!): MandateTraining!
+    mandateTrainingByMandate(mandate: String!): [MandateTraining!]!
+    mandateTrainingByTraining(training: String!): [MandateTraining!]!
+    mandates(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedMandate!
+    mandatesByAction(actionPlanId: String!): [MandateAction!]!
+    mandatesByDescription(description: String!): [Mandate!]!
+    measurementsByRisk(riskId: String!): [MeasurementByRisk!]!
+    measuringInstrument(id: String!): MeasuringInstrument!
+    measuringInstruments(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedMeasuringInstrument!
+    medicalCertificate(id: String!): MedicalCertificate!
+    medicalCertificates: [MedicalCertificate!]!
+    medicalCertificatesByMedicalRecord(medicalRecord: String!): [MedicalCertificate!]!
+    medicalRecord(id: String!): MedicalRecord!
+    medicalRecordHealthProgram(id: String!): MedicalRecordHealthProgram!
+    medicalRecordHealthProgramByMedicalRecord(medicalRecord: String!): [MedicalRecordHealthProgram!]!
+    medicalRecordHealthPrograms: [MedicalRecordHealthProgram!]!
+    medicalRecordVaccine(id: String!): MedicalRecordVaccine!
+    medicalRecordVaccines: [MedicalRecordVaccine!]!
+    medicalRecordVaccinesByMedicalRecord(medicalRecord: String!): [MedicalRecordVaccine!]!
+    medicalRecords(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedMedicalRecords!
+    medicalReferral(id: String!): MedicalReferral!
+    medicalReferrals: [MedicalReferral!]!
+    medicalReferralsByMedicalRecord(medicalRecord: String!): [MedicalReferral!]!
+    medicine(id: String!): Medicine!
+    medicines(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedMedicine!
+    meeting(id: String!): Meeting!
+    meetingAction(id: String!): MeetingAction!
+    meetingActionByDescription(description: String!, meetingId: String!): [MeetingAction!]!
+    meetingActionPendent(meetingId: String!): [MeetingAction!]!
+    meetingActions(meetingId: String!): [MeetingAction!]!
+    meetingByActive(mandateId: String!): [Meeting!]!
+    meetingByDate(date: DateTime!, mandateId: String!): [Meeting!]!
+    meetingBySubject(mandateId: String!, subject: String!): [Meeting!]!
+    meetings(mandateId: String!): [Meeting!]!
+    occupation(id: String!): Occupation!
+    occupationalHealthCertificate(id: String!): OccupationalHealthCertificate!
+    occupationalHealthCertificates: [OccupationalHealthCertificate!]!
+    occupationalHealthCertificatesByMedicalRecord(medicalRecord: String!): [OccupationalHealthCertificate!]!
+    occupations(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedOccupation!
+    organization: OrganizationWithBranches!
+    orthoRater(id: String!): OrthoRater!
+    orthoRaterByConsultation(complementaryExamId: String, consultationId: String!): OrthoRater!
+    people(pagination: Pagination, query: PaginationPersonQueryInput!): PaginatedPerson!
+    peopleActives: [PersonHistoryActivate!]!
+    peopleByOriginDeliveries(id: String!): [Person!]!
+    peopleSuggestions(pagination: Pagination, query: PaginationPersonQueryInput!): PaginatedPerson!
+    periodicRange(id: String!): PeriodicRange!
+    periodicRanges(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedPeriodicRange!
+    person(id: String!): Person!
+    physicalEnvironment(id: String!): PhysicalEnvironment!
+    physicalEnvironments(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedPhysicalEnvironment!
+    quantityLifesActive: Float!
+    quiz(id: String!): Quiz!
+    quizzes(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedQuiz!
+    realGoal(id: String!): RealGoal!
+    relativeIndex: [RelativeIndex!]!
+    responsibleAction(id: String!): ResponsibleAction!
+    responsibleActionByPerson(person: String!): [ResponsibleAction!]!
+    responsiblesAction(actionPlanId: String!): [ResponsibleAction!]!
+    resultExamIbmp(id: String!): ResultExamIbmp!
+    resultExamIbmpByConsultation(complementaryExamId: String, consultationId: String!): ResultExamIbmp!
+    risk(id: String!): Risk!
+    riskAgent(id: String!): RiskAgent!
+    riskAgents(group: AgentGroup, pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedRiskAgent!
+    riskComposition(id: String!): RiskComposition!
+    riskCompositions: [RiskComposition!]!
+    riskCompositionsByEnvironment(environment: String!): [RiskComposition!]!
+    risks(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedRisk!
+    risksByEnvironment(environment: String!): [Risk!]!
+    risksForIntegration(environmentId: String!, group: String!, riskDegree: String!): [Risk!]!
+    routes(isMobile: Boolean = false): [Routes!]!
+    scheduleRestriction(id: String!): ScheduleRestriction!
+    scheduleRestrictions(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedScheduleRestriction!
+    scheduleRestrictionsByDoctor(doctorId: String!, pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedScheduleRestriction!
+    sessions: [Session!]!
+    severityIndex: [SeverityIndex!]!
+    sipat(id: String!): Sipat!
+    sipatByDate(date: DateTime!, mandateId: String!): [Sipat!]!
+    sipatByDescription(description: String!, mandateId: String!): [Sipat!]!
+    sipatEvent(id: String!): SipatEvent!
+    sipatEventByDate(date: DateTime!, sipatId: String!): [SipatEvent!]!
+    sipatEventByDescription(sipatId: String!, subject: String!): [SipatEvent!]!
+    sipatEventByPerson(personId: String!, sipatId: String!): [SipatEvent!]!
+    sipats(mandateId: String!): [Sipat!]!
+    snellen(id: String!): Snellen!
+    snellenByConsultation(complementaryExamId: String, consultationId: String!): Snellen!
+    stabilityType(id: String!): StabilityType!
+    stabilityTypes(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedStabilityType!
+    statementResponsibility(id: String!): StatementResponsibility!
+    statementsResponsibility(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedStatementResponsibility!
+    suggestion(id: String!): SuggestionBox!
+    suggestionAmount(dateEnd: DateTime!, dateStart: DateTime!): [SuggestionAmount!]!
+    suggestionBoxByDescription(description: String!, mandateId: String!): [SuggestionBox!]!
+    suggestionBoxByPriority(mandateId: String!, priority: String!): [SuggestionBox!]!
+    suggestionBoxByStatus(mandateId: String!, status: String!): [SuggestionBox!]!
+    suggestions(mandateId: String!): [SuggestionBox!]!
+    task(id: String!): Task!
+    tasks(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedTask!
+    terms: Terms!
+    training(id: String!): Training!
+    trainings(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedTraining!
+    urinalysis(id: String!): Urinalysis!
+    urinalysisByConsultation(complementaryExamId: String, consultationId: String!): Urinalysis!
+    user(id: String!): UserBasicInfo!
+    users: [UserOrganizationListing!]!
+    vaccine(id: String!): Vaccine!
+    vaccines(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedVaccine!
+    vote(id: String!): Vote!
+    voteByMandate(mandateId: String!): [Vote!]!
+    workShift(id: String!): WorkShift!
+    workShifts(pagination: Pagination, query: PaginationDefaultQueryInput!): PaginatedWorkShift!
+}
+
+type Questions {
+    defaultOption: String
+    description: String!
+    gender: QuestionGenderEnum!
+    hasDetails: Boolean!
+    id: String!
+    order: Float!
+    required: Boolean!
+    responseOptions: [ResponseOptions!]
+    responseType: ResponseType!
+}
+
+type QuestionsGroup {
+    description: String!
+    id: String!
+    questionsQuiz: [Questions!]
+}
+
+type Quiz {
+    description: String!
+    id: String!
+    isActive: Boolean!
+    questionsGroup: [QuestionsGroup!]
+}
+
+type RealGoal {
+    actionPlan: ActionPlan!
+    date: DateTime!
+    id: String!
+    value: Float!
+}
+
+type RealGoalOnActionPlan {
+    date: DateTime!
+    value: Float!
+}
+
+type References {
+    gender: ExamGenderEnum!
+    id: String!
+    maxAge: Float!
+    maxPercent: Float
+    maxValue: Float!
+    minAge: Float!
+    minPercent: Float
+    minValue: Float!
+}
+
+type RelativeIndex {
+    description: String
+    index: Float!
+}
+
+type ResponseOptions {
+    description: String!
+    id: String!
+}
+
+type ResponsesClinicalQuiz {
+    id: String!
+    question: Questions!
+    response: String
+    responseOption: ResponseOptions
+}
+
+type ResponsibleAction {
+    actionPlan: ActionPlan!
+    id: String!
+    person: Person!
+}
+
+type ResponsibleOnActionPlan {
+    person: Person!
+}
+
+type ResultExamIbmp {
+    complementaryExam: ComplementaryExam
+    consultation: Consultation
+    crm: String
+    date: DateTime!
+    details: String
+    doctor: String
+    id: String!
+    indicator: ExamResultIndicatorEnum!
+    observations: String
+    quantityFound: Float!
+    result: String!
+    state: State
+}
+
+type Risk {
+    actionLevel: Float
+    agent: RiskAgent!
+    category: RiskCategory
+    composition: RiskComposition
+    consider: ConsiderPrint
+    controlMeasures: [ControlMeasureByRisk!]
+    coordinateX: Float
+    coordinateY: Float
+    costCenters: [CostCenterByRisk!]
+    damageCaused: String
+    departments: [DepartmentByRisk!]
+    desiredSituation: String
+    eliminationDate: DateTime
+    environment: PhysicalEnvironment!
+    ergonomicStatus: ErgonomicStatus
+    errorIntegration: String
+    exams: [ExamByRisk!]
+    exhibitionType: ExhibitionType
+    exposureTime: String
+    generatingSource: GeneratingSource!
+    id: String!
+    intensity: RiskIntensity
+    interval: String
+    ipes: [IpeByRisk!]
+    legalFramework: String
+    measureType: RiskMeasureType
+    measurements: [MeasurementByRisk!]
+    needCpe: Boolean
+    needIpe: Boolean
+    occupations: [OccupationByRisk!]
+    persons: [PersonByRisk!]
+    recognitionDate: DateTime!
+    repetition: String
+    riskDegree: RiskDegree
+    riskMap: RiskMap
+    situationFound: String
+    tasks: [TaskByRisk!]
+    techniqueUsed: String
+    trainings: [TrainingByRisk!]
+    unitMeasurement: RiskMeasure
+}
+
+type RiskAgent {
+    activeSubstance: String
+    bonus: AgentBonus
+    classification: AgentClassification
+    description: String!
+    endurance: String
+    entrance: String
+    evaluation: AgentEvaluation!
+    group: AgentGroup!
+    id: String!
+    isActive: Boolean!
+    pathogenicity: String
+    propagation: String
+    source: String
+    study: String
+    symptomatology: String
+    transmissibility: String
+    transmissionWays: String
+    virulence: String
+}
+
+type RiskComposition {
+    id: String!
+    risks: [Risk!]!
+}
+
+type Role {
+    branch: Branch!
+    branchId: String!
+    createdAt: DateTime!
+    roleId: String!
+    userId: String!
+}
+
+type ScheduleRestriction {
+    dateEnd: DateTime!
+    dateStart: DateTime!
+    doctor: Person!
+    id: String!
+    observation: String
+    type: RestrictionType!
+}
+
+type Session {
+    branch: BranchWithOrganization
+    data: SessionData!
+    timeZone: String
+    token: String!
+    user: User!
+    validSubscription: Boolean!
+}
+
+type SessionData {
+    userAgent: String
+}
+
+type SeverityIndex {
+    description: String
+    index: Float!
+}
+
+type Sipat {
+    attachments: [Attachment!]
+    comments: String
+    dateEnd: DateTime!
+    dateStart: DateTime!
+    description: String!
+    id: String!
+    mandate: Mandate
+    sipatEvents: [SipatEvent!]
+}
+
+type SipatEvent {
+    comments: String
+    cost: Float
+    dateEnd: DateTime!
+    dateStart: DateTime!
+    id: String!
+    localEvent: String!
+    person: Person!
+    sipat: Sipat!
+    subject: String!
+}
+
+type Snellen {
+    aggravation: OphthalmologicAggravationEnum!
+    bothEyes: SnellenValue!
+    calibrationDate: DateTime!
+    complementaryExam: ComplementaryExam
+    consultation: Consultation
+    correction: OphthalmologicCorrectionEnum!
+    crm: String
+    date: DateTime!
+    details: String
+    doctor: String
+    equipment: MeasuringInstrument!
+    gaugingDate: DateTime!
+    id: String!
+    indicator: ExamResultIndicatorEnum!
+    leftEye: SnellenValue!
+    observations: String
+    responsibleForMeasuring: Person!
+    result: String!
+    rightEye: SnellenValue!
+    state: State
+    withCorrection: Boolean!
+}
+
+type StabilityType {
+    description: String!
+    id: String!
+}
+
+type StatementResponsibility {
+    description: String!
+    id: String!
+    isActive: Boolean!
+    statement: String!
+}
+
+type SuggestionAmount {
+    amount: Float!
+    month: Float!
+    year: Float!
+}
+
+type SuggestionBox {
+    comments: String
+    description: String!
+    id: String!
+    localSuggestion: String!
+    mandate: Mandate
+    person: Person
+    priority: Priority!
+    status: StatusSuggestion!
+}
+
+type Summary {
+    entries: [SummaryEntry!]!
+    totalAmount: Int!
+}
+
+type SummaryEntry {
+    name: String!
+    options: [SummaryOption!]!
+    title: String!
+    type: FilterType!
+}
+
+type SummaryOption {
+    amount: Int!
+    description: String!
+    id: String!
+}
+
+type Task {
+    description: String
+    effort: Effort
+    id: String!
+    isActive: Boolean!
+    name: String!
+    workedHours: String
+}
+
+type TaskByPerson {
+    endDate: DateTime
+    id: String!
+    startDate: DateTime!
+    task: Task!
+}
+
+type TaskByRisk {
+    id: String!
+    task: Task!
+}
+
+type Terms {
+    content: String!
+    createdAt: DateTime!
+    id: String!
+}
+
+type TimePoint {
+    day: DayOfWeek!
+    hour: String!
+}
+
+type Training {
+    description: String!
+    erpId: String
+    id: String!
+    isActive: Boolean!
+    referenceId: String
+}
+
+type TrainingByRisk {
+    errorIntegration: String
+    id: String!
+    training: Training!
+    urgency: TrainingUrgency!
+}
+
+type TrainingHistory {
+    approved: Boolean
+    completionDate: DateTime
+    erpId: String
+    expectedDate: DateTime!
+    expirationDate: DateTime
+    id: String!
+    person: Person!
+    training: Training!
+}
+
+type TrainingHistoryByPerson {
+    approved: Boolean
+    completionDate: DateTime
+    erpId: String
+    expectedDate: DateTime!
+    expirationDate: DateTime
+    id: String!
+    training: Training!
+}
+
+type Urinalysis {
+    bilirubin: BilirubinEnum!
+    complementaryExam: ComplementaryExam
+    consultation: Consultation
+    crm: String
+    date: DateTime!
+    density: DensityEnum!
+    details: String
+    doctor: String
+    glycolysis: GlycolysisEnum!
+    id: String!
+    indicator: ExamResultIndicatorEnum!
+    ketones: KetonesEnum!
+    leukocytes: LeukocytesEnum!
+    nitrites: NitritesEnum!
+    observations: String
+    ph: PhEnum!
+    proteins: ProteinsEnum!
+    redCells: RedCellsEnum!
+    result: String!
+    state: State
+    urobilinogen: UrobilinogenEnum!
+}
+
+type User {
+    address: String
+    birthDate: String
+    documentNumber: String
+    educationLevel: EducationLevel
+    email: String!
+    gender: UserGender
+    id: ID!
+    name: String!
+    profilePicture: String
+    roles: [Role!]!
+    rolesMdt: [UserRoleMdt!]!
+    verifiedEmail: String
+}
+
+type UserBasicInfo {
+    address: String
+    birthDate: String
+    documentNumber: String
+    educationLevel: EducationLevel
+    email: String!
+    gender: UserGender
+    id: ID!
+    name: String!
+    profilePicture: String
+    verifiedEmail: String
+}
+
+type UserFromCreation {
+    address: String
+    birthDate: String
+    documentNumber: String
+    educationLevel: EducationLevel
+    email: String!
+    gender: UserGender
+    id: ID!
+    name: String!
+    organization: OrganizationWithBranches
+    profilePicture: String
+    verifiedEmail: String
+}
+
+type UserOrganizationListing {
+    branches: [String!]!
+    email: String!
+    id: String
+    name: String
+    profilePicture: String
+    roleId: String!
+    rolesMdt: [UserRoleMdt!]!
+    status: String!
+}
+
+type UserRoleMdt {
+    document: String
+    id: String!
+    isBlocked: Boolean!
+    roleId: String!
+    state: String
+    userId: String!
+}
+
+type UtmDataType {
+    referrer: String
+    utmCampaign: String
+    utmContent: String
+    utmMedium: String
+    utmSource: String
+    utmTerm: String
+}
+
+type Vaccine {
+    advantages: String
+    description: String!
+    effects: String
+    fromAge: Float!
+    gender: VaccineGenderEnum!
+    id: String!
+    isActive: Boolean!
+    recommendations: String
+    referenceId: String
+    reinforcement: VaccineReinforcementEnum!
+    reinforcementInterval: Float
+    secondDoseInterval: Float
+    thirdDoseInterval: Float
+    toAge: Float!
+    vaccineCostCenter: [CostCenterOnVaccine!]
+    vaccineOccupation: [OccupationOnVaccine!]
+}
+
+type Vote {
+    candidateId: String
+    cypherUser: String!
+    id: String!
+    mandateId: String!
+    nullVote: Boolean
+    whiteVote: Boolean
+}
+
+type WitnessOnAccident {
+    person: Person!
+}
+
+type WorkShift {
+    description: String!
+    erpId: String
+    id: String!
+    isActive: Boolean!
+    productiveHours: Float
+    referenceId: String
+}
+
+type _Invite {
+    branch: String
+    createdAt: String
+    email: String
+    role: String
+    token: String
+    user: String
+}
+
+type _PasswordRecovery {
+    createdAt: String
+    token: String
+    user: String
+}
+
+type _Terms {
+    content: String
+    createdAt: String
+    id: String
+    signature: String
+}
+
+enum AccidentLocation {
+    company
+    other
+    otherCompany
+    outsideContry
+    publicHigway
+    ruralArea
+    ship
+}
+
+enum AccidentOrderByFields {
+    AccidentType
+    Date
+    Summary
+}
+
+enum AccidentTypeEnum {
+    Incident
+    OnWay
+    Typical
+    WorkDisease
+}
+
+enum ActionPlanOrderByFields {
+    Conclusion
+    DateStart
+    What
+    Why
+}
+
+enum ActivityType {
+    AccommodationAndFood
+    AdministrativeAndComplementaryServices
+    AgricultureLivestockForestryAndAquaculture
+    ArtsCultureSportAndRecreation
+    Construction
+    DomesticServices
+    Education
+    ElectricityAndGas
+    ExtractiveIndustries
+    FinancialAndInsurance
+    HumanHealthAndSocialServices
+    InformationAndCommunication
+    InternationalOrganizations
+    ManufacturingIndustries
+    MotorVehiclesTradeAndRepair
+    OtherServices
+    ProfessionalScientificAndTechnical
+    PublicAdministrationDefenseAndSocialSecurity
+    RealEstate
+    TransportStorageAndMail
+    WaterSewageWasteManagementAndDecontamination
+}
+
+enum AgentBonus {
+    dangerousness
+    unhealthiness
+}
+
+enum AgentClassification {
+    bacteria
+    fungus
+    parasites
+    virus
+}
+
+enum AgentEvaluation {
+    qualitative
+    quantitative
+}
+
+enum AgentGroup {
+    association
+    biological
+    chemical
+    dangerous
+    ergonomic
+    mechanical
+    other
+    physical
+}
+
+enum AudiometryClinicalEnum {
+    MildDeafness
+    ModerateDeafness
+    Normal
+    ProfoundDeafness
+    SevereDeafness
+    TotalDeafness
+}
+
+enum AudiometryInssEnum {
+    DecreaseMediumGrade
+    DecreaseMinimumDegree
+    HearingLoss
+    MaximumCraneReduction
+    Normal
+}
+
+enum AudiometryLossTypeEnum {
+    Central
+    Conductive
+    Mixed
+    Sensorioneural
+}
+
+enum AudiometryOrdinanceEnum {
+    AcceptableThresholds
+    HearingLoss
+    PairNonSuggestive
+    PairSuggestive
+    RequiresInterpretations
+    SuggestionOfAggravation
+    SuggestiveTrigger
+}
+
+enum AuthType {
+    Basic
+}
+
+enum BilirubinEnum {
+    Big
+    Moderate
+    Negative
+    Small
+}
+
+enum BiologicalMaterial {
+    Blood
+    Urine
+}
+
+enum BloodType {
+    aBNegative
+    aBPositive
+    aNegative
+    aPositive
+    bNegative
+    bPositive
+    nA
+    oNegative
+    oPositive
+}
+
+enum BusinessEntity {
+    AbsenceType
+    AllowanceType
+    CostCenter
+    Occupation
+    StabilityType
+    Training
+    WorkShift
+}
+
+enum CaSituation {
+    Overdue
+    Valid
+}
+
+enum CauseType {
+    InsecureAct
+    UnsafeCondition
+}
+
+enum CeilingMaterial {
+    Barite
+    Concrete
+    Lead
+    LeadGlass
+    Masonry
+    Pottery
+    Wood
+}
+
+enum CertificateOrigin {
+    External
+    Internal
+}
+
+enum CertificateType {
+    Certificate
+    Declaration
+}
+
+enum CivilStatus {
+    Divorced
+    JudiciallySeparated
+    Married
+    Single
+    Widower
+}
+
+enum ClassICDType {
+    Etiology
+    Manifestation
+}
+
+enum ComponentType {
+    main
+    substitute
+}
+
+enum ComunicationType {
+    death
+    initial
+    reopening
+}
+
+enum ConsiderPrint {
+    Aso
+    AsoPpp
+    None
+    Ppp
+}
+
+enum ConsultationType {
+    Clinical
+    Occupational
+    Urgency
+}
+
+enum ControlType {
+    AdministrativeMeasures
+    BiologicalMonitoring
+    CollectiveProtection
+    Engineering
+    IndividualProtection
+    Others
+}
+
+enum DayOfWeek {
+    Friday
+    Monday
+    Saturday
+    Sunday
+    Thursday
+    Tuesday
+    Wednesday
+}
+
+enum DeficiencyType {
+    Hearing
+    Mental
+    Physical
+    Psychosocial
+    Visual
+}
+
+enum DeliveryReason {
+    Admissional
+    Defect
+    Demissional
+    DielectricTest
+    Loss
+    Other
+    Sanitation
+    Theft
+    Wear
+}
+
+enum DensityEnum {
+    OneThousand
+    OneThousandFifteen
+    OneThousandFive
+    OneThousandTen
+    OneThousandTirty
+    OneThousandTwentiFive
+    OneThousandTwenty
+}
+
+enum DisplayType {
+    Equivalent
+    Plumbiferous
+}
+
+enum DoorMaterial {
+    Barite
+    Concrete
+    Glass
+    Iron
+    Lead
+    LeadGlass
+    Masonry
+    Others
+    Paperboard
+    Plaster
+    Pottery
+    Wood
+}
+
+enum EarPartEnum {
+    AntiHelix
+    Cartilage
+    Concha
+    Earlobe
+    ExternalAcousticMeatus
+    Helix
+    Scapha
+    TemporalBone
+    TemporalMuscle
+    TringularFossa
+}
+
+enum EducationLevel {
+    DoctorateDegree
+    ElementarySchool
+    HighSchool
+    MastersDegree
+    UniversityGraduate
+}
+
+enum Effort {
+    Excessive
+    Light
+    Moderate
+}
+
+enum Emitter {
+    doctor
+    employer
+    insured
+    publicAuthority
+    syndicate
+}
+
+enum EmployeeSituation {
+    Absence
+    Active
+    Discharge
+    Dismissed
+    DoctorStatement
+    Vacations
+}
+
+enum ErgonomicStatus {
+    Adequate
+    Inadequate
+}
+
+enum ErpType {
+    FakeERP
+    TTalk
+}
+
+enum EvolutionaryCharacterEnum {
+    NotConfirmed
+    Progression
+    Stable
+}
+
+enum ExamGenderEnum {
+    Both
+    Female
+    Male
+}
+
+enum ExamMeasure {
+    NumeroAdimensional
+    aM
+    dezPorMM
+    dezSeisMM
+    emiT
+    fl
+    gdL
+    gg
+    kCalH
+    kg
+    kgfCm2
+    l
+    mA
+    mT
+    mg
+    mgDl
+    mgG
+    mgL
+    milhoesMM
+    milhoesPiL
+    ml
+    mmCubico
+    mmQuadrado
+    mppdc
+    nA
+    nm
+    oC
+    percentual
+    pg
+    piCubico
+    piL
+    ppm
+    ugCemMl
+    ugG
+    un
+}
+
+enum ExamResultIndicatorEnum {
+    Referential
+    Sequential
+}
+
+enum ExhibitionType {
+    Eventual
+    HabitualIntermittent
+    HabitualPermanent
+    NoHarmfulAgent
+    OccasionalIntermittent
+}
+
+enum ExpenseType {
+    Indemnity
+    Material
+    Medical
+    Others
+    ProductionLoss
+}
+
+enum ExtinguishingSystemSituation {
+    Active
+    Inactive
+}
+
+enum ExtinguishingSystemType {
+    FireExtinguisher
+    HidraulicSystem
+}
+
+enum EyeColor {
+    amber
+    black
+    blue
+    brown
+    darkGreen
+    greenishBlue
+    greenishBrown
+    grey
+    lightGreen
+    other
+    yellowishGreen
+}
+
+enum FilterType {
+    DateRange
+    DateTimeRange
+    PercentageRange
+    Value
+    ValueRange
+}
+
+enum FireBrigadeSpecificFunction {
+    Boss
+    Coordenator
+    Leader
+    Member
+}
+
+enum FireExtinguisherType {
+    CarbonDioxide
+    ChemicalFoam
+    ChemicalPowder
+    HalogenatedHydrocarbons
+    MechanicalFoam
+    Water
+}
+
+enum FirstCoatMaterial {
+    Barite
+    Concrete
+    Lead
+    LeadGlass
+    Masonry
+    Pottery
+    Wood
+}
+
+enum FloorMaterial {
+    Barite
+    Carpet
+    Cement
+    Concrete
+    Lead
+    LeadGlass
+    Masonry
+    Others
+    Paviflex
+    Pottery
+    Rubberized
+    VinylBlanket
+    Wood
+}
+
+enum Gender {
+    Female
+    Male
+}
+
+enum GlycolysisEnum {
+    FiveHundred
+    Negative
+    OneHundred
+    OneThousand
+    TwoHundredFifty
+    TwoThousand
+}
+
+enum HairColor {
+    black
+    blond
+    brown
+    gray
+    multicolour
+    other
+    redhead
+    white
+}
+
+enum IncidenceExpense {
+    Direct
+    Indirect
+}
+
+enum Indication {
+    company
+    employees
+}
+
+enum InspectionSituation {
+    Canceled
+    Finished
+    Pending
+}
+
+enum IpeProtection {
+    BreathProtection
+    EyeFaceProtection
+    FallProtection
+    FullBodyProtection
+    HeadProtection
+    HearingProtection
+    LowerLimbProtection
+    Other
+    TrunkProtection
+    UpperLimbProtection
+}
+
+enum KetonesEnum {
+    BigEighty
+    BigOneHundredSixty
+    Moderate
+    Negative
+    Small
+    Trace
+}
+
+enum Laterality {
+    both
+    left
+    notApplicable
+    right
+}
+
+enum LeukocytesEnum {
+    Big
+    Moderate
+    Negative
+    Small
+    Trace
+}
+
+enum LightingMaterial {
+    Fluorescent
+    Incandescent
+    Mixed
+    Others
+}
+
+enum Measure {
+    NumeroAdimensional
+    aM
+    atm
+    dBA
+    dBC
+    dBLinear
+    doseAnual
+    doseDiaria
+    doseMensal
+    doseTrimestral
+    emiT
+    fCm3
+    ghz
+    gy
+    h
+    hz
+    jM2
+    kCalH
+    kHz
+    kgfCm2
+    kvM
+    lx
+    mA
+    mS
+    mS175
+    mS2
+    mSv
+    mT
+    mW
+    mgM3
+    min
+    mjCm2
+    mppdc
+    nA
+    nm
+    oC
+    percentual
+    ppm
+    sv
+    ufcM3
+    un
+    ur
+    vM
+    w
+    wM2
+}
+
+enum MeasureType {
+    Ascending
+    Downward
+    NA
+}
+
+enum MedicalRecordVaccineStatus {
+    Pending
+    Realized
+    Refuses
+}
+
+enum MedicalSpecialty {
+    AllergyImmunology
+    Anesthesiology
+    Angiology
+    Cardiology
+    CardiovascularSurgery
+    ClinicalPathology
+    Coloproctology
+    Dermatology
+    DiagnosticImaging
+    DigestiveSystemSurgery
+    EmergencyMedicine
+    EndocrinologyMetabology
+    Endoscopy
+    FamilyCommunityMedicine
+    ForensicMedicine
+    Gastroenterology
+    GeneralSurgery
+    Geriatrics
+    GynecologyObstetrics
+    HandSurgery
+    HeadNeckSurgery
+    HematologyHemotherapy
+    Homeopathy
+    InfectiousDisease
+    IntensiveCareMedicine
+    InternalMedicine
+    Mastology
+    MedicalGenetics
+    Nephrology
+    Neurology
+    Neurosurgery
+    NuclearMedicine
+    Nutrition
+    Obstetrics
+    OccupationalMedicine
+    Oncology
+    Ophthalmology
+    OrthopedicsTraumatology
+    Otorhinolaryngology
+    Pathology
+    PediatricSurgery
+    Pediatrics
+    PhysicalMedicineRehabilitation
+    PlasticSurgery
+    Pneumology
+    PreventiveSocialMedicine
+    Psychiatry
+    Radiology
+    Radiotherapy
+    Rheumatology
+    SportsMedicine
+    ThoracicSurgery
+    TrafficMedicine
+    Urology
+    VascularSurgery
+}
+
+enum MedicineLabelEnum {
+    BlackLabel
+    FreeSale
+    RedLabel
+    RedLabelUnderRestriction
+}
+
+enum MedicineMeasurementUnit {
+    Ampoule
+    AmpouleBottle
+    BTube
+    Bag
+    BillionInternationalUnits
+    Bottle
+    Bowl
+    Box
+    CTablet
+    Capsule
+    Carpule
+    Centgray
+    Centimeter
+    Chewabletablet
+    Dose
+    Dragee
+    Drops
+    EffervescentTablet
+    Egg
+    Envelope
+    Flaconete
+    Gallon
+    Globule
+    Gram
+    Gray
+    InternationalUnit
+    Kilogram
+    Kit
+    Liter
+    Mallet
+    Meter
+    Micrograms
+    Milligram
+    Milliliter
+    MillionsOfInternationalUnits
+    NotApplicable
+    PTablet
+    Package
+    Pair
+    Pearl
+    Piece
+    Pill
+    Pipe
+    Roll
+    Sachet
+    Set
+    Suppository
+    Syringe
+    TTablet
+    TTube
+    Tin
+    TransdermalPatch
+    Unity
+}
+
+enum MeetingType {
+    extraordinary
+    ordinary
+}
+
+enum Nature {
+    Admission
+    BackToWork
+    ChangeOfFunction
+    Dismissal
+    Periodic
+}
+
+enum NitritesEnum {
+    Negative
+    PositiveMajor
+    PositiveMinor
+}
+
+enum NoiseExposureEnum {
+    Constant
+    Eventual
+    NotExposed
+}
+
+enum OccurencePath {
+    lunchToWork
+    residenceToWork
+    workToLunch
+    workToResidence
+}
+
+enum OphthalmologicAggravationEnum {
+    Assistencial
+    DoesNotApply
+    Occupational
+}
+
+enum OphthalmologicCorrectionEnum {
+    Both
+    Close
+    DoesNotApply
+    Far
+}
+
+enum OrderBy {
+    Ascending
+    Descending
+}
+
+enum OrthoRaterResponseEnum {
+    Acceptable
+    Disapproved
+    Normal
+}
+
+enum OrthoRaterValueEnum {
+    Eighty
+    Fifty
+    Fourty
+    Ninety
+    OnHundred
+    Seventy
+    Sixty
+    Ten
+    Thirty
+    Twenty
+}
+
+enum OtologicalDiagnosisEnum {
+    ConductiveLoss
+    MixedLoss
+    Normal
+}
+
+enum PeriodicRangeGenderEnum {
+    Both
+    Female
+    Male
+}
+
+enum PhEnum {
+    Eight
+    EightPointFive
+    Five
+    Seven
+    SevenPointFive
+    Six
+    SixPoitFive
+}
+
+enum PhoriaEnum {
+    Eight
+    EightPoitFive
+    Five
+    FivePointFive
+    Four
+    FourPoitFive
+    Nine
+    One
+    OnePointFive
+    Seven
+    SevenPointFive
+    Six
+    SixPoitFive
+    Tree
+    TreePointFive
+    Two
+    TwoPoitFive
+    Zero
+    ZeroPoitFive
+}
+
+enum Priority {
+    high
+    low
+    medium
+}
+
+enum ProgramType {
+    occupational
+    qualityOfLife
+}
+
+enum ProteinsEnum {
+    Negative
+    OneHundred
+    Tirty
+    Trace
+    TreeHundred
+    TwoThousand
+}
+
+enum QuestionGenderEnum {
+    Both
+    Female
+    Male
+}
+
+enum Recommendation {
+    Able
+    AbleWithRestrictions
+    Unable
+}
+
+enum RedCellsEnum {
+    Big
+    Hemolized
+    Moderate
+    Negative
+    NotHemolized
+    Small
+}
+
+enum ReplacementSituation {
+    late
+    near
+    other
+}
+
+enum ReportFinality {
+    Dangerousness
+    Others
+    Unhealthiness
+}
+
+enum ReportType {
+    AET
+    LTCAT
+    LTExpert
+    PAE
+    PCMAT
+    PCMSO
+    PGR
+    PPR
+    PPRA
+}
+
+enum ResponseType {
+    Descritive
+    Multiple
+    Only
+}
+
+enum RestrictionType {
+    Blocked
+    Reserved
+}
+
+enum ResultTypeEnum {
+    Audiometric
+    ExamItems
+    IBMP
+    Normal
+    OrthoRater
+    Otological
+    Snellen
+    Spirometry
+    Urinalysis
+    XRay
+}
+
+enum RiskCategory {
+    Attention
+    Critical
+    Intolerable
+    Irrelevant
+}
+
+enum RiskDegree {
+    Large
+    Medium
+    Small
+}
+
+enum RiskIntensity {
+    Forty
+    NotTypify
+    Ten
+    Thirty
+    Twenty
+}
+
+enum RiskMap {
+    Both
+    CIPA
+    SESMT
+}
+
+enum RiskMeasure {
+    NumeroAdimensional
+    aM
+    atm
+    dBA
+    dBC
+    dBLinear
+    doseAnual
+    doseDiaria
+    doseMensal
+    doseTrimestral
+    emiT
+    fCm3
+    ghz
+    gy
+    h
+    hz
+    jM2
+    kCalH
+    kHz
+    kgfCm2
+    kvM
+    lx
+    mA
+    mS
+    mS175
+    mS2
+    mSv
+    mT
+    mW
+    mgM3
+    min
+    mjCm2
+    mppdc
+    nA
+    nm
+    oC
+    percentual
+    ppm
+    sv
+    ufcM3
+    ur
+    vM
+    w
+    wM2
+}
+
+enum RiskMeasureType {
+    above
+    aboveOrEqual
+    below
+    belowOrEqual
+    equal
+    na
+}
+
+enum Routes {
+    Accident
+    ActionPlan
+    Brigades
+    ExamResult
+    ExtinguishingSystem
+    Home
+    IpeDelivery
+    Mandates
+    MedicalRecord
+    Others
+    Profile
+    Registrations
+    Reports
+    Risks
+    Schedule
+}
+
+enum SecondCoatMaterial {
+    Barite
+    Concrete
+    Lead
+    LeadGlass
+    Masonry
+    Pottery
+    Wood
+}
+
+enum ServiceArea {
+    rural
+    urban
+}
+
+enum Situation {
+    Cancel
+    Close
+    Open
+}
+
+enum SkinColor {
+    black
+    brown
+    indigenous
+    white
+    yellow
+}
+
+enum SnellenValue {
+    fifty
+    forty
+    oneHundred
+    seventy
+    thirty
+    twenty
+    twentyFive
+    twoHundred
+}
+
+enum SocialSecurityAffiliation {
+    employee
+    residentDoctor
+    singleWorker
+    specialSequence
+}
+
+enum SpecificFunction {
+    member
+    president
+    secretary
+    substituteSecretary
+    vicePresident
+}
+
+enum State {
+    Acre
+    Alagoas
+    Amapa
+    Amazonas
+    Bahia
+    Ceara
+    DistritoFederal
+    EspiritoSanto
+    Goias
+    Maranhao
+    MatoGrosso
+    MatoGrossoDoSul
+    MinasGerais
+    Para
+    Paraiba
+    Parana
+    Pernambuco
+    Piaui
+    RioDeJaneiro
+    RioGrandeDoNorte
+    RioGrandeDoSul
+    Rondonia
+    Roraima
+    SantaCatarina
+    SaoPaulo
+    Sergipe
+    Tocantins
+}
+
+enum StatusSuggestion {
+    canceled
+    finished
+    inProcess
+    new
+}
+
+enum TimeUnitEnum {
+    Day
+    Hour
+    Month
+    Year
+}
+
+enum TrafficAccidentType {
+    collision
+    other
+    trampling
+}
+
+enum TrainingUrgency {
+    Desired
+    Indispensable
+    Recommended
+}
+
+enum UrobilinogenEnum {
+    Eight
+    Four
+    One
+    Two
+    ZeroPointTwo
+}
+
+enum UseOfAuricularIpeEnum {
+    Both
+    BothAlternate
+    DoesNotUtilize
+    EarPlug
+    Earmuff
+    Others
+}
+
+enum UserGender {
+    Female
+    Male
+}
+
+enum VaccineGenderEnum {
+    Both
+    Female
+    Male
+}
+
+enum VaccineReinforcementEnum {
+    NoReinforcement
+    Periodic
+    Unique
+}
+
+enum VisualFieldEnum {
+    Nasal
+    Temporal
+}
+
+enum WallMaterial {
+    Barite
+    Concrete
+    Glass
+    Iron
+    Lead
+    LeadGlass
+    Masonry
+    Others
+    Paperboard
+    Plaster
+    Pottery
+    Wood
+}
+
+enum WindowMaterial {
+    Acrylic
+    Glass
+    Metal
+    Others
+    Plastic
+    Wood
+}
+
+input AbsenceTypeInput {
+    description: String!
+    referenceId: String
+}
+
+input AbsenceTypeIntegration {
+    branch: String!
+    description: String
+    erpId: String
+    id: String
+    referenceId: String
+}
+
+input AbsenceTypeUpdate {
+    description: String
+    id: String!
+    referenceId: String
+}
+
+input AccidentBodyPartInput {
+    accidentId: String!
+    bodyPartId: String!
+    branch: String!
+    laterality: Laterality
+}
+
+input AccidentBodyPartInputBranch {
+    bodyPartId: String!
+    branch: String!
+    laterality: Laterality
+}
+
+input AccidentCauseInput {
+    causeType: CauseType!
+    description: String!
+    referenceId: String
+}
+
+input AccidentCauseUpdate {
+    causeType: CauseType
+    description: String
+    id: String!
+    isActive: Boolean
+    referenceId: String
+}
+
+input AccidentExpenseInput {
+    accidentId: String!
+    branch: String
+    date: DateTime
+    expenseId: String!
+    value: Float
+}
+
+input AccidentExpenseUpdate {
+    accidentId: String
+    branch: String
+    date: DateTime
+    expenseId: String
+    id: String!
+    value: Float
+}
+
+input AccidentFilter {
+    accidentCodes: [String!]
+    accidentTypes: [AccidentTypeEnum!]
+    costCenters: [String!]
+    dates: DateRange
+    icdGroups: [String!]
+    icds: [String!]
+    injuryNatures: [String!]
+    location: [AccidentLocation!]
+    people: [String!]
+}
+
+input AccidentInput {
+    accept: Boolean
+    accidentCodeId: String
+    accidentLocation: AccidentLocation
+    accidentTypeEnum: AccidentTypeEnum!
+    accidentTypeId: String
+    bodyParts: [BodyPartOnAccidentInput!]
+    causerAgents: [CauserAgentOnAccidentInput!]
+    city: String
+    companyRegistration: String
+    comunicationType: ComunicationType
+    conclusion: String
+    costCenterId: String
+    country: String
+    date: DateTime!
+    daysLost: Float
+    deathDate: DateTime
+    description: String
+    distance: String
+    emissionDate: DateTime
+    emitter: Emitter
+    exitHour: String
+    expenses: [ExpenseOnAccidentInput!]
+    hadPathChange: Boolean
+    hasAbsence: Boolean
+    icdGroupId: String
+    icdId: String
+    icds: [ComplementaryIcdOnAccidentInput!]
+    injuryNatureId: String
+    lastDayWork: DateTime
+    locationDescription: String
+    locomotion: String
+    occurencePath: OccurencePath
+    originDate: DateTime
+    originNumber: String
+    otherOccupation: Boolean
+    personId: String
+    policeRecord: Boolean
+    reason: String
+    retired: Boolean
+    serviceArea: ServiceArea
+    socialSecurityAffiliation: SocialSecurityAffiliation
+    socialSecurityCode: String
+    standarTime: String
+    state: String
+    street: String
+    streetNumber: String
+    summary: String!
+    timeWorked: String
+    trafficAccidentType: TrafficAccidentType
+    usualPath: String
+    willTransferSector: Boolean
+    witnesses: [WitnessOnAccidentInput!]
+    workedHours: String
+    zipCode: String
+}
+
+input AccidentOrderByInput {
+    field: AccidentOrderByFields = Summary
+    type: OrderBy = Ascending
+}
+
+input AccidentQueryInput {
+    filter: AccidentFilter
+    identifier: String
+    onlyActive: Boolean
+}
+
+input AccidentUpdate {
+    accept: Boolean
+    accidentCodeId: String
+    accidentLocation: AccidentLocation
+    accidentTypeEnum: AccidentTypeEnum
+    accidentTypeId: String
+    bodyParts: BodyPartOnAccidentUpdate
+    causerAgents: CauserAgentOnAccidentUpdate
+    city: String
+    companyRegistration: String
+    comunicationType: ComunicationType
+    conclusion: String
+    costCenterId: String
+    country: String
+    date: DateTime
+    daysLost: Float
+    deathDate: DateTime
+    description: String
+    distance: String
+    emissionDate: DateTime
+    emitter: Emitter
+    exitHour: String
+    expenses: ExpenseOnAccidentUpdate
+    hadPathChange: Boolean
+    hasAbsence: Boolean
+    icdGroupId: String
+    icdId: String
+    icds: ComplementaryIcdOnAccidentUpdate
+    id: String!
+    injuryNatureId: String
+    lastDayWork: DateTime
+    locationDescription: String
+    locomotion: String
+    occurencePath: OccurencePath
+    originDate: DateTime
+    originNumber: String
+    otherOccupation: Boolean
+    personId: String
+    policeRecord: Boolean
+    reason: String
+    retired: Boolean
+    serviceArea: ServiceArea
+    socialSecurityAffiliation: SocialSecurityAffiliation
+    socialSecurityCode: String
+    standarTime: String
+    state: String
+    street: String
+    streetNumber: String
+    summary: String
+    timeWorked: String
+    trafficAccidentType: TrafficAccidentType
+    usualPath: String
+    willTransferSector: Boolean
+    witnesses: WitnessOnAccidentUpdate
+    workedHours: String
+    zipCode: String
+}
+
+input AccidentWitnessInput {
+    accidentId: String!
+    branch: String
+    personId: String!
+}
+
+input AccreditedExamChanges {
+    toCreate: [AccreditedExamInput!]!
+    toRemove: [String!]!
+    toUpdate: [AccreditedExamUpdate!]!
+}
+
+input AccreditedExamInput {
+    contractEnd: DateTime
+    contractStart: DateTime!
+    examId: String!
+    price: Float!
+}
+
+input AccreditedExamUpdate {
+    contractEnd: DateTime
+    contractStart: DateTime!
+    examId: String!
+    id: String!
+    price: Float!
+}
+
+input AccreditedInput {
+    exams: [AccreditedExamInput!]
+    name: String!
+}
+
+input AccreditedUpdate {
+    exams: AccreditedExamChanges
+    id: String!
+    isActive: Boolean
+    name: String
+}
+
+input ActionOnMeetingInput {
+    active: Boolean!
+    dateAction: DateTime!
+    description: String!
+}
+
+input ActionOnMeetingRemove {
+    dateAction: DateTime!
+    description: String!
+}
+
+input ActionOnMeetingUpdate {
+    toCreate: [ActionOnMeetingInput!]!
+    toRemove: [ActionOnMeetingRemove!]!
+    toUpdate: [ActionOnMeetingInput!]!
+}
+
+input ActionPlanExpectedGoalInput {
+    date: DateTime!
+    value: Float!
+}
+
+input ActionPlanExpectedGoalUpdate {
+    toCreate: [ActionPlanExpectedGoalInput!]!
+    toRemove: [DateTime!]!
+}
+
+input ActionPlanFilter {
+    conclusion: FloatRange
+    endDates: DateRange
+    measureTypes: [MeasureType!]
+    people: [String!]
+    startDates: DateRange
+}
+
+input ActionPlanInput {
+    currentValue: Float!
+    dateEnd: DateTime!
+    dateStart: DateTime!
+    expectedCost: Float!
+    expectedGoals: [ActionPlanExpectedGoalInput!]
+    goal: Float!
+    how: String!
+    measure: Measure!
+    measureType: MeasureType!
+    observation: String
+    realCost: Float
+    realGoals: [ActionPlanRealGoalInput!]
+    responsiblesAction: [ActionPlanResponsibleInput!]
+    situation: Situation
+    what: String!
+    where: String!
+    why: String!
+}
+
+input ActionPlanOrderByInput {
+    field: ActionPlanOrderByFields = What
+    type: OrderBy = Ascending
+}
+
+input ActionPlanQueryInput {
+    filter: ActionPlanFilter
+    identifier: String
+    onlyActive: Boolean
+}
+
+input ActionPlanRealGoalInput {
+    date: DateTime!
+    value: Float!
+}
+
+input ActionPlanRealGoalUpdate {
+    toCreate: [ActionPlanRealGoalInput!]!
+    toRemove: [DateTime!]!
+}
+
+input ActionPlanResponsibleInput {
+    personId: String!
+}
+
+input ActionPlanResponsibleUpdate {
+    toCreate: [ActionPlanResponsibleInput!]!
+    toRemove: [String!]!
+}
+
+input ActionPlanUpdate {
+    currentValue: Float
+    dateEnd: DateTime
+    dateStart: DateTime
+    expectedCost: Float
+    expectedGoals: ActionPlanExpectedGoalUpdate
+    goal: Float
+    how: String
+    id: String!
+    measure: Measure
+    measureType: MeasureType
+    observation: String
+    realCost: Float
+    realGoals: ActionPlanRealGoalUpdate
+    responsiblesAction: ActionPlanResponsibleUpdate
+    situation: Situation
+    what: String
+    where: String
+    why: String
+}
+
+input AgeRangeInput {
+    fromAge: Float!
+    id: String
+    periodicity: Float!
+    toAge: Float!
+}
+
+input AllowanceTypeInput {
+    description: String!
+}
+
+input AllowanceTypeIntegration {
+    branch: String!
+    description: String
+    erpId: String
+    id: String
+}
+
+input AllowanceTypeUpdate {
+    description: String
+    id: String!
+    referenceId: String
+}
+
+input AnalysisInput {
+    description: String!
+    examMeasure: ExamMeasure
+    references: [ReferencesInput!]
+}
+
+input AnalysisUpdate {
+    description: String
+    examMeasure: ExamMeasure
+    id: String
+    references: [ReferencesUpdate!]
+}
+
+input BaseAttachment {
+    contentLength: Float!
+    contentType: String!
+}
+
+input BodyPartOnAccidentInput {
+    eSocialCode: String!
+    laterality: Laterality
+}
+
+input BodyPartOnAccidentUpdate {
+    toCreate: [BodyPartOnAccidentInput!]!
+    toRemove: [String!]!
+}
+
+input BranchCreationInput {
+    activityType: ActivityType
+    city: String
+    country: String
+    documentNumber: String!
+    economicActivityId: String
+    erpBranch: String
+    name: String!
+    neighborhood: String
+    number: String
+    phoneNumber: String
+    state: String
+    street: String
+    timeZone: String
+    zipCode: String
+}
+
+input BranchInput {
+    activityType: ActivityType
+    city: String
+    country: String
+    documentNumber: String
+    economicActivityId: String
+    endpoint: EndpointInput
+    erpBranch: String
+    name: String!
+    neighborhood: String
+    number: String
+    phoneNumber: String
+    state: String
+    street: String
+    timeZone: String
+    zipCode: String
+}
+
+input BranchUpdateInput {
+    activityType: ActivityType
+    city: String
+    country: String
+    documentNumber: String
+    economicActivityId: String
+    endpoint: EndpointInput
+    erpBranch: String
+    id: String!
+    name: String
+    neighborhood: String
+    number: String
+    phoneNumber: String
+    state: String
+    street: String
+    timeZone: String
+    zipCode: String
+}
+
+input CalendarInput {
+    calendarWorkShifts: [CalendarWorkShiftInput!]!
+    name: String!
+}
+
+input CalendarUpdate {
+    calendarWorkShifts: [CalendarWorkShiftInput!]
+    id: String!
+    isActive: Boolean
+    name: String
+}
+
+input CalendarWorkShiftInput {
+    end: TimePointInput!
+    start: TimePointInput!
+}
+
+input CandidateInput {
+    mandateId: String!
+    personId: String!
+    stabilityId: String
+}
+
+input CauserAgentInput {
+    accidentId: String!
+    accidentObjectId: String!
+    branch: String!
+}
+
+input CauserAgentOnAccidentInput {
+    accidentObjectId: String!
+}
+
+input CauserAgentOnAccidentUpdate {
+    toCreate: [CauserAgentOnAccidentInput!]!
+    toRemove: [String!]!
+}
+
+input ClinicalQuizInput {
+    medicalRecordId: String!
+    quizId: String!
+    realizationDate: DateTime!
+    responses: [ResponseClinicalQuizInput!]
+}
+
+input ClinicalQuizUpdate {
+    id: String!
+    medicalRecordId: String
+    quizId: String
+    realizationDate: DateTime
+    responses: [ResponseClinicalQuizUpdate!]!
+}
+
+input ComplementaryExamInput {
+    accreditedId: String
+    consultationId: String!
+    examId: String!
+}
+
+input ComplementaryIcdInput {
+    accidentId: String!
+    branch: String!
+    icdGroupId: String
+    icdId: String
+}
+
+input ComplementaryIcdOnAccidentInput {
+    icdGroupId: String
+    icdId: String
+}
+
+input ComplementaryIcdOnAccidentUpdate {
+    toCreate: [ComplementaryIcdOnAccidentInput!]!
+    toRemove: [String!]!
+}
+
+input ComplementaryIcdOnDiagnosticInput {
+    icdGroupId: String
+    icdId: String
+}
+
+input ComplementaryIcdOnDiagnosticUpdate {
+    toCreate: [ComplementaryIcdOnDiagnosticInput!]!
+    toRemove: [String!]!
+}
+
+input ComponentInput {
+    active: Boolean!
+    componentType: ComponentType!
+    indication: Indication!
+    mandateId: String!
+    personId: String!
+    specificFunction: SpecificFunction!
+    stabilityId: String
+}
+
+input ComponentUpdate {
+    active: Boolean
+    componentType: ComponentType
+    id: String!
+    specificFunction: SpecificFunction
+    stabilityId: String
+}
+
+input ConsultationInput {
+    complementaryExams: [ExamOnConsultationInput!]
+    doctorId: String!
+    endDate: DateTime
+    estimatedDate: DateTime!
+    estimatedTime: Float
+    examId: String
+    observation: String
+    patientId: String!
+    reason: String!
+    startDate: DateTime
+    type: ConsultationType!
+}
+
+input ConsultationUpdate {
+    complementaryExams: ExamOnConsultationUpdate
+    doctorId: String
+    endDate: DateTime
+    estimatedDate: DateTime
+    estimatedTime: Float
+    examId: String
+    id: String!
+    observation: String
+    patientId: String
+    reason: String
+    startDate: DateTime
+    type: ConsultationType
+}
+
+input ContactRequestInput {
+    comment: String
+    email: String!
+    name: String!
+    phone: String!
+}
+
+input ControlMeasureByRiskInput {
+    controlMeasureId: String!
+    riskId: String!
+}
+
+input ControlMeasureInput {
+    controlType: ControlType!
+    description: String
+    name: String!
+}
+
+input ControlMeasureOnRiskInput {
+    controlMeasureId: String!
+}
+
+input ControlMeasureOnRiskUpdate {
+    toCreate: [ControlMeasureOnRiskInput!]!
+    toRemove: [String!]!
+}
+
+input ControlMeasureUpdate {
+    controlType: ControlType
+    description: String
+    id: String!
+    isActive: Boolean
+    name: String
+}
+
+input CostCenterByRiskInput {
+    costCenterId: String!
+    riskId: String!
+}
+
+input CostCenterInput {
+    classCostCenter: String
+    description: String!
+    equipments: [EquipmentOnCostCenterInput!]
+    erpId: String
+    needEquipment: Boolean
+    referenceId: String
+}
+
+input CostCenterIntegration {
+    branch: String!
+    classCostCenter: String
+    description: String
+    erpId: String
+    id: String
+    needEquipment: Boolean
+    referenceId: String
+}
+
+input CostCenterOnMandateInput {
+    costCenterId: String!
+}
+
+input CostCenterOnRiskInput {
+    costCenterId: String!
+}
+
+input CostCenterOnRiskUpdate {
+    toCreate: [CostCenterOnRiskInput!]!
+    toRemove: [String!]!
+}
+
+input CostCenterOnVaccineInput {
+    costCenterId: String!
+}
+
+input CostCenterOnVaccineUpdate {
+    toCreate: [CostCenterOnVaccineInput!]!
+    toRemove: [String!]!
+}
+
+input CostCenterUpdate {
+    classCostCenter: String
+    description: String
+    equipments: EquipmentOnCostCenterUpdate
+    id: String!
+    isActive: Boolean
+    needEquipment: Boolean
+    referenceId: String
+}
+
+input CronTabInput {
+    businessEntity: BusinessEntity
+    description: String
+    id: String!
+    isActive: Boolean
+    lastHttpCode: Float
+    lastHttpState: String
+    periodicity: Float
+}
+
+input DateRange {
+    max: DateTime
+    min: DateTime
+}
+
+input DeficiencyInput {
+    date: DateTime!
+    icdId: String
+    medicalRecordId: String!
+    observation: String
+    recovered: Boolean
+    type: DeficiencyType!
+}
+
+input DeficiencyUpdate {
+    date: DateTime
+    icdId: String
+    id: String!
+    medicalRecordId: String
+    observation: String
+    recovered: Boolean
+    type: DeficiencyType
+}
+
+input DepartmentByRiskInput {
+    departmentId: String!
+    riskId: String!
+}
+
+input DepartmentInput {
+    description: String!
+    erpId: String
+}
+
+input DepartmentIntegration {
+    branch: String!
+    description: String
+    erpId: String
+    id: String
+}
+
+input DepartmentOnRiskInput {
+    departmentId: String!
+}
+
+input DepartmentOnRiskUpdate {
+    toCreate: [DepartmentOnRiskInput!]!
+    toRemove: [String!]!
+}
+
+input DepartmentUpdate {
+    description: String
+    id: String!
+    isActive: Boolean
+}
+
+input DependentInput {
+    birthday: DateTime!
+    erpId: String
+    gender: Gender!
+    individualRegistration: String
+    name: String!
+    personId: String!
+}
+
+input DependentOnPersonInput {
+    birthday: DateTime!
+    erpId: String
+    gender: Gender!
+    id: String
+    individualRegistration: String
+    name: String!
+}
+
+input DependentOnPersonRemove {
+    erpId: String
+    individualRegistration: String
+    name: String!
+}
+
+input DependentOnPersonUpdate {
+    toCreate: [DependentOnPersonInput!]!
+    toRemove: [DependentOnPersonRemove!]!
+    toUpdate: [DependentOnPersonInput!]!
+}
+
+input DependentUpdate {
+    birthday: DateTime
+    erpId: String
+    gender: Gender
+    id: String!
+    individualRegistration: String
+    name: String
+    personId: String!
+}
+
+input DiagnosticComplementaryIcdInput {
+    branch: String!
+    diagnosticId: String!
+    icdGroupId: String
+    icdId: String
+}
+
+input DiagnosticInput {
+    attendance: String
+    complaint: String
+    consultationId: String!
+    diagnostic: String!
+    diagnosticDate: DateTime!
+    diastolicPressure: Float
+    height: Float
+    icdGroupId: String
+    icdId: String
+    icds: [ComplementaryIcdOnDiagnosticInput!]
+    medicines: [MedicineOnDiagnosticInput!]
+    systolicPressure: Float
+    weight: Float
+}
+
+input DiagnosticMedicineInput {
+    amount: Float!
+    diagnosticId: String!
+    measurementUnit: MedicineMeasurementUnit
+    medicineId: String!
+    posology: String
+    showsInPrescription: Boolean!
+}
+
+input DiagnosticUpdate {
+    attendance: String
+    complaint: String
+    diagnostic: String
+    diastolicPressure: Float
+    height: Float
+    icdGroupId: String
+    icdId: String
+    icds: ComplementaryIcdOnDiagnosticUpdate
+    id: String!
+    medicines: MedicineOnDiagnosticChanges
+    systolicPressure: Float
+    weight: Float
+}
+
+input EarPartInput {
+    abnormality: Boolean!
+    description: String
+    earPart: EarPartEnum!
+}
+
+input EarPartUpdate {
+    abnormality: Boolean
+    description: String
+    earPart: EarPartEnum
+    id: String
+    otologicalId: String
+}
+
+input ElectionComissionInput {
+    mandateId: String!
+    personId: String!
+}
+
+input ElectionComissionInputByMandate {
+    personId: String!
+}
+
+input EmployeeTaskInput {
+    endDate: DateTime
+    personId: String!
+    startDate: DateTime!
+    taskId: String!
+}
+
+input EmployeeTaskOnPersonInput {
+    endDate: DateTime
+    startDate: DateTime!
+    taskId: String!
+}
+
+input EmployeeTaskOnPersonRemove {
+    startDate: DateTime!
+    taskId: String!
+}
+
+input EmployeeTaskOnPersonUpdate {
+    toCreate: [EmployeeTaskOnPersonInput!]!
+    toRemove: [EmployeeTaskOnPersonRemove!]!
+    toUpdate: [EmployeeTaskOnPersonInput!]!
+}
+
+input EmployeeTaskUpdate {
+    endDate: DateTime
+    id: String!
+    personId: String
+    startDate: DateTime
+    taskId: String
+}
+
+input EndpointInput {
+    authType: AuthType
+    erpType: ErpType!
+    id: String
+    password: String
+    port: Float
+    url: String
+    user: String
+}
+
+input EnvironmentalReportInput {
+    content: String!
+    costCenterId: String
+    elaboratorId: String!
+    endDate: DateTime!
+    expirationDate: DateTime!
+    finality: ReportFinality
+    initialDate: DateTime!
+    objective: String!
+    review: String!
+    statementResponsibilityId: String
+    type: ReportType!
+}
+
+input EnvironmentalReportUpdate {
+    content: String
+    costCenterId: String
+    elaboratorId: String
+    endDate: DateTime
+    expirationDate: DateTime
+    finality: ReportFinality
+    id: String!
+    initialDate: DateTime
+    objective: String
+    review: String
+    statementResponsibilityId: String
+    type: ReportType
+}
+
+input EquipmentByCostCenterInput {
+    costCenterId: String!
+    daysForReplacement: Float
+    ipeId: String!
+}
+
+input EquipmentByOccupationInput {
+    daysForReplacement: Float
+    ipeId: String!
+    occupationId: String!
+}
+
+input EquipmentOnCostCenterInput {
+    daysForReplacement: Float
+    ipeId: String!
+}
+
+input EquipmentOnCostCenterUpdate {
+    toCreate: [EquipmentOnCostCenterInput!]!
+    toRemove: [String!]!
+}
+
+input EquipmentOnOccupationInput {
+    daysForReplacement: Float
+    ipeId: String!
+}
+
+input EquipmentOnOccupationUpdate {
+    toCreate: [EquipmentOnOccupationInput!]!
+    toRemove: [String!]!
+}
+
+input EventOnSipatInput {
+    comments: String
+    cost: Float
+    dateEnd: DateTime!
+    dateStart: DateTime!
+    localEvent: String!
+    personId: String!
+    subject: String!
+}
+
+input EventOnSipatRemove {
+    dateStart: DateTime!
+    personId: String!
+}
+
+input EventOnSipatUpdate {
+    toCreate: [EventOnSipatInput!]!
+    toRemove: [EventOnSipatRemove!]!
+    toUpdate: [EventOnSipatInput!]!
+}
+
+input ExamAudiometryInput {
+    calibrationDate: DateTime!
+    complementaryExamId: String
+    consultationId: String
+    crm: String
+    date: DateTime!
+    details: String
+    doctor: String
+    equipmentId: String!
+    gaugingDate: DateTime!
+    indicator: ExamResultIndicatorEnum!
+    observations: String
+    odAirEight: Float
+    odAirFour: Float
+    odAirHigherAvg: Float
+    odAirLowerAvg: Float
+    odAirMaskEight: Float
+    odAirMaskFour: Float
+    odAirMaskMarkedEight: Boolean!
+    odAirMaskMarkedFour: Boolean!
+    odAirMaskMarkedOne: Boolean!
+    odAirMaskMarkedPointFive: Boolean!
+    odAirMaskMarkedPointTwentyFive: Boolean!
+    odAirMaskMarkedSix: Boolean!
+    odAirMaskMarkedThree: Boolean!
+    odAirMaskMarkedTwo: Boolean!
+    odAirMaskMax: Float
+    odAirMaskMin: Float
+    odAirMaskOne: Float
+    odAirMaskPointFive: Float
+    odAirMaskPointTwentyFive: Float
+    odAirMaskSix: Float
+    odAirMaskThree: Float
+    odAirMaskTwo: Float
+    odAirOne: Float
+    odAirPointFive: Float
+    odAirPointTwentyFive: Float
+    odAirSix: Float
+    odAirThree: Float
+    odAirTwo: Float
+    odBoneFour: Float
+    odBoneMaskFour: Float
+    odBoneMaskMarkedFour: Boolean!
+    odBoneMaskMarkedOne: Boolean!
+    odBoneMaskMarkedPointFive: Boolean!
+    odBoneMaskMarkedThree: Boolean!
+    odBoneMaskMarkedTwo: Boolean!
+    odBoneMaskMax: Float
+    odBoneMaskMin: Float
+    odBoneMaskOne: Float
+    odBoneMaskPointFive: Float
+    odBoneMaskThree: Float
+    odBoneMaskTwo: Float
+    odBoneOne: Float
+    odBonePointFive: Float
+    odBoneThree: Float
+    odBoneTwo: Float
+    odClinicalResult: AudiometryClinicalEnum!
+    odInssResult: AudiometryInssEnum!
+    odIrfMasking: Float
+    odIrfMonosyllables: Float
+    odIrfSyllables: Float
+    odLossTypeResult: AudiometryLossTypeEnum
+    odMeatoscopy: String
+    odOrdinanceResult: AudiometryOrdinanceEnum!
+    odSdtIndex: Float
+    odSrtIndex: Float
+    odSrtMasking: Float
+    oeAirEight: Float
+    oeAirFour: Float
+    oeAirHigherAvg: Float
+    oeAirLowerAvg: Float
+    oeAirMaskEight: Float
+    oeAirMaskFour: Float
+    oeAirMaskMarkedEight: Boolean!
+    oeAirMaskMarkedFour: Boolean!
+    oeAirMaskMarkedOne: Boolean!
+    oeAirMaskMarkedPointFive: Boolean!
+    oeAirMaskMarkedPointTwentyFive: Boolean!
+    oeAirMaskMarkedSix: Boolean!
+    oeAirMaskMarkedThree: Boolean!
+    oeAirMaskMarkedTwo: Boolean!
+    oeAirMaskMax: Float
+    oeAirMaskMin: Float
+    oeAirMaskOne: Float
+    oeAirMaskPointFive: Float
+    oeAirMaskPointTwentyFive: Float
+    oeAirMaskSix: Float
+    oeAirMaskThree: Float
+    oeAirMaskTwo: Float
+    oeAirOne: Float
+    oeAirPointFive: Float
+    oeAirPointTwentyFive: Float
+    oeAirSix: Float
+    oeAirThree: Float
+    oeAirTwo: Float
+    oeBoneFour: Float
+    oeBoneMaskFour: Float
+    oeBoneMaskMarkedFour: Boolean!
+    oeBoneMaskMarkedOne: Boolean!
+    oeBoneMaskMarkedPointFive: Boolean!
+    oeBoneMaskMarkedThree: Boolean!
+    oeBoneMaskMarkedTwo: Boolean!
+    oeBoneMaskMax: Float
+    oeBoneMaskMin: Float
+    oeBoneMaskOne: Float
+    oeBoneMaskPointFive: Float
+    oeBoneMaskThree: Float
+    oeBoneMaskTwo: Float
+    oeBoneOne: Float
+    oeBonePointFive: Float
+    oeBoneThree: Float
+    oeBoneTwo: Float
+    oeClinicalResult: AudiometryClinicalEnum!
+    oeInssResult: AudiometryInssEnum!
+    oeIrfMasking: Float
+    oeIrfMonosyllables: Float
+    oeIrfSyllables: Float
+    oeLossTypeResult: AudiometryLossTypeEnum
+    oeMeatoscopy: String
+    oeOrdinanceResult: AudiometryOrdinanceEnum!
+    oeSdtIndex: Float
+    oeSrtIndex: Float
+    oeSrtMasking: Float
+    responsibleForMeasuringId: String!
+    result: String!
+    state: State
+}
+
+input ExamAudiometryUpdate {
+    calibrationDate: DateTime
+    crm: String
+    details: String
+    doctor: String
+    equipmentId: String
+    gaugingDate: DateTime
+    id: String!
+    indicator: ExamResultIndicatorEnum
+    observations: String
+    odAirEight: Float
+    odAirFour: Float
+    odAirHigherAvg: Float
+    odAirLowerAvg: Float
+    odAirMaskEight: Float
+    odAirMaskFour: Float
+    odAirMaskMarkedEight: Boolean
+    odAirMaskMarkedFour: Boolean
+    odAirMaskMarkedOne: Boolean
+    odAirMaskMarkedPointFive: Boolean
+    odAirMaskMarkedPointTwentyFive: Boolean
+    odAirMaskMarkedSix: Boolean
+    odAirMaskMarkedThree: Boolean
+    odAirMaskMarkedTwo: Boolean
+    odAirMaskMax: Float
+    odAirMaskMin: Float
+    odAirMaskOne: Float
+    odAirMaskPointFive: Float
+    odAirMaskPointTwentyFive: Float
+    odAirMaskSix: Float
+    odAirMaskThree: Float
+    odAirMaskTwo: Float
+    odAirOne: Float
+    odAirPointFive: Float
+    odAirPointTwentyFive: Float
+    odAirSix: Float
+    odAirThree: Float
+    odAirTwo: Float
+    odBoneFour: Float
+    odBoneMaskFour: Float
+    odBoneMaskMarkedFour: Boolean
+    odBoneMaskMarkedOne: Boolean
+    odBoneMaskMarkedPointFive: Boolean
+    odBoneMaskMarkedThree: Boolean
+    odBoneMaskMarkedTwo: Boolean
+    odBoneMaskMax: Float
+    odBoneMaskMin: Float
+    odBoneMaskOne: Float
+    odBoneMaskPointFive: Float
+    odBoneMaskThree: Float
+    odBoneMaskTwo: Float
+    odBoneOne: Float
+    odBonePointFive: Float
+    odBoneThree: Float
+    odBoneTwo: Float
+    odClinicalResult: AudiometryClinicalEnum
+    odInssResult: AudiometryInssEnum
+    odIrfMasking: Float
+    odIrfMonosyllables: Float
+    odIrfSyllables: Float
+    odLossTypeResult: AudiometryLossTypeEnum
+    odMeatoscopy: String
+    odOrdinanceResult: AudiometryOrdinanceEnum
+    odSdtIndex: Float
+    odSrtIndex: Float
+    odSrtMasking: Float
+    oeAirEight: Float
+    oeAirFour: Float
+    oeAirHigherAvg: Float
+    oeAirLowerAvg: Float
+    oeAirMaskEight: Float
+    oeAirMaskFour: Float
+    oeAirMaskMarkedEight: Boolean
+    oeAirMaskMarkedFour: Boolean
+    oeAirMaskMarkedOne: Boolean
+    oeAirMaskMarkedPointFive: Boolean
+    oeAirMaskMarkedPointTwentyFive: Boolean
+    oeAirMaskMarkedSix: Boolean
+    oeAirMaskMarkedThree: Boolean
+    oeAirMaskMarkedTwo: Boolean
+    oeAirMaskMax: Float
+    oeAirMaskMin: Float
+    oeAirMaskOne: Float
+    oeAirMaskPointFive: Float
+    oeAirMaskPointTwentyFive: Float
+    oeAirMaskSix: Float
+    oeAirMaskThree: Float
+    oeAirMaskTwo: Float
+    oeAirOne: Float
+    oeAirPointFive: Float
+    oeAirPointTwentyFive: Float
+    oeAirSix: Float
+    oeAirThree: Float
+    oeAirTwo: Float
+    oeBoneFour: Float
+    oeBoneMaskFour: Float
+    oeBoneMaskMarkedFour: Boolean
+    oeBoneMaskMarkedOne: Boolean
+    oeBoneMaskMarkedPointFive: Boolean
+    oeBoneMaskMarkedThree: Boolean
+    oeBoneMaskMarkedTwo: Boolean
+    oeBoneMaskMax: Float
+    oeBoneMaskMin: Float
+    oeBoneMaskOne: Float
+    oeBoneMaskPointFive: Float
+    oeBoneMaskThree: Float
+    oeBoneMaskTwo: Float
+    oeBoneOne: Float
+    oeBonePointFive: Float
+    oeBoneThree: Float
+    oeBoneTwo: Float
+    oeClinicalResult: AudiometryClinicalEnum
+    oeInssResult: AudiometryInssEnum
+    oeIrfMasking: Float
+    oeIrfMonosyllables: Float
+    oeIrfSyllables: Float
+    oeLossTypeResult: AudiometryLossTypeEnum
+    oeMeatoscopy: String
+    oeOrdinanceResult: AudiometryOrdinanceEnum
+    oeSdtIndex: Float
+    oeSrtIndex: Float
+    oeSrtMasking: Float
+    responsibleForMeasuringId: String
+    result: String
+    state: State
+}
+
+input ExamByHealthProgramChanges {
+    toCreate: [ExamByHealthProgramInput!]!
+    toRemove: [String!]!
+    toUpdate: [ExamByHealthProgramUpdate!]!
+}
+
+input ExamByHealthProgramInput {
+    admission: Boolean!
+    backToWork: Boolean!
+    changeOfFunction: Boolean!
+    dismissal: Boolean!
+    examId: String!
+    periodic: Boolean!
+    periodicRangeId: String
+}
+
+input ExamByHealthProgramUpdate {
+    admission: Boolean!
+    backToWork: Boolean!
+    changeOfFunction: Boolean!
+    dismissal: Boolean!
+    examId: String!
+    id: String!
+    periodic: Boolean!
+    periodicRangeId: String
+}
+
+input ExamByOccupationChanges {
+    toCreate: [ExamByOccupationInput!]!
+    toRemove: [String!]!
+    toUpdate: [ExamByOccupationUpdate!]!
+}
+
+input ExamByOccupationInput {
+    admission: Boolean!
+    backToWork: Boolean!
+    changeOfFunction: Boolean!
+    dismissal: Boolean!
+    examId: String!
+    periodic: Boolean!
+    periodicRangeId: String
+}
+
+input ExamByOccupationUpdate {
+    admission: Boolean!
+    backToWork: Boolean!
+    changeOfFunction: Boolean!
+    dismissal: Boolean!
+    examId: String!
+    id: String!
+    periodic: Boolean!
+    periodicRangeId: String
+}
+
+input ExamByRiskChanges {
+    toCreate: [ExamByRiskInput!]!
+    toRemove: [String!]!
+    toUpdate: [ExamByRiskUpdate!]!
+}
+
+input ExamByRiskInput {
+    admission: Boolean!
+    backToWork: Boolean!
+    changeOfFunction: Boolean!
+    dismissal: Boolean!
+    examId: String!
+    periodic: Boolean!
+    periodicRangeId: String
+}
+
+input ExamByRiskUpdate {
+    admission: Boolean!
+    backToWork: Boolean!
+    changeOfFunction: Boolean!
+    dismissal: Boolean!
+    examId: String!
+    id: String!
+    periodic: Boolean!
+    periodicRangeId: String
+}
+
+input ExamDiagnosticImageInput {
+    attachments: [NamedAttachment!]
+    complementaryExamId: String
+    consultationId: String
+    crm: String
+    date: DateTime!
+    description: String
+    details: String
+    doctor: String
+    indicator: ExamResultIndicatorEnum!
+    observations: String
+    result: String!
+    state: State
+}
+
+input ExamDiagnosticImageUpdate {
+    attachments: [NamedAttachment!]
+    crm: String
+    description: String
+    details: String
+    doctor: String
+    id: String!
+    indicator: ExamResultIndicatorEnum
+    observations: String
+    result: String
+    state: State
+}
+
+input ExamIbmpInput {
+    biologicalMaterial: BiologicalMaterial!
+    examMeasure: ExamMeasure!
+    maximumAllowed: Float!
+    reference: Float!
+    riskAgentId: String!
+}
+
+input ExamIbmpUpdate {
+    biologicalMaterial: BiologicalMaterial
+    examMeasure: ExamMeasure
+    id: String!
+    maximumAllowed: Float
+    reference: Float
+    riskAgentId: String
+}
+
+input ExamInput {
+    admission: Boolean!
+    backToWork: Boolean!
+    changeOfFunction: Boolean!
+    description: String!
+    dismissal: Boolean!
+    groupAnalysis: [GroupAnalysisInput!]
+    ibmp: ExamIbmpInput
+    periodic: Boolean!
+    periodicRangeId: String
+    preparation: String
+    referenceId: String
+    resultType: ResultTypeEnum!
+}
+
+input ExamItemInput {
+    complementaryExamId: String
+    consultationId: String
+    crm: String
+    date: DateTime!
+    details: String
+    doctor: String
+    examItemValues: [ExamItemValueInput!]!
+    indicator: ExamResultIndicatorEnum!
+    observations: String
+    result: String!
+    state: State
+}
+
+input ExamItemUpdate {
+    crm: String
+    details: String
+    doctor: String
+    examItemValues: [ExamItemValueUpdate!]
+    id: String!
+    indicator: ExamResultIndicatorEnum
+    observations: String
+    result: String
+    state: State
+}
+
+input ExamItemValueInput {
+    analysisId: String!
+    percentageValue: Float
+    value: Float!
+}
+
+input ExamItemValueUpdate {
+    analysisId: String
+    id: String!
+    percentageValue: Float
+    value: Float
+}
+
+input ExamNormalInput {
+    complementaryExamId: String
+    consultationId: String!
+    crm: String
+    date: DateTime!
+    details: String
+    doctor: String
+    indicator: ExamResultIndicatorEnum!
+    observations: String
+    result: String!
+    state: State
+}
+
+input ExamNormalUpdate {
+    crm: String
+    details: String
+    doctor: String
+    id: String!
+    indicator: ExamResultIndicatorEnum
+    observations: String
+    result: String
+    state: State
+}
+
+input ExamOnConsultationInput {
+    accreditedId: String
+    examId: String!
+}
+
+input ExamOnConsultationUpdate {
+    toCreate: [ExamOnConsultationInput!]!
+    toRemove: [String!]!
+}
+
+input ExamOtologicalInput {
+    complementaryExamId: String
+    consultationId: String
+    crm: String
+    date: DateTime!
+    description: String
+    details: String
+    doctor: String
+    earParts: [EarPartInput!]!
+    evolutionaryCharacter: EvolutionaryCharacterEnum!
+    examLocation: String!
+    exposureTime: String!
+    indicator: ExamResultIndicatorEnum!
+    nexusNoise: Boolean!
+    noiseExposure: NoiseExposureEnum!
+    observations: String
+    occupational: Boolean!
+    otologicalDiagnosis: OtologicalDiagnosisEnum!
+    result: String!
+    state: State
+    timeUnit: TimeUnitEnum!
+    useOfIpe: UseOfAuricularIpeEnum!
+}
+
+input ExamOtologicalUpdate {
+    crm: String
+    description: String
+    details: String
+    doctor: String
+    earParts: [EarPartUpdate!]
+    evolutionaryCharacter: EvolutionaryCharacterEnum
+    examLocation: String
+    exposureTime: String
+    id: String!
+    indicator: ExamResultIndicatorEnum
+    nexusNoise: Boolean
+    noiseExposure: NoiseExposureEnum
+    observations: String
+    occupational: Boolean
+    otologicalDiagnosis: OtologicalDiagnosisEnum
+    result: String
+    state: State
+    timeUnit: TimeUnitEnum
+    useOfIpe: UseOfAuricularIpeEnum
+}
+
+input ExamSpirometryInput {
+    bronchodilator: Boolean!
+    calibrationDate: DateTime!
+    complementaryExamId: String
+    consultationId: String
+    crm: String
+    date: DateTime!
+    description: String
+    details: String
+    doctor: String
+    equipmentId: String!
+    examLocation: String
+    gaugingDate: DateTime!
+    inconclusiveData: Boolean!
+    indicator: ExamResultIndicatorEnum!
+    observations: String
+    posMeasuredFet: Float
+    posMeasuredFev: Float
+    posMeasuredFevFvc: Float
+    posMeasuredFevTwentyFiveSeventyFive: Float
+    posMeasuredFvc: Float
+    posMeasuredPef: Float
+    posMeasuredPif: Float
+    posPrevFet: Float
+    posPrevFev: Float
+    posPrevFevFvc: Float
+    posPrevFevTwentyFiveSeventyFive: Float
+    posPrevFvc: Float
+    posPrevPef: Float
+    posPrevPif: Float
+    preMeasuredFet: Float
+    preMeasuredFev: Float
+    preMeasuredFevFvc: Float
+    preMeasuredFevTwentyFiveSeventyFive: Float
+    preMeasuredFvc: Float
+    preMeasuredPef: Float
+    preMeasuredPif: Float
+    prePrevFet: Float
+    prePrevFev: Float
+    prePrevFevTwentyFiveSeventyFive: Float
+    prePrevFevfvc: Float
+    prePrevFvc: Float
+    prePrevPef: Float
+    prePrevPif: Float
+    responsibleForMeasuringId: String!
+    result: String!
+    smoker: Boolean!
+    state: State
+    timeBeingSmoker: Float
+}
+
+input ExamSpirometryUpdate {
+    bronchodilator: Boolean
+    calibrationDate: DateTime
+    crm: String
+    date: DateTime
+    description: String
+    details: String
+    doctor: String
+    equipmentId: String
+    examLocation: String
+    gaugingDate: DateTime
+    id: String!
+    inconclusiveData: Boolean
+    indicator: ExamResultIndicatorEnum
+    observations: String
+    posMeasuredFet: Float
+    posMeasuredFev: Float
+    posMeasuredFevFvc: Float
+    posMeasuredFevTwentyFiveSeventyFive: Float
+    posMeasuredFvc: Float
+    posMeasuredPef: Float
+    posMeasuredPif: Float
+    posPrevFet: Float
+    posPrevFev: Float
+    posPrevFevFvc: Float
+    posPrevFevTwentyFiveSeventyFive: Float
+    posPrevFvc: Float
+    posPrevPef: Float
+    posPrevPif: Float
+    preMeasuredFet: Float
+    preMeasuredFev: Float
+    preMeasuredFevFvc: Float
+    preMeasuredFevTwentyFiveSeventyFive: Float
+    preMeasuredFvc: Float
+    preMeasuredPef: Float
+    preMeasuredPif: Float
+    prePrevFet: Float
+    prePrevFev: Float
+    prePrevFevTwentyFiveSeventyFive: Float
+    prePrevFevfvc: Float
+    prePrevFvc: Float
+    prePrevPef: Float
+    prePrevPif: Float
+    responsibleForMeasuringId: String
+    result: String
+    smoker: Boolean
+    state: State
+    timeBeingSmoker: Float
+}
+
+input ExamUpdate {
+    admission: Boolean
+    backToWork: Boolean
+    changeOfFunction: Boolean
+    description: String
+    dismissal: Boolean
+    groupAnalysis: [GroupAnalysisUpdate!]
+    ibmp: ExamIbmpUpdate
+    id: String!
+    isActive: Boolean
+    periodic: Boolean
+    periodicRangeId: String
+    preparation: String
+    referenceId: String
+    resultType: ResultTypeEnum
+}
+
+input ExpectedGoalInput {
+    actionPlanId: String!
+    date: DateTime!
+    value: Float!
+}
+
+input ExpenseInput {
+    description: String!
+    incidence: IncidenceExpense!
+    referenceId: String
+    type: ExpenseType!
+}
+
+input ExpenseOnAccidentInput {
+    date: DateTime!
+    expenseId: String!
+    value: Float!
+}
+
+input ExpenseOnAccidentRemove {
+    date: DateTime!
+    expenseId: String!
+}
+
+input ExpenseOnAccidentUpdate {
+    toCreate: [ExpenseOnAccidentInput!]!
+    toRemove: [ExpenseOnAccidentRemove!]!
+    toUpdate: [ExpenseOnAccidentInput!]!
+}
+
+input ExpenseUpdate {
+    description: String
+    id: String!
+    incidence: IncidenceExpense
+    isActive: Boolean
+    referenceId: String
+    type: ExpenseType
+}
+
+input ExtinguishingSystemInput {
+    abnt: String
+    brand: String
+    description: String!
+    emptyWeight: Float
+    extinguishingCapacity: String
+    fireExtinguisherType: FireExtinguisherType
+    fullWeight: Float
+    inspectionPeriodicity: Float
+    inspections: [InspectionOnExtinguishingSystemInput!]
+    location: String
+    manufacturingYear: Float
+    model: String
+    physicalEnvironmentId: String!
+    purchaseDate: DateTime
+    situation: ExtinguishingSystemSituation!
+    systemType: ExtinguishingSystemType!
+}
+
+input ExtinguishingSystemInspectionInput {
+    completeValve: Boolean!
+    cylindricalValve: Boolean!
+    diffuserReplacement: Boolean!
+    drillUsed: Boolean!
+    extinguishingSystemId: String!
+    fireUsed: Boolean!
+    hose: Boolean!
+    hydrostaticTest: Boolean!
+    monometer: Boolean!
+    observation: String
+    painting: Boolean!
+    plannedDate: DateTime!
+    realDate: DateTime
+    realoaded: Boolean!
+    reloadDate: DateTime
+    responsibleId: String!
+    safetyValve: Boolean!
+    situation: InspectionSituation!
+    sundry: Boolean!
+    triggerReplacement: Boolean!
+}
+
+input ExtinguishingSystemUpdate {
+    abnt: String
+    brand: String
+    description: String
+    emptyWeight: Float
+    extinguishingCapacity: String
+    fireExtinguisherType: FireExtinguisherType
+    fullWeight: Float
+    id: String!
+    inspectionPeriodicity: Float
+    inspections: InspectionOnExtinguishingSystemChanges
+    location: String
+    manufacturingYear: Float
+    model: String
+    physicalEnvironmentId: String
+    purchaseDate: DateTime
+    situation: ExtinguishingSystemSituation
+    systemType: ExtinguishingSystemType
+}
+
+input FilterPerson {
+    field: String!
+    value: String!
+}
+
+input FireBrigadeComponentInput {
+    assignments: String
+    exitDate: DateTime
+    fireBrigadeId: String!
+    inclusionDate: DateTime!
+    personId: String!
+    specificFunction: FireBrigadeSpecificFunction!
+}
+
+input FireBrigadeComponentUpdate {
+    assignments: String
+    exitDate: DateTime
+    id: String!
+    inclusionDate: DateTime
+    specificFunction: FireBrigadeSpecificFunction
+}
+
+input FireBrigadeExamInput {
+    admission: Boolean!
+    backToWork: Boolean!
+    changeOfFunction: Boolean!
+    dismissal: Boolean!
+    examId: String!
+    fireBrigadeId: String!
+    periodic: Boolean!
+    periodicRangeId: String
+}
+
+input FireBrigadeExamUpdate {
+    admission: Boolean
+    backToWork: Boolean
+    changeOfFunction: Boolean
+    dismissal: Boolean
+    id: String!
+    periodic: Boolean
+    periodicRangeId: String
+}
+
+input FireBrigadeInput {
+    description: String!
+    endDate: DateTime
+    startDate: DateTime!
+}
+
+input FireBrigadeMeetingInput {
+    date: DateTime!
+    duration: String
+    fireBrigadeId: String!
+    meetingLocal: String
+    meetingType: MeetingType!
+    minutesMeeting: String
+    realDate: DateTime
+    subject: String!
+}
+
+input FireBrigadeMeetingUpdate {
+    date: DateTime
+    duration: String
+    id: String!
+    meetingLocal: String
+    meetingType: MeetingType
+    minutesMeeting: String
+    realDate: DateTime
+    subject: String
+}
+
+input FireBrigadeTrainingInput {
+    fireBrigadeId: String!
+    trainingId: String!
+    urgency: TrainingUrgency!
+}
+
+input FireBrigadeUpdate {
+    description: String
+    endDate: DateTime
+    id: String!
+    startDate: DateTime
+}
+
+input FloatRange {
+    max: Float
+    min: Float
+}
+
+input FuncionalHistoryInput {
+    costCenterId: String!
+    occupationId: String!
+    personId: String!
+    realizationDate: DateTime!
+    sefip: String
+}
+
+input FuncionalHistoryOnPersonInput {
+    costCenterId: String!
+    erpId: String
+    id: String
+    occupationId: String!
+    realizationDate: DateTime!
+    sefip: String
+}
+
+input FuncionalHistoryOnPersonUpdate {
+    toCreate: [FuncionalHistoryOnPersonInput!]!
+    toRemove: [DateTime!]!
+    toUpdate: [FuncionalHistoryOnPersonInput!]!
+}
+
+input FuncionalHistoryUpdate {
+    costCenterId: String
+    id: String!
+    occupationId: String
+    personId: String!
+    realizationDate: DateTime
+    sefip: String
+}
+
+input GeneratingSourceInput {
+    contentLength: Float
+    contentType: String
+    name: String!
+    sourcePicture: String
+    uploadUrl: String
+}
+
+input GeneratingSourceUpdate {
+    contentLength: Float
+    contentType: String
+    id: String!
+    isActive: Boolean
+    name: String
+    sourcePicture: String
+    uploadUrl: String
+}
+
+input GroupAnalysisInput {
+    analysis: [AnalysisInput!]
+    description: String!
+    examMeasure: ExamMeasure
+    hasPercent: Boolean!
+}
+
+input GroupAnalysisUpdate {
+    analysis: [AnalysisUpdate!]
+    description: String
+    examMeasure: ExamMeasure
+    hasPercent: Boolean
+    id: String
+}
+
+input HealthProgramInput {
+    description: String
+    exams: [ExamByHealthProgramInput!]
+    name: String!
+    programType: ProgramType!
+    referenceId: String
+}
+
+input HealthProgramUpdate {
+    description: String
+    exams: ExamByHealthProgramChanges
+    id: String!
+    isActive: Boolean
+    name: String!
+    programType: ProgramType
+    referenceId: String
+}
+
+input InspectionOnExtinguishingSystemChanges {
+    toCreate: [InspectionOnExtinguishingSystemInput!]!
+    toRemove: [String!]!
+    toUpdate: [InspectionOnExtinguishingSystemUpdate!]!
+}
+
+input InspectionOnExtinguishingSystemInput {
+    completeValve: Boolean!
+    cylindricalValve: Boolean!
+    diffuserReplacement: Boolean!
+    drillUsed: Boolean!
+    fireUsed: Boolean!
+    hose: Boolean!
+    hydrostaticTest: Boolean!
+    monometer: Boolean!
+    observation: String
+    painting: Boolean!
+    plannedDate: DateTime!
+    realDate: DateTime
+    realoaded: Boolean!
+    reloadDate: DateTime
+    responsibleId: String!
+    safetyValve: Boolean!
+    situation: InspectionSituation!
+    sundry: Boolean!
+    triggerReplacement: Boolean!
+}
+
+input InspectionOnExtinguishingSystemUpdate {
+    completeValve: Boolean!
+    cylindricalValve: Boolean!
+    diffuserReplacement: Boolean!
+    drillUsed: Boolean!
+    fireUsed: Boolean!
+    hose: Boolean!
+    hydrostaticTest: Boolean!
+    id: String!
+    monometer: Boolean!
+    observation: String
+    painting: Boolean!
+    plannedDate: DateTime!
+    realDate: DateTime
+    realoaded: Boolean!
+    reloadDate: DateTime
+    responsibleId: String!
+    safetyValve: Boolean!
+    situation: InspectionSituation!
+    sundry: Boolean!
+    triggerReplacement: Boolean!
+}
+
+input InvestigationCauseInput {
+    accidentCauseId: String!
+    branch: String!
+    investigationId: String!
+}
+
+input InvestigationCauseOnAccidentInput {
+    accidentCauseId: String!
+}
+
+input InvestigationCauseOnAccidentUpdate {
+    toCreate: [InvestigationCauseOnAccidentInput!]!
+    toRemove: [String!]!
+}
+
+input InvestigationInput {
+    accidentId: String!
+    attachments: [NamedAttachment!]
+    date: DateTime
+    defectiveEquipment: Boolean
+    improvisation: Boolean
+    investigationCauses: [InvestigationCauseOnAccidentInput!]
+    knewNorms: Boolean
+    mandateId: String!
+    personId: String!
+    report: String!
+    trained: Boolean
+    wasUsedEpi: Boolean
+}
+
+input InvestigationUpdate {
+    accidentId: String
+    attachments: [NamedAttachment!]
+    date: DateTime
+    defectiveEquipment: Boolean
+    id: String!
+    improvisation: Boolean
+    investigationCauses: InvestigationCauseOnAccidentUpdate
+    knewNorms: Boolean
+    mandateId: String
+    personId: String
+    report: String
+    trained: Boolean
+    wasUsedEpi: Boolean
+}
+
+input InviteInput {
+    email: String!
+    name: String
+    roleId: String
+}
+
+input IpeByRiskInput {
+    daysForReplacement: Float
+    ipeId: String!
+    riskId: String!
+}
+
+input IpeDeliveryInput {
+    amountReturned: Float
+    ca: String!
+    caExpirationDate: DateTime!
+    cost: Float
+    deliveryAmount: Float!
+    deliveryDate: DateTime!
+    effective: Boolean
+    employeeId: String!
+    issueDate: DateTime
+    lastMaintenanceDate: DateTime!
+    observation: String
+    reason: DeliveryReason!
+    returnDate: DateTime
+}
+
+input IpeDeliveryUpdate {
+    amountReturned: Float
+    ca: String
+    caExpirationDate: DateTime
+    cost: Float
+    deliveryAmount: Float
+    deliveryDate: DateTime
+    effective: Boolean
+    employeeId: String
+    id: String!
+    issueDate: DateTime
+    lastMaintenanceDate: DateTime
+    observation: String
+    reason: DeliveryReason
+    returnDate: DateTime
+}
+
+input IpeOnRiskInput {
+    daysForReplacement: Float
+    ipeId: String!
+}
+
+input IpeOnRiskUpdate {
+    toCreate: [IpeOnRiskInput!]!
+    toRemove: [String!]!
+}
+
+input MandateActionInput {
+    actionPlanId: String!
+    mandateId: String!
+}
+
+input MandateCostCenterInput {
+    costCenterId: String!
+    mandateId: String!
+}
+
+input MandateEventInput {
+    dataEnd: DateTime!
+    dateStart: DateTime!
+    mandateId: String!
+    referenceId: String!
+}
+
+input MandateEventInputByMandate {
+    dataEnd: DateTime!
+    dateStart: DateTime!
+    referenceId: String!
+}
+
+input MandateEventUpdate {
+    dateEnd: DateTime
+    dateStart: DateTime
+    done: Boolean
+    id: String!
+}
+
+input MandateInput {
+    costCenters: [CostCenterOnMandateInput!]
+    dateEnd: DateTime!
+    dateStart: DateTime!
+    description: String!
+    electionComissions: [ElectionComissionInputByMandate!]
+    electionLocal: String
+    electionOccurences: String
+    electionPresidentId: String
+    electionSecretaryId: String
+    endElectionHour: String
+    sessionPresidentId: String
+    sessionSecretaryId: String
+    startElectionHour: String
+}
+
+input MandateTrainingInput {
+    mandateId: String!
+    trainingId: String!
+    urgency: TrainingUrgency!
+}
+
+input MandateUpdate {
+    dateEnd: DateTime
+    dateStart: DateTime
+    description: String
+    electionLocal: String
+    electionOccurences: String
+    electionPresidentId: String
+    electionSecretaryId: String
+    endElectionHour: String
+    id: String!
+    sessionPresidentId: String
+    sessionSecretaryId: String
+    startElectionHour: String
+}
+
+input MeasurementByRiskInput {
+    amount: Float!
+    date: DateTime!
+    measuringInstrumentId: String!
+    riskId: String!
+}
+
+input MeasurementByRiskUpdate {
+    amount: Float!
+    date: DateTime!
+    id: String!
+    measuringInstrumentId: String!
+    riskId: String!
+}
+
+input MeasurementOnRiskInput {
+    amount: Float!
+    date: DateTime!
+    measuringInstrumentId: String!
+}
+
+input MeasurementOnRiskUpdate {
+    toCreate: [MeasurementOnRiskInput!]!
+    toRemove: [DateTime!]!
+    toUpdate: [MeasurementByRiskUpdate!]!
+}
+
+input MeasuringInstrumentInput {
+    calibrationDate: DateTime
+    description: String!
+    referenceId: String
+    valuationDate: DateTime
+}
+
+input MeasuringInstrumentUpdate {
+    calibrationDate: DateTime
+    description: String
+    id: String!
+    isActive: Boolean
+    referenceId: String
+    valuationDate: DateTime
+}
+
+input MedicalCertificateInput {
+    absenceTypeId: String
+    accidentId: String
+    allowanceTypeId: String
+    amountOfTreatmentDays: Float!
+    certificateType: CertificateType!
+    crmState: State
+    dateEnd: DateTime!
+    dateStart: DateTime!
+    doctorCrm: String
+    doctorName: String
+    icdGroupId: String
+    icdId: String
+    medicalRecordId: String!
+    observation: String
+    origin: CertificateOrigin!
+}
+
+input MedicalCertificateUpdate {
+    absenceTypeId: String
+    accidentId: String
+    allowanceTypeId: String
+    amountOfTreatmentDays: Float
+    certificateType: CertificateType
+    crmState: State
+    dateEnd: DateTime
+    dateStart: DateTime
+    doctorCrm: String
+    doctorName: String
+    icdGroupId: String
+    icdId: String
+    id: String!
+    medicalRecordId: String
+    observation: String
+    origin: CertificateOrigin
+}
+
+input MedicalRecordHealthProgramInput {
+    endDate: DateTime
+    healthProgramId: String!
+    medicalRecordId: String!
+    startDate: DateTime!
+}
+
+input MedicalRecordHealthProgramUpdate {
+    endDate: DateTime
+    healthProgramId: String!
+    id: String!
+    startDate: DateTime
+}
+
+input MedicalRecordInput {
+    amountConsumed: Float
+    armSize: Float
+    birthday: DateTime!
+    bloodDonator: Boolean!
+    bloodType: BloodType!
+    candidate: Boolean!
+    elbowHeight: Float
+    eyeColor: EyeColor
+    eyeHeight: Float
+    forearmSize: Float
+    gender: Gender!
+    hairColor: HairColor
+    handSize: Float
+    height: Float!
+    historic: String
+    individualRegistration: String
+    kneeHeight: Float
+    legLength: Float
+    name: String!
+    nippleLine: Float
+    personId: String
+    pubicHeight: Float
+    shoeSize: Float
+    skinColor: SkinColor
+    smoker: Boolean!
+    tamagistPeriod: Float
+    weight: Float!
+}
+
+input MedicalRecordUpdate {
+    amountConsumed: Float
+    armSize: Float
+    birthday: DateTime
+    bloodDonator: Boolean
+    bloodType: BloodType
+    candidate: Boolean
+    elbowHeight: Float
+    eyeColor: EyeColor
+    eyeHeight: Float
+    forearmSize: Float
+    gender: Gender
+    hairColor: HairColor
+    handSize: Float
+    height: Float
+    historic: String
+    id: String!
+    individualRegistration: String
+    kneeHeight: Float
+    legLength: Float
+    name: String
+    nippleLine: Float
+    personId: String
+    pubicHeight: Float
+    shoeSize: Float
+    skinColor: SkinColor
+    smoker: Boolean
+    tamagistPeriod: Float
+    weight: Float
+}
+
+input MedicalRecordVaccineInput {
+    date: DateTime!
+    dose: Float!
+    medicalRecordId: String!
+    status: MedicalRecordVaccineStatus!
+    vaccineId: String!
+}
+
+input MedicalRecordVaccineUpdate {
+    date: DateTime
+    dose: Float
+    id: String!
+    status: MedicalRecordVaccineStatus
+    vaccineId: String
+}
+
+input MedicalReferralInput {
+    date: DateTime!
+    medicalRecordId: String!
+    observation: String
+    specialty: MedicalSpecialty!
+}
+
+input MedicalReferralUpdate {
+    date: DateTime
+    id: String!
+    medicalRecordId: String
+    observation: String
+    specialty: MedicalSpecialty
+}
+
+input MedicineInput {
+    activePrincipleId: String
+    ambulatoryMedicine: Boolean!
+    contraindication: String
+    description: String!
+    indication: String
+    label: MedicineLabelEnum
+    laboratoryId: String
+    presentation: String!
+    referenceId: String
+}
+
+input MedicineOnDiagnosticChanges {
+    toCreate: [MedicineOnDiagnosticInput!]!
+    toRemove: [String!]!
+    toUpdate: [MedicineOnDiagnosticUpdate!]!
+}
+
+input MedicineOnDiagnosticInput {
+    amount: Float!
+    measurementUnit: MedicineMeasurementUnit
+    medicineId: String!
+    posology: String
+    showsInPrescription: Boolean!
+}
+
+input MedicineOnDiagnosticUpdate {
+    amount: Float!
+    id: String!
+    measurementUnit: MedicineMeasurementUnit
+    medicineId: String!
+    posology: String
+    showsInPrescription: Boolean!
+}
+
+input MedicineUpdate {
+    activePrincipleId: String
+    ambulatoryMedicine: Boolean
+    contraindication: String
+    description: String
+    id: String!
+    indication: String
+    isActive: Boolean
+    label: MedicineLabelEnum
+    laboratoryId: String
+    presentation: String
+    referenceId: String
+}
+
+input MeetingActionInput {
+    active: Boolean!
+    dateAction: DateTime!
+    description: String!
+    meetingId: String!
+}
+
+input MeetingActionUpdate {
+    active: Boolean
+    dateAction: DateTime
+    description: String
+    id: String!
+    meetingId: String
+}
+
+input MeetingInput {
+    actions: [ActionOnMeetingInput!]
+    date: DateTime!
+    duration: String
+    mandateId: String!
+    meetingLocal: String
+    meetingType: MeetingType!
+    minutesMeeting: String
+    participants: [ParticipantOnMeetingInput!]
+    realDate: DateTime
+    subject: String!
+}
+
+input MeetingParticipantInput {
+    attendance: Boolean
+    justification: String
+    meetingId: String!
+    personId: String!
+}
+
+input MeetingParticipantUpdate {
+    attendance: Boolean
+    id: String!
+    justification: String
+    meetingId: String
+    personId: String
+}
+
+input MeetingUpdate {
+    actions: ActionOnMeetingUpdate
+    date: DateTime
+    duration: String
+    id: String!
+    meetingLocal: String
+    meetingType: MeetingType
+    minutesMeeting: String
+    participants: ParticipantOnMeetingUpdate
+    realDate: DateTime
+    subject: String
+}
+
+input NamedAttachment {
+    contentLength: Float!
+    contentType: String!
+    filename: String!
+}
+
+input OccupationByRiskInput {
+    occupationId: String!
+    riskId: String!
+}
+
+input OccupationInput {
+    cbo: String
+    description: String!
+    equipments: [EquipmentOnOccupationInput!]
+    erpId: String
+    exams: [ExamByOccupationInput!]
+    needEquipment: Boolean
+    referenceId: String
+}
+
+input OccupationIntegration {
+    branch: String!
+    cbo: String
+    description: String
+    erpId: String
+    id: String
+    needEquipment: Boolean
+    referenceId: String
+}
+
+input OccupationOnRiskInput {
+    occupationId: String!
+}
+
+input OccupationOnRiskUpdate {
+    toCreate: [OccupationOnRiskInput!]!
+    toRemove: [String!]!
+}
+
+input OccupationOnVaccineInput {
+    occupationId: String!
+}
+
+input OccupationOnVaccineUpdate {
+    toCreate: [OccupationOnVaccineInput!]!
+    toRemove: [String!]!
+}
+
+input OccupationUpdate {
+    cbo: String
+    description: String
+    equipments: EquipmentOnOccupationUpdate
+    exams: ExamByOccupationChanges
+    id: String!
+    isActive: Boolean
+    needEquipment: Boolean
+    referenceId: String
+}
+
+input OccupationalHealthCertificateInput {
+    cancelDate: DateTime
+    civilMaintenance: Boolean
+    cold: Boolean
+    confined: Boolean
+    electricity: Boolean
+    emissionDate: DateTime
+    excavation: Boolean
+    explosives: Boolean
+    height: Boolean
+    loadHandling: Boolean
+    medicalRecordId: String!
+    nature: Nature!
+    observation: String
+    plataform: Boolean
+    pressure: Boolean
+    radiation: Boolean
+    recommendation: Recommendation
+    scheduleDate: DateTime!
+    welding: Boolean
+}
+
+input OccupationalHealthCertificateUpdate {
+    cancelDate: DateTime
+    civilMaintenance: Boolean
+    cold: Boolean
+    confined: Boolean
+    electricity: Boolean
+    emissionDate: DateTime
+    excavation: Boolean
+    explosives: Boolean
+    height: Boolean
+    id: String!
+    loadHandling: Boolean
+    medicalRecordId: String
+    nature: Nature
+    observation: String
+    plataform: Boolean
+    pressure: Boolean
+    radiation: Boolean
+    recommendation: Recommendation
+    scheduleDate: DateTime
+    welding: Boolean
+}
+
+input OrganizationInput {
+    branch: BranchInput!
+    erpCompany: String
+    name: String!
+    socialName: String
+    utmData: UtmDataInput
+}
+
+input OrganizationOwnershipInput {
+    organizationId: String!
+    userId: String!
+}
+
+input OrganizationUpdateInput {
+    erpCompany: String
+    name: String
+    socialName: String
+}
+
+input OrthoRaterInput {
+    aggravation: OphthalmologicAggravationEnum!
+    calibrationDate: DateTime!
+    closeBothEyes: OrthoRaterValueEnum!
+    closeFusion: String
+    closeFusionResponse: OrthoRaterResponseEnum!
+    closeLateralPhoria: PhoriaEnum!
+    closeLeftEye: OrthoRaterValueEnum!
+    closeRightEye: OrthoRaterValueEnum!
+    closeStereopsis: String
+    closeStereopsisResponse: OrthoRaterResponseEnum!
+    closeVerticalPhoria: PhoriaEnum!
+    closeWithCorrection: Boolean!
+    complementaryExamId: String
+    consultationId: String
+    correction: OphthalmologicCorrectionEnum!
+    crm: String
+    date: DateTime!
+    details: String
+    doctor: String
+    equipmentId: String!
+    farBothEyes: OrthoRaterValueEnum!
+    farFusion: String
+    farFusionResponse: OrthoRaterResponseEnum!
+    farLateralPhoria: PhoriaEnum!
+    farLeftEye: OrthoRaterValueEnum!
+    farRightEye: OrthoRaterValueEnum!
+    farStereopsis: String
+    farStereopsisResponse: OrthoRaterResponseEnum!
+    farVerticalPhoria: PhoriaEnum!
+    farWithCorrection: Boolean!
+    gaugingDate: DateTime!
+    indicator: ExamResultIndicatorEnum!
+    observations: String
+    responsibleForMeasuringId: String!
+    result: String!
+    sees23: Boolean!
+    sees32: Boolean!
+    sees56: Boolean!
+    sees63: Boolean!
+    sees79: Boolean!
+    sees92: Boolean!
+    state: State
+    visualFieldLeftEye: VisualFieldEnum!
+    visualFieldRightEye: VisualFieldEnum!
+}
+
+input OrthoRaterUpdate {
+    aggravation: OphthalmologicAggravationEnum
+    calibrationDate: DateTime
+    closeBothEyes: OrthoRaterValueEnum
+    closeFusion: String
+    closeFusionResponse: OrthoRaterResponseEnum
+    closeLateralPhoria: PhoriaEnum
+    closeLeftEye: OrthoRaterValueEnum
+    closeRightEye: OrthoRaterValueEnum
+    closeStereopsis: String
+    closeStereopsisResponse: OrthoRaterResponseEnum
+    closeVerticalPhoria: PhoriaEnum
+    closeWithCorrection: Boolean
+    correction: OphthalmologicCorrectionEnum
+    crm: String
+    details: String
+    doctor: String
+    equipmentId: String
+    farBothEyes: OrthoRaterValueEnum
+    farFusion: String
+    farFusionResponse: OrthoRaterResponseEnum
+    farLateralPhoria: PhoriaEnum
+    farLeftEye: OrthoRaterValueEnum
+    farRightEye: OrthoRaterValueEnum
+    farStereopsis: String
+    farStereopsisResponse: OrthoRaterResponseEnum
+    farVerticalPhoria: PhoriaEnum
+    farWithCorrection: Boolean
+    gaugingDate: DateTime
+    id: String!
+    indicator: ExamResultIndicatorEnum
+    observations: String
+    responsibleForMeasuringId: String
+    result: String
+    sees23: Boolean
+    sees32: Boolean
+    sees56: Boolean
+    sees63: Boolean
+    sees79: Boolean
+    sees92: Boolean
+    state: State
+    visualFieldLeftEye: VisualFieldEnum
+    visualFieldRightEye: VisualFieldEnum
+}
+
+input Pagination {
+    limit: Int = 10
+    skip: Int = 0
+}
+
+input PaginationDefaultQueryInput {
+    identifier: String
+    onlyActive: Boolean
+}
+
+input PaginationPersonQueryInput {
+    filter: FilterPerson
+    onlyActive: Boolean
+}
+
+input ParticipantOnMeetingInput {
+    attendance: Boolean
+    justification: String
+    personId: String!
+}
+
+input ParticipantOnMeetingUpdate {
+    toCreate: [ParticipantOnMeetingInput!]!
+    toRemove: [String!]!
+    toUpdate: [ParticipantOnMeetingInput!]!
+}
+
+input PeriodicRangeInput {
+    ageRanges: [AgeRangeInput!]!
+    description: String!
+    gender: PeriodicRangeGenderEnum!
+    postAdmission: Float
+}
+
+input PeriodicRangeUpdate {
+    ageRanges: [AgeRangeInput!]
+    description: String
+    gender: PeriodicRangeGenderEnum
+    id: String!
+    isActive: Boolean
+    postAdmission: Float
+}
+
+input PersonByRiskInput {
+    personId: String!
+    riskId: String!
+}
+
+input PersonHistoryActivateInput {
+    activateDate: DateTime!
+    deactivateDate: DateTime
+    personId: String!
+}
+
+input PersonHistoryActivateUpdate {
+    deactivateDate: DateTime!
+    personId: String!
+}
+
+input PersonInput {
+    address: String
+    admissionDate: DateTime
+    birthday: DateTime!
+    city: String
+    civilStatus: CivilStatus
+    contentLength: Float
+    contentType: String
+    costCenterId: String
+    ctps: String
+    dependents: [DependentOnPersonInput!]
+    dismissalDate: DateTime
+    educationLevel: EducationLevel
+    email: String
+    employeeSituation: EmployeeSituation
+    erpId: String
+    funcionalHistories: [FuncionalHistoryOnPersonInput!]
+    gender: Gender!
+    generalRegistration: String
+    individualRegistration: String!
+    mothersName: String
+    name: String!
+    neighborhood: String
+    numberAddress: String
+    occupationId: String
+    pisCode: String
+    profilePicture: String
+    registration: String
+    sefip: String
+    state: String
+    tasks: [EmployeeTaskOnPersonInput!]
+    telephone: String
+    trainingHistories: [TrainingHistoryOnPersonInput!]
+    unicESocialId: String
+    uploadUrl: String
+    user: String
+    workShiftId: String
+    zipCode: String
+}
+
+input PersonOnRiskInput {
+    personId: String!
+}
+
+input PersonOnRiskUpdate {
+    toCreate: [PersonOnRiskInput!]!
+    toRemove: [String!]!
+}
+
+input PersonUpdate {
+    address: String
+    admissionDate: DateTime
+    birthday: DateTime
+    city: String
+    civilStatus: CivilStatus
+    contentLength: Float
+    contentType: String
+    costCenterId: String
+    ctps: String
+    dependents: DependentOnPersonUpdate
+    dismissalDate: DateTime
+    educationLevel: EducationLevel
+    email: String
+    employeeSituation: EmployeeSituation
+    funcionalHistories: FuncionalHistoryOnPersonUpdate
+    gender: Gender
+    generalRegistration: String
+    id: String!
+    individualRegistration: String
+    isActive: Boolean
+    mothersName: String
+    name: String
+    neighborhood: String
+    numberAddress: String
+    occupationId: String
+    pisCode: String
+    profilePicture: String
+    registration: String
+    sefip: String
+    state: String
+    taskId: String
+    tasks: EmployeeTaskOnPersonUpdate
+    telephone: String
+    trainingHistories: TrainingHistoryOnPersonUpdate
+    unicESocialId: String
+    uploadUrl: String
+    user: String
+    workShiftId: String
+    zipCode: String
+}
+
+input PhysicalEnvironmentInput {
+    ceilingDetailing: String
+    ceilingMaterial: CeilingMaterial
+    description: String!
+    displayDetailing: String
+    displayType: DisplayType
+    doorDetailing: String
+    doorMaterial: DoorMaterial
+    firstCoatDetailing: String
+    firstCoatMaterial: FirstCoatMaterial
+    floorDetailing: String
+    floorMaterial: FloorMaterial
+    heightCeiling: Float
+    lightingDetailing: String
+    lightingMaterial: LightingMaterial
+    machinery: String
+    riskMapPicture: String
+    secondCoatDetailing: String
+    secondCoatMaterial: SecondCoatMaterial
+    uploadUrl: String
+    wallDetailing: String
+    wallMaterial: WallMaterial
+    windowDetailing: String
+    windowMaterial: WindowMaterial
+}
+
+input PhysicalEnvironmentUpdate {
+    ceilingDetailing: String
+    ceilingMaterial: CeilingMaterial
+    contentLength: Float
+    contentType: String
+    description: String
+    displayDetailing: String
+    displayType: DisplayType
+    doorDetailing: String
+    doorMaterial: DoorMaterial
+    firstCoatDetailing: String
+    firstCoatMaterial: FirstCoatMaterial
+    floorDetailing: String
+    floorMaterial: FloorMaterial
+    heightCeiling: Float
+    id: String!
+    isActive: Boolean
+    lightingDetailing: String
+    lightingMaterial: LightingMaterial
+    machinery: String
+    riskMapPicture: String
+    secondCoatDetailing: String
+    secondCoatMaterial: SecondCoatMaterial
+    uploadUrl: String
+    wallDetailing: String
+    wallMaterial: WallMaterial
+    windowDetailing: String
+    windowMaterial: WindowMaterial
+}
+
+input QuestionsGroupInput {
+    description: String!
+    questionsQuiz: [QuestionsInput!]
+}
+
+input QuestionsGroupUpdate {
+    description: String
+    id: String
+    questionsQuiz: [QuestionsUpdate!]
+}
+
+input QuestionsInput {
+    defaultOption: String
+    description: String!
+    gender: QuestionGenderEnum!
+    hasDetails: Boolean!
+    order: Float!
+    required: Boolean!
+    responseOptions: [ResponseOptionsInput!]
+    responseType: ResponseType!
+}
+
+input QuestionsUpdate {
+    defaultOption: String
+    description: String
+    gender: QuestionGenderEnum
+    hasDetails: Boolean
+    id: String
+    order: Float
+    required: Boolean
+    responseOptions: [ResponseOptionsUpdate!]
+    responseType: ResponseType
+}
+
+input QuizInput {
+    description: String!
+    questionsGroup: [QuestionsGroupInput!]
+}
+
+input QuizUpdate {
+    description: String
+    id: String!
+    isActive: Boolean
+    questionsGroup: [QuestionsGroupUpdate!]
+}
+
+input RealGoalInput {
+    actionPlanId: String!
+    date: DateTime!
+    value: Float!
+}
+
+input ReferencesInput {
+    gender: ExamGenderEnum!
+    maxAge: Float!
+    maxPercent: Float
+    maxValue: Float!
+    minAge: Float!
+    minPercent: Float
+    minValue: Float!
+}
+
+input ReferencesUpdate {
+    gender: ExamGenderEnum
+    id: String
+    maxAge: Float
+    maxPercent: Float
+    maxValue: Float
+    minAge: Float
+    minPercent: Float
+    minValue: Float
+}
+
+input ResponseClinicalQuizInput {
+    id: String
+    questionId: String!
+    response: String
+    responseOptionId: String
+}
+
+input ResponseClinicalQuizUpdate {
+    id: String!
+    questionId: String!
+    response: String
+    responseOptionId: String
+}
+
+input ResponseOptionsInput {
+    description: String!
+}
+
+input ResponseOptionsUpdate {
+    description: String
+    id: String
+}
+
+input ResponsibleActionInput {
+    actionPlanId: String!
+    personId: String!
+}
+
+input ResultExamIbmpInput {
+    complementaryExamId: String
+    consultationId: String
+    crm: String
+    date: DateTime!
+    details: String
+    doctor: String
+    indicator: ExamResultIndicatorEnum!
+    observations: String
+    quantityFound: Float!
+    result: String!
+    state: State
+}
+
+input ResultExamIbmpUpdate {
+    crm: String
+    details: String
+    doctor: String
+    id: String!
+    indicator: ExamResultIndicatorEnum
+    observations: String
+    quantityFound: Float
+    result: String
+    state: State
+}
+
+input RiskAgentInput {
+    activeSubstance: String
+    bonus: AgentBonus
+    classification: AgentClassification
+    description: String!
+    endurance: String
+    entrance: String
+    evaluation: AgentEvaluation!
+    group: AgentGroup!
+    pathogenicity: String
+    propagation: String
+    source: String
+    study: String
+    symptomatology: String
+    transmissibility: String
+    transmissionWays: String
+    virulence: String
+}
+
+input RiskAgentUpdate {
+    activeSubstance: String
+    bonus: AgentBonus
+    classification: AgentClassification
+    description: String
+    endurance: String
+    entrance: String
+    evaluation: AgentEvaluation
+    group: AgentGroup
+    id: String!
+    isActive: Boolean
+    pathogenicity: String
+    propagation: String
+    source: String
+    study: String
+    symptomatology: String
+    transmissibility: String
+    transmissionWays: String
+    virulence: String
+}
+
+input RiskCompositionInput {
+    riskIds: [String!]!
+}
+
+input RiskCompositionUpdate {
+    id: String!
+    riskIds: [String!]!
+}
+
+input RiskInput {
+    actionLevel: Float
+    agentId: String!
+    category: RiskCategory
+    consider: ConsiderPrint
+    controlMeasures: [ControlMeasureOnRiskInput!]
+    coordinateX: Float
+    coordinateY: Float
+    costCenters: [CostCenterOnRiskInput!]
+    damageCaused: String
+    departments: [DepartmentOnRiskInput!]
+    desiredSituation: String
+    eliminationDate: DateTime
+    environmentId: String!
+    ergonomicStatus: ErgonomicStatus
+    exams: [ExamByRiskInput!]
+    exhibitionType: ExhibitionType
+    exposureTime: String
+    generatingSourceId: String!
+    intensity: RiskIntensity
+    interval: String
+    ipes: [IpeOnRiskInput!]
+    legalFramework: String
+    measureType: RiskMeasureType
+    measurements: [MeasurementOnRiskInput!]
+    needCpe: Boolean
+    needIpe: Boolean
+    occupations: [OccupationOnRiskInput!]
+    persons: [PersonOnRiskInput!]
+    recognitionDate: DateTime!
+    repetition: String
+    riskDegree: RiskDegree
+    riskMap: RiskMap
+    situationFound: String
+    tasks: [TaskOnRiskInput!]
+    techniqueUsed: String
+    trainings: [TrainingOnRiskInput!]
+    unitMeasurement: RiskMeasure
+}
+
+input RiskUpdate {
+    actionLevel: Float
+    agentId: String
+    category: RiskCategory
+    compositionId: String
+    consider: ConsiderPrint
+    controlMeasures: ControlMeasureOnRiskUpdate
+    coordinateX: Float
+    coordinateY: Float
+    costCenters: CostCenterOnRiskUpdate
+    damageCaused: String
+    departments: DepartmentOnRiskUpdate
+    desiredSituation: String
+    eliminationDate: DateTime
+    environmentId: String
+    ergonomicStatus: ErgonomicStatus
+    exams: ExamByRiskChanges
+    exhibitionType: ExhibitionType
+    exposureTime: String
+    generatingSourceId: String
+    id: String!
+    intensity: RiskIntensity
+    interval: String
+    ipes: IpeOnRiskUpdate
+    legalFramework: String
+    measureType: RiskMeasureType
+    measurements: MeasurementOnRiskUpdate
+    needCpe: Boolean
+    needIpe: Boolean
+    occupations: OccupationOnRiskUpdate
+    persons: PersonOnRiskUpdate
+    recognitionDate: DateTime
+    repetition: String
+    riskDegree: RiskDegree
+    riskMap: RiskMap
+    situationFound: String
+    tasks: TaskOnRiskUpdate
+    techniqueUsed: String
+    trainings: TrainingOnRiskUpdate
+    unitMeasurement: RiskMeasure
+}
+
+input RoleUpdate {
+    roleId: String!
+    userId: String!
+}
+
+input ScheduleRestrictionInput {
+    dateEnd: DateTime!
+    dateStart: DateTime!
+    doctorId: String!
+    observation: String
+    type: RestrictionType!
+}
+
+input ScheduleRestrictionUpdate {
+    dateEnd: DateTime
+    dateStart: DateTime
+    doctorId: String
+    id: String!
+    observation: String
+    type: RestrictionType
+}
+
+input SessionInput {
+    email: String!
+    password: String!
+    timeZone: String
+    utm: UTMInput
+}
+
+input SipatEventInput {
+    comments: String
+    cost: Float
+    dateEnd: DateTime!
+    dateStart: DateTime!
+    localEvent: String!
+    personId: String!
+    sipatId: String!
+    subject: String!
+}
+
+input SipatEventUpdate {
+    comments: String
+    cost: Float
+    dateEnd: DateTime
+    dateStart: DateTime
+    id: String!
+    localEvent: String
+    personId: String
+    subject: String
+}
+
+input SipatInput {
+    attachments: [NamedAttachment!]
+    comments: String
+    dateEnd: DateTime!
+    dateStart: DateTime!
+    description: String!
+    mandateId: String!
+    sipatEvents: [EventOnSipatInput!]
+}
+
+input SipatUpdate {
+    attachments: [NamedAttachment!]
+    comments: String
+    dateEnd: DateTime
+    dateStart: DateTime
+    description: String
+    id: String!
+    sipatEvents: EventOnSipatUpdate
+}
+
+input SnellenInput {
+    aggravation: OphthalmologicAggravationEnum!
+    bothEyes: SnellenValue!
+    calibrationDate: DateTime!
+    complementaryExamId: String
+    consultationId: String
+    correction: OphthalmologicCorrectionEnum!
+    crm: String
+    date: DateTime!
+    details: String
+    doctor: String
+    equipmentId: String!
+    gaugingDate: DateTime!
+    indicator: ExamResultIndicatorEnum!
+    leftEye: SnellenValue!
+    observations: String
+    responsibleForMeasuringId: String!
+    result: String!
+    rightEye: SnellenValue!
+    state: State
+    withCorrection: Boolean!
+}
+
+input SnellenUpdate {
+    aggravation: OphthalmologicAggravationEnum
+    bothEyes: SnellenValue
+    calibrationDate: DateTime
+    correction: OphthalmologicCorrectionEnum
+    crm: String
+    details: String
+    doctor: String
+    equipmentId: String
+    gaugingDate: DateTime
+    id: String!
+    indicator: ExamResultIndicatorEnum
+    leftEye: SnellenValue
+    observations: String
+    responsibleForMeasuringId: String
+    result: String
+    rightEye: SnellenValue
+    state: State
+    withCorrection: Boolean
+}
+
+input StabilityTypeInput {
+    description: String!
+    referenceId: String
+}
+
+input StabilityTypeIntegration {
+    branch: String!
+    description: String
+    erpId: String
+    id: String
+}
+
+input StabilityTypeUpdate {
+    description: String
+    id: String!
+    referenceId: String
+}
+
+input StatementResponsibilityInput {
+    description: String!
+    statement: String!
+}
+
+input StatementResponsibilityUpdate {
+    description: String
+    id: String!
+    isActive: Boolean
+    statement: String
+}
+
+input SuggestionBoxInput {
+    comments: String
+    description: String!
+    localSuggestion: String!
+    mandateId: String!
+    personId: String!
+    priority: Priority!
+    status: StatusSuggestion!
+}
+
+input SuggestionBoxUpdate {
+    comments: String
+    description: String
+    id: String!
+    localSuggestion: String
+    personId: String
+    priority: Priority
+    status: StatusSuggestion
+}
+
+input TaskByRiskInput {
+    riskId: String!
+    taskId: String!
+}
+
+input TaskInput {
+    description: String
+    effort: Effort
+    name: String!
+    workedHours: String
+}
+
+input TaskOnRiskInput {
+    taskId: String!
+}
+
+input TaskOnRiskUpdate {
+    toCreate: [TaskOnRiskInput!]!
+    toRemove: [String!]!
+}
+
+input TaskUpdate {
+    description: String
+    effort: Effort
+    id: String!
+    isActive: Boolean
+    name: String
+    workedHours: String
+}
+
+input TimePointInput {
+    day: DayOfWeek!
+    hour: String!
+}
+
+input TrainingByRiskInput {
+    riskId: String!
+    trainingId: String!
+    urgency: TrainingUrgency!
+}
+
+input TrainingHistoryInput {
+    approved: Boolean
+    completionDate: DateTime
+    erpId: String
+    expectedDate: DateTime!
+    expirationDate: DateTime
+    personId: String!
+    trainingId: String!
+}
+
+input TrainingHistoryOnPersonInput {
+    approved: Boolean
+    completionDate: DateTime
+    erpId: String
+    expectedDate: DateTime!
+    expirationDate: DateTime
+    id: String
+    trainingId: String!
+}
+
+input TrainingHistoryOnPersonRemove {
+    expectedDate: DateTime!
+    trainingId: String!
+}
+
+input TrainingHistoryOnPersonUpdate {
+    toCreate: [TrainingHistoryOnPersonInput!]!
+    toRemove: [TrainingHistoryOnPersonRemove!]!
+    toUpdate: [TrainingHistoryOnPersonInput!]!
+}
+
+input TrainingHistoryUpdate {
+    approved: Boolean
+    completionDate: DateTime
+    erpId: String
+    expectedDate: DateTime
+    expirationDate: DateTime
+    id: String!
+    personId: String!
+    trainingId: String
+}
+
+input TrainingInput {
+    description: String!
+    erpId: String
+    referenceId: String
+}
+
+input TrainingIntegration {
+    branch: String!
+    description: String
+    erpId: String
+    id: String
+    referenceId: String
+}
+
+input TrainingOnRiskInput {
+    trainingId: String!
+    urgency: TrainingUrgency!
+}
+
+input TrainingOnRiskUpdate {
+    toCreate: [TrainingOnRiskInput!]!
+    toRemove: [String!]!
+}
+
+input TrainingUpdate {
+    description: String
+    id: String!
+    isActive: Boolean
+    referenceId: String
+}
+
+input UTMInput {
+    campaign: String
+    content: String
+    medium: String!
+    source: String!
+    term: String
+}
+
+input UrinalysisInput {
+    bilirubin: BilirubinEnum!
+    complementaryExamId: String
+    consultationId: String
+    crm: String
+    date: DateTime!
+    density: DensityEnum!
+    details: String
+    doctor: String
+    glycolysis: GlycolysisEnum!
+    indicator: ExamResultIndicatorEnum!
+    ketones: KetonesEnum!
+    leukocytes: LeukocytesEnum!
+    nitrites: NitritesEnum!
+    observations: String
+    ph: PhEnum!
+    proteins: ProteinsEnum!
+    redCells: RedCellsEnum!
+    result: String!
+    state: State
+    urobilinogen: UrobilinogenEnum!
+}
+
+input UrinalysisUpdate {
+    bilirubin: BilirubinEnum
+    crm: String
+    density: DensityEnum
+    details: String
+    doctor: String
+    glycolysis: GlycolysisEnum
+    id: String!
+    indicator: ExamResultIndicatorEnum
+    ketones: KetonesEnum
+    leukocytes: LeukocytesEnum
+    nitrites: NitritesEnum
+    observations: String
+    ph: PhEnum
+    proteins: ProteinsEnum
+    redCells: RedCellsEnum
+    result: String
+    state: State
+    urobilinogen: UrobilinogenEnum
+}
+
+input UserCreationInput {
+    address: String
+    birthDate: String
+    documentNumber: String
+    educationLevel: EducationLevel
+    email: String
+    gender: UserGender
+    inviteToken: String
+    name: String!
+    organization: OrganizationInput
+    password: String!
+    utm: UTMInput
+}
+
+input UserRoleInput {
+    document: String
+    roleId: String!
+    state: String
+    userId: String!
+}
+
+input UserRoleUpdate {
+    document: String
+    id: String
+    isBlocked: Boolean!
+    roleId: String!
+    state: String
+}
+
+input UserUpdateInput {
+    address: String
+    birthDate: String
+    currentPassword: String
+    documentNumber: String
+    educationLevel: EducationLevel
+    email: String
+    gender: UserGender
+    name: String
+    password: String
+}
+
+input UtmDataInput {
+    referrer: String
+    utmCampaign: String
+    utmContent: String
+    utmMedium: String
+    utmSource: String
+    utmTerm: String
+}
+
+input VaccineCostCenterInput {
+    costCenterId: String!
+    vaccineId: String!
+}
+
+input VaccineInput {
+    advantages: String
+    description: String!
+    effects: String
+    fromAge: Float!
+    gender: VaccineGenderEnum!
+    recommendations: String
+    referenceId: String
+    reinforcement: VaccineReinforcementEnum!
+    reinforcementInterval: Float
+    secondDoseInterval: Float
+    thirdDoseInterval: Float
+    toAge: Float!
+    vaccineCostCenter: [CostCenterOnVaccineInput!]
+    vaccineOccupation: [OccupationOnVaccineInput!]
+}
+
+input VaccineOccupationInput {
+    occupationId: String!
+    vaccineId: String!
+}
+
+input VaccineUpdate {
+    advantages: String
+    description: String
+    effects: String
+    fromAge: Float
+    gender: VaccineGenderEnum
+    id: String!
+    isActive: Boolean
+    recommendations: String
+    referenceId: String
+    reinforcement: VaccineReinforcementEnum
+    reinforcementInterval: Float
+    secondDoseInterval: Float
+    thirdDoseInterval: Float
+    toAge: Float
+    vaccineCostCenter: CostCenterOnVaccineUpdate
+    vaccineOccupation: OccupationOnVaccineUpdate
+}
+
+input VoteInput {
+    candidateId: String
+    mandateId: String!
+    nullVote: Boolean
+    whiteVote: Boolean
+}
+
+input WitnessOnAccidentInput {
+    personId: String!
+}
+
+input WitnessOnAccidentUpdate {
+    toCreate: [WitnessOnAccidentInput!]!
+    toRemove: [String!]!
+}
+
+input WorkShiftInput {
+    description: String!
+    erpId: String
+    productiveHours: Float
+    referenceId: String
+}
+
+input WorkShiftIntegration {
+    branch: String!
+    description: String
+    erpId: String
+    id: String
+}
+
+input WorkShiftUpdate {
+    description: String
+    erpId: String
+    id: String!
+    isActive: Boolean
+    productiveHours: Float
+    referenceId: String
+}
+
+input _InviteInput {
+    email: String!
+    name: String!
+    roleId: String!
+}
+
+
+"The javascript `Date` as string. Type represents date and time as the ISO Date string."
+scalar DateTime

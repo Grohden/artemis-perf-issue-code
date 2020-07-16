@@ -1,0 +1,6 @@
+fragment MedicalRecordDeficiencyItem on Deficiency {
+    __typename
+    id
+    date
+    type
+}

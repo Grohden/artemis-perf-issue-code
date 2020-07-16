@@ -1,0 +1,10 @@
+fragment PersonItem on Person {
+    __typename
+    id
+    name
+    birthday
+    gender
+    profilePicture
+    # FIXME: maybe rename this to cpf??
+    individualRegistration
+}

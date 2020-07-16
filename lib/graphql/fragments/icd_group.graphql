@@ -1,0 +1,5 @@
+fragment ICDGroupItem on IcdGroup {
+    __typename
+    id
+    description
+}

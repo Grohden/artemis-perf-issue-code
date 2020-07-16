@@ -1,0 +1,5 @@
+mutation createMedicalRecordVaccine($vaccine: MedicalRecordVaccineInput!) {
+    createMedicalRecordVaccine(medicalRecordVaccine: $vaccine) {
+        ...MedicalRecordVaccineItem
+    }
+}

@@ -1,0 +1,8 @@
+query profileView {
+    currentSession {
+        ...SessionItem
+    }
+    availableBranches {
+        ...BranchItem
+    }
+}

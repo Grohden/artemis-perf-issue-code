@@ -1,0 +1,10 @@
+fragment MedicalRecordHistoryItem on Consultation {
+    __typename
+    id
+    estimatedDate
+    doctor {
+        __typename
+        id
+        name
+    }
+}

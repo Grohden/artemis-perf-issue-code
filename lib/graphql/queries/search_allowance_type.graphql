@@ -1,0 +1,8 @@
+query searchAllowanceTypes($pagination: Pagination,$query: PaginationDefaultQueryInput!) {
+    allowanceTypes(query: $query, pagination: $pagination) {
+        hasMore
+        items {
+            ...AllowanceTypeItem
+        }
+    }
+}

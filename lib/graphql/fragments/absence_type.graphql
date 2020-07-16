@@ -1,0 +1,5 @@
+fragment AbsenceTypeItem on AbsenceType {
+    __typename
+    id
+    description
+}

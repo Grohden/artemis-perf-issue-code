@@ -1,0 +1,5 @@
+query medicalRecordView($id: String!) {
+    medicalRecord(id: $id) {
+        ...MedicalRecordViewItem
+    }
+}

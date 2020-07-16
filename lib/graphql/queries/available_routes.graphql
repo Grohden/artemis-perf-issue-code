@@ -1,0 +1,3 @@
+query availableRoutes {
+    routes(isMobile: true)
+}

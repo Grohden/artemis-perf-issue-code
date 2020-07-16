@@ -1,0 +1,5 @@
+fragment ICDItem on Icd {
+    __typename
+    id
+    description
+}
